@@ -1,3 +1,74 @@
-.title{
-    color: red;
+/* Start Global Rules */
+*{
+    font-family: "Georama", sans-serif;
+    margin: 0;
+    padding: 0;
 }
+a {
+    text-decoration: none;
+}
+ul {
+    list-style-type: none;
+}
+:root{
+    --main-color:#0E9E4D;
+    --second-color:#1f1f1f;
+}
+.container {
+    padding-left: 30px;
+    padding-right: 30px;
+}
+/* End Global Rules */
+
+/* Start Landing Page */
+.landing-page {
+        min-height: 100vh;
+        position: relative;
+}
+.landing-page .header-area {
+    box-shadow: 0 0 10px #ddd;;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    position: fixed;
+}
+.landing-page .container {
+    display: flex;
+    justify-content: space-between;
+    height: 60px;
+    align-items: center;
+}
+.landing-page .container .logo img {
+    width: 100px;
+}
+.landing-page .container .links li {
+    display: inline-block;
+    margin-right: 30px;
+}
+.landing-page .container .links a{
+    color: var(--second-color);
+}
+.landing-page .container .links a:hover {
+    color: var(--main-color);
+}
+.landing-page .container .info-enter{
+    display: flex;
+}
+.landing-page .container .info-enter .login{
+    margin-right: 30px;
+}
+.landing-page .container .info-enter a {
+    color: white;
+    font-weight: bold;
+    background-color: var(--main-color);
+    padding: 10px 20px;
+    border-radius: 5px;
+
+    width: 60px;
+    text-align: center;
+}
+.landing-page .container .info-enter a:hover{
+    background-color: #208f50;
+}
+
+/* End Landing Page */
