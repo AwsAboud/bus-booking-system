@@ -13,17 +13,24 @@ ul {
 :root{
     --main-color:#0E9E4D;
     --second-color:#1f1f1f;
+    --font-color:#424248;
+    --hover-color:#208f50;
+    --border-color:rgba(14, 158, 77, 0.6);
 }
 .container {
-    padding-left: 30px;
-    padding-right: 30px;
+    padding-left: 60px;
+    padding-right: 60px;
 }
 /* End Global Rules */
 
 /* Start Landing Page */
 .landing-page {
-        min-height: 100vh;
-        position: relative;
+    min-height: 100vh;
+    background: url(/imgs/download1.jpg);
+    background-size: 50%;
+    background-repeat: no-repeat;
+    background-position: left;
+    position: relative;
 }
 .landing-page .header-area {
     box-shadow: 0 0 10px #ddd;;
@@ -31,8 +38,9 @@ ul {
     margin: 0;
     padding: 0;
     position: fixed;
+    z-index: 2;
 }
-.landing-page .container {
+.landing-page .info {
     display: flex;
     justify-content: space-between;
     height: 60px;
@@ -67,8 +75,99 @@ ul {
     width: 60px;
     text-align: center;
 }
-.landing-page .container .info-enter a:hover{
-    background-color: #208f50;
+.landing-page .container .info-enter a:hover,
+.landing-page .banner .banner-right .tab-content .submit:hover,
+.landing-page .banner .banner-left a:hover{
+    background-color: var(--hover-color);
 }
-
+.landing-page .content {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+.landing-page .banner {
+    display: flex;
+    justify-content: space-between;
+}
+.landing-page .banner .banner-left,
+.landing-page .banner .banner-right {
+    width: 40%;
+}
+.landing-page .banner .banner-left .title {
+    color: var(--font-color);
+    font-weight: 600;
+    font-size: 48px;
+}
+.landing-page .banner .banner-left a {
+    background-color: var(--main-color);
+    color: white;
+    text-transform: uppercase;
+    font-size: 14px;
+    padding: 12px 25px;
+    border-radius: 5px;
+    margin-top: 35px;
+    width: 110px;
+    word-spacing: 2px;
+    display: block;
+    font-weight: 600;
+}
+.landing-page .banner .banner-right .title{
+    font-size: 22px;
+    margin-bottom:10px ;
+}
+.landing-page .banner .banner-right .tab-content{
+    background-color: #ddd;
+    border-radius: 5px;
+}
+.landing-page .banner .banner-right .tab-content form {
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+}
+.landing-page .banner .banner-right .tab-content input:not(:last-child) {
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+.landing-page .banner .banner-right .tab-content input {
+    outline: none;
+    border: none;
+}
+.landing-page .banner .banner-right .tab-content .submit {
+    background-color: var(--main-color);
+    color: #fff;
+    padding: 10px;
+    border: none;
+    width: 40%;
+    border-radius: 5px;
+    margin: 0 auto;
+    font-size: 14px;
+    font-weight: 600;
+}
+.landing-page .long-image {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+.landing-page .long-image img:first-child {
+    width: 100%;
+}
+.landing-page .long-image .bus {
+    position: absolute;
+    right: 0;
+    bottom: 5px;
+    /* animation: move-t0 5s 1s 0s infinite normal linear; */
+    animation-name: move-to;
+    animation-duration: 15s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+@keyframes move-to {
+    form {
+        right:0 ;
+    }
+    to {
+        right: 100%;
+    }
+}
 /* End Landing Page */
