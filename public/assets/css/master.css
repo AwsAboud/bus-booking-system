@@ -88,10 +88,13 @@ ul {
 .landing-page .banner {
     display: flex;
     justify-content: space-between;
+    width: 100%;
 }
-.landing-page .banner .banner-left,
-.landing-page .banner .banner-right {
+.landing-page .banner .banner-left {
     width: 40%;
+}
+.landing-page .banner .banner-right {
+    width: 30%;
 }
 .landing-page .banner .banner-left .title {
     color: var(--font-color);
