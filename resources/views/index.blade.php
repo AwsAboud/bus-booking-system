@@ -19,7 +19,7 @@
     <!-- Start Landing Page -->
     <div class="landing-page">
         <div class="header-area">
-            <div class="container">
+            <div class="container info">
                 <div class="logo"><img src="{{ asset('imgs/logo.png') }}" alt="logo"></div>
                 <ul class="links">
                     <li><a href="#">Home</a></li>
@@ -32,25 +32,41 @@
                 </div>
             </div>
         </div>
-        <!-- <div class="content">
-            <div class="container">
+        <div class="content">
+            <div class="container banner">
                 <div class="banner-left">
                     <h1 class="title">Get Your Ticket Online, Easy and Safely</h1>
                     <a href="">Get Ticket Now</a>
                 </div>
                 <div class="banner-right">
-                    <h4 class="title">Choose Your Ticket</h4>
+                    <h4 class="title">Choose Your Ticket:</h4>
                     <div class="tab-content">
                         <form action="">
-                            <input type="text">
-                            <input type="text">
-                            <input type="text">
-                            <input type="submit" value="">
+                            <input list="pickup" name="pickup" placeholder="Pickup Point">
+                            <datalist id="pickup">
+                                <option value="Latakia">
+                                <option value="Aleppo">
+                                <option value="Damascus">
+                                <option value="Homs">
+                            </datalist>
+                            <input list="dropping" name="dropping" placeholder="Dropping Point">
+                            <datalist id="dropping">
+                                <option value="Latakia">
+                                <option value="Aleppo">
+                                <option value="Damascus">
+                                <option value="Homs">
+                            </datalist>
+                            <input type="date" name="date" id="" class="date">
+                            <input type="submit" value="Find Ticket" class="submit">
                         </form>
                     </div>
                 </div>
             </div>
-        </div> -->
+        </div>
+        <div class="long-image">
+            <img src="{{ asset('imgs/longImage.png') }}" alt="">
+            <img src="{{ asset('imgs/bus.png') }}" alt="" class="bus">
+        </div>
     </div>
     <!-- End Landing Page -->
 </body>
