@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class Driver extends Model
 {
-    use HasApiTokens, HasFactory, Notifiable;
+    use HasFactory;
     protected $fillable = [
         'name',
         'email',

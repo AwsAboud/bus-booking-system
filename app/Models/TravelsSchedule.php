@@ -23,13 +23,14 @@ class TravelsSchedule extends Model
         'remarks'
     ];
 
-    public function bus()
-    {
+    public function bus(){
+
         return $this->belongsTo(Bus::class);
     }
-    public function driver()
-    {
-        return $this->belongsTo(Bus::class);
+
+    public function driver() {
+
+        return $this->belongsTo(Driver::class);
     }
 
     public function Bookings (){
