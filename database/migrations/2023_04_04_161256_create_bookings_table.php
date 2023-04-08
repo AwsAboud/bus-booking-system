@@ -22,7 +22,7 @@ class CreateBookingsTable extends Migration
                 ->onDelete('cascade')
                 ->onUpdate('cascade');
             $table->unsignedInteger('number_of_seats');
-            $table->unsignedInteger('price__per_seat');
+            $table->unsignedInteger('price_per_seat');
             $table->unsignedInteger('total_price');
             $table->date('booking_date')->default(DB::raw('CURRENT_DATE'));
             $table->timestamps();
