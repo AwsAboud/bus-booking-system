@@ -2,9 +2,9 @@
 
 namespace App\Filament\Resources;
 
-use App\Filament\Resources\DriverResource\Pages;
-use App\Filament\Resources\DriverResource\RelationManagers;
-use App\Models\Driver;
+use App\Filament\Resources\BusResource\Pages;
+use App\Filament\Resources\BusResource\RelationManagers;
+use App\Models\Bus;
 use Filament\Forms;
 use Filament\Resources\Form;
 use Filament\Resources\Resource;
@@ -13,9 +13,9 @@ use Filament\Tables;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
 
-class DriverResource extends Resource
+class BusResource extends Resource
 {
-    protected static ?string $model = Driver::class;
+    protected static ?string $model = Bus::class;
 
     protected static ?string $navigationIcon = 'heroicon-o-collection';
 
@@ -23,11 +23,14 @@ class DriverResource extends Resource
     {
         return $form
             ->schema([
-                Forms\Components\TextInput::make('name')->required(),
-                Forms\Components\TextInput::make('phone_number')->required()
-                ->length(10),
-                Forms\Components\TextInput::make('password')->required()->minLength(8)->password(),
-                Forms\Components\TextInput::make('email')->email()->required(),
+
+                Forms\Components\TextInput::make('bus_number')
+                    ->required()->numeric(),
+                Forms\Components\TextInput::make('bus_plate_number')
+                    ->required()->numeric(),
+                Forms\Components\TextInput::make('capacity')
+                    ->required()->numeric()
+                    ->minValue(20)->maxValue(100),
             ]);
     }
 
@@ -36,9 +39,10 @@ class DriverResource extends Resource
         return $table
             ->columns([
                 Tables\Columns\TextColumn::make('id'),
-                Tables\Columns\TextColumn::make('name'),
-                Tables\Columns\TextColumn::make('phone_number'),
-                Tables\Columns\TextColumn::make('email'),
+                Tables\Columns\TextColumn::make('bus_number'),
+                Tables\Columns\TextColumn::make('bus_plate_number'),
+                Tables\Columns\TextColumn::make('capacity'),
+
             ])
             ->filters([
                 //
@@ -61,9 +65,9 @@ class DriverResource extends Resource
     public static function getPages(): array
     {
         return [
-            'index' => Pages\ListDrivers::route('/'),
-            'create' => Pages\CreateDriver::route('/create'),
-            'edit' => Pages\EditDriver::route('/{record}/edit'),
+            'index' => Pages\ListBuses::route('/'),
+            'create' => Pages\CreateBus::route('/create'),
+            'edit' => Pages\EditBus::route('/{record}/edit'),
         ];
     }
 }
