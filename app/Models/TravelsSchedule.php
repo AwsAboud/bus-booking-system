@@ -10,7 +10,7 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 class TravelsSchedule extends Model
 {
     use HasFactory;
-
+    protected $table="travels_schedule";
     protected $fillable = [
         'bus_id',
         'driver_id',
