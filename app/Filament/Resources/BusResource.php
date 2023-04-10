@@ -38,10 +38,10 @@ class BusResource extends Resource
     {
         return $table
             ->columns([
-                Tables\Columns\TextColumn::make('id'),
-                Tables\Columns\TextColumn::make('bus_number'),
-                Tables\Columns\TextColumn::make('bus_plate_number'),
-                Tables\Columns\TextColumn::make('capacity'),
+                Tables\Columns\TextColumn::make('id') ->sortable()->searchable(),
+                Tables\Columns\TextColumn::make('bus_number') ->searchable(),
+                Tables\Columns\TextColumn::make('bus_plate_number')->searchable(),
+                Tables\Columns\TextColumn::make('capacity') ->searchable(),
 
             ])
             ->filters([

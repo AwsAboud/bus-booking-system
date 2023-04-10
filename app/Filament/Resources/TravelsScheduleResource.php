@@ -65,15 +65,15 @@ class TravelsScheduleResource extends Resource
     {
         return $table
             ->columns([
-                Tables\Columns\TextColumn::make('id'),
-                Tables\Columns\TextColumn::make('bus_id'),
-                Tables\Columns\TextColumn::make('driver_id'),
-                Tables\Columns\TextColumn::make('starting_point'),
-                Tables\Columns\TextColumn::make('destination'),
-                Tables\Columns\TextColumn::make('schedule_date'),
-                Tables\Columns\TextColumn::make('departure_time'),
+                Tables\Columns\TextColumn::make('id')->sortable()->searchable(),
+                Tables\Columns\TextColumn::make('bus_id')->searchable(),
+                Tables\Columns\TextColumn::make('driver_id')->searchable(),
+                Tables\Columns\TextColumn::make('starting_point')->searchable(),
+                Tables\Columns\TextColumn::make('destination')->searchable(),
+                Tables\Columns\TextColumn::make('schedule_date')->searchable(),
+                Tables\Columns\TextColumn::make('departure_time')->searchable(),
                 Tables\Columns\TextColumn::make('estimate_arrival_time'),
-                Tables\Columns\TextColumn::make('price'),
+                Tables\Columns\TextColumn::make('price')->searchable(),
                 Tables\Columns\TextColumn::make('remarks'),
 
             ])
