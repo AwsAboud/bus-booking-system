@@ -41,13 +41,13 @@ class BookingResource extends Resource
     {
         return $table
             ->columns([
-                Tables\Columns\TextColumn::make('id'),
-                Tables\Columns\TextColumn::make('travels_schedule_id'),
-                Tables\Columns\TextColumn::make('customer_id'),
+                Tables\Columns\TextColumn::make('id')->sortable()->searchable(),
+                Tables\Columns\TextColumn::make('travels_schedule_id')->sortable(),
+                Tables\Columns\TextColumn::make('customer_id')->sortable(),
                 Tables\Columns\TextColumn::make('number_of_seats'),
                 Tables\Columns\TextColumn::make('price_per_seat'),
                 Tables\Columns\TextColumn::make('total_price'),
-                Tables\Columns\TextColumn::make('booking_date'),
+                Tables\Columns\TextColumn::make('booking_date')->sortable()->searchable(),
             ])
             ->filters([
                 //
