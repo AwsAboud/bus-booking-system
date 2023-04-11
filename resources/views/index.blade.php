@@ -56,7 +56,7 @@
                                 <option value="Damascus">
                                 <option value="Homs">
                             </datalist>
-                            <input type="date" name="date" id="" class="date">
+                            <input type="date" name="date" id="" class="date" min="<?php echo date('Y-m-ad'); ?>"max="<?php echo date('Y-m-d', strtotime('+7 days')); ?>" >
                             <input type="submit" value="Find Ticket" class="submit">
                         </form>
                     </div>
