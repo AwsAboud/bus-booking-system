@@ -5,6 +5,7 @@ namespace App\Filament\Resources\BusResource\Pages;
 use App\Filament\Resources\BusResource;
 use Filament\Pages\Actions;
 use Filament\Resources\Pages\ListRecords;
+use App\Filament\Resources\BusResource\Widgets\BusStatsOverview;
 
 class ListBuses extends ListRecords
 {
@@ -16,4 +17,15 @@ class ListBuses extends ListRecords
             Actions\CreateAction::make(),
         ];
     }
+    //Bus widgets
+    protected function getHeaderWidgets(): array
+    {
+        return [
+            BusStatsOverview::class,
+        ];
+    }
+
+
 }
+
+

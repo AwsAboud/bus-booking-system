@@ -2,9 +2,11 @@
 
 namespace App\Filament\Resources\BookingResource\Pages;
 
-use App\Filament\Resources\BookingResource;
 use Filament\Pages\Actions;
 use Filament\Resources\Pages\ListRecords;
+use App\Filament\Resources\BookingResource;
+use App\Filament\Resources\BusResource\Widgets\BusStatsOverview;
+use App\Filament\Resources\BookingResource\Widgets\BookingsStatsOverview;
 
 class ListBookings extends ListRecords
 {
@@ -16,4 +18,12 @@ class ListBookings extends ListRecords
             Actions\CreateAction::make(),
         ];
     }
+        //Bookings widgets
+        protected function getHeaderWidgets(): array
+        {
+            return [
+                BookingsStatsOverview::class,
+            ];
+        }
+
 }

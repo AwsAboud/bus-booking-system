@@ -2,9 +2,10 @@
 
 namespace App\Filament\Resources\TravelsScheduleResource\Pages;
 
-use App\Filament\Resources\TravelsScheduleResource;
 use Filament\Pages\Actions;
 use Filament\Resources\Pages\ListRecords;
+use App\Filament\Resources\TravelsScheduleResource;
+use App\Filament\Resources\TravelsScheduleResource\Widgets\TravelsStatsOverview;
 
 class ListTravelsSchedules extends ListRecords
 {
@@ -16,4 +17,13 @@ class ListTravelsSchedules extends ListRecords
             Actions\CreateAction::make(),
         ];
     }
+
+       //Travels widget
+       protected function getHeaderWidgets(): array
+       {
+           return [
+                TravelsStatsOverview::class,
+           ];
+       }
+
 }
