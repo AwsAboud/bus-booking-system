@@ -12,6 +12,7 @@ use Filament\Resources\Table;
 use Filament\Tables;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
+use App\Filament\Resources\DriverResource\Widgets\DriverStatsOverview;
 
 class DriverResource extends Resource
 {
@@ -66,4 +67,12 @@ class DriverResource extends Resource
             'edit' => Pages\EditDriver::route('/{record}/edit'),
         ];
     }
+
+     //Driver Widgets
+     public static function getWidgets(): array
+     {
+         return [
+             DriverStatsOverview::class,
+         ];
+     }
 }

@@ -5,7 +5,7 @@ namespace App\Filament\Resources\DriverResource\Pages;
 use App\Filament\Resources\DriverResource;
 use Filament\Pages\Actions;
 use Filament\Resources\Pages\ListRecords;
-
+use App\Filament\Resources\DriverResource\Widgets\DriverStatsOverview;
 class ListDrivers extends ListRecords
 {
     protected static string $resource = DriverResource::class;
@@ -16,4 +16,12 @@ class ListDrivers extends ListRecords
             Actions\CreateAction::make(),
         ];
     }
+    //
+    protected function getHeaderWidgets(): array
+    {
+        return [
+            DriverStatsOverview::class,
+        ];
+    }
+
 }

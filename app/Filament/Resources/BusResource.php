@@ -12,6 +12,7 @@ use Filament\Resources\Table;
 use Filament\Tables;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
+use App\Filament\Resources\BusResource\Widgets\BusStatsOverview;
 
 class BusResource extends Resource
 {
@@ -70,4 +71,14 @@ class BusResource extends Resource
             'edit' => Pages\EditBus::route('/{record}/edit'),
         ];
     }
+
+
+       //Bus Widgets
+       public static function getWidgets(): array
+       {
+           return [
+               BusStatsOverview::class,
+
+           ];
+       }
 }

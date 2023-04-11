@@ -2,17 +2,18 @@
 
 namespace App\Filament\Resources;
 
-use App\Filament\Resources\TravelsScheduleResource\Pages;
-use App\Filament\Resources\TravelsScheduleResource\RelationManagers;
-use App\Models\TravelsSchedule;
+use App\Models\Bus;
 use Filament\Forms;
-use Filament\Resources\Form;
-use Filament\Resources\Resource;
-use Filament\Resources\Table;
 use Filament\Tables;
+use Filament\Resources\Form;
+use Filament\Resources\Table;
+use App\Models\TravelsSchedule;
+use Filament\Resources\Resource;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
-use App\Models\Bus;
+use App\Filament\Resources\TravelsScheduleResource\Pages;
+use App\Filament\Resources\TravelsScheduleResource\RelationManagers;
+use App\Filament\Resources\TravelsScheduleResource\Widgets\TravelsStatsOverview;
 
 class TravelsScheduleResource extends Resource
 {
@@ -104,4 +105,12 @@ class TravelsScheduleResource extends Resource
             'edit' => Pages\EditTravelsSchedule::route('/{record}/edit'),
         ];
     }
+     //Travels Widgets
+     public static function getWidgets(): array
+     {
+         return [
+             TravelsStatsOverview::class,
+
+         ];
+     }
 }

@@ -12,6 +12,7 @@ use Filament\Resources\Table;
 use Filament\Tables;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
+use App\Filament\Resources\CustomerResource\Widgets\CustomerStatsOverview;
 
 class CustomerResource extends Resource
 {
@@ -72,4 +73,13 @@ class CustomerResource extends Resource
             'edit' => Pages\EditCustomer::route('/{record}/edit'),
         ];
     }
+
+       //Customer Widgets
+       public static function getWidgets(): array
+       {
+           return [
+               CustomerStatsOverview::class,
+
+           ];
+       }
 }
