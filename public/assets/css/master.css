@@ -20,25 +20,29 @@ ul {
 .container {
     padding-left: 60px;
     padding-right: 60px;
+    margin-left: auto;
+    margin-right: auto;
 }
 /* End Global Rules */
 
 /* Start Landing Page */
 .landing-page {
     min-height: 100vh;
-    background: url(/imgs/download1.jpg);
+    /* background: url(/imgs/download1.jpg);
     background-size: 50%;
     background-repeat: no-repeat;
-    background-position: left;
+    background-position: left; */
     position: relative;
 }
 .landing-page .header-area {
     box-shadow: 0 0 10px #ddd;;
     width: 100%;
-    margin: 0;
-    padding: 0;
-    position: fixed;
-    z-index: 2;
+    justify-content: space-between;
+    height: 60px;
+    align-items: center;
+    display: flex;
+    padding-left:60px;
+    padding-right:60px;
 }
 .landing-page .info {
     display: flex;
@@ -46,26 +50,26 @@ ul {
     height: 60px;
     align-items: center;
 }
-.landing-page .container .logo img {
-    width: 100px;
+.landing-page  .logo img {
+    max-width: 100px;
 }
-.landing-page .container .links li {
+.landing-page  .links li {
     display: inline-block;
     margin-right: 30px;
 }
-.landing-page .container .links a{
+.landing-page  .links a{
     color: var(--second-color);
 }
-.landing-page .container .links a:hover {
+.landing-page  .links a:hover {
     color: var(--main-color);
 }
-.landing-page .container .info-enter{
+.landing-page  .info-enter{
     display: flex;
 }
-.landing-page .container .info-enter .login{
+.landing-page  .info-enter .login{
     margin-right: 30px;
 }
-.landing-page .container .info-enter a {
+.landing-page  .info-enter a {
     color: white;
     font-weight: bold;
     background-color: var(--main-color);
@@ -75,7 +79,7 @@ ul {
     width: 60px;
     text-align: center;
 }
-.landing-page .container .info-enter a:hover,
+.landing-page  .info-enter a:hover,
 .landing-page .banner .banner-right .tab-content .submit:hover,
 .landing-page .banner .banner-left a:hover{
     background-color: var(--hover-color);
@@ -88,7 +92,7 @@ ul {
 .landing-page .banner {
     display: flex;
     justify-content: space-between;
-    width: 100%;
+    /* width: 100%; */
 }
 .landing-page .banner .banner-left {
     width: 40%;
@@ -174,3 +178,16 @@ ul {
     }
 }
 /* End Landing Page */
+/* Start responsive for Landing Page */
+@media (max-width:480px) {
+    .links , .login,.sign,.long-image {
+        display: none;
+    }
+    .landing-page {
+        width: 750px;
+    }
+    .banner {
+        flex-direction: column;
+    }
+}
+/* End responsive for Landing Page */
