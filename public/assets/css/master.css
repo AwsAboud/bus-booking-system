@@ -20,6 +20,8 @@ ul {
 .container {
     padding-left: 60px;
     padding-right: 60px;
+    margin-left: auto;
+    margin-right: auto;
 }
 /* End Global Rules */
 
@@ -88,7 +90,7 @@ ul {
 .landing-page .banner {
     display: flex;
     justify-content: space-between;
-    width: 100%;
+    /* width: 100%; */
 }
 .landing-page .banner .banner-left {
     width: 40%;
@@ -174,3 +176,16 @@ ul {
     }
 }
 /* End Landing Page */
+/* Start responsive for Landing Page */
+@media (max-width:480px) {
+    .links , .login,.sign,.long-image {
+        display: none;
+    }
+    .landing-page {
+        width: 750px;
+    }
+    .banner {
+        flex-direction: column;
+    }
+}
+/* End responsive for Landing Page */
