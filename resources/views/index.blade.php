@@ -19,21 +19,20 @@
     <!-- Start Landing Page -->
     <div class="landing-page">
         <div class="header-area">
-            <div class="container info">
-                <div class="logo"><img src="{{ asset('imgs/logo.png') }}" alt="logo"></div>
-                <ul class="links">
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">About</a></li>
-                    <li><a href="#">Contact</a></li>
-                </ul>
-                <div class="info-enter">
-                    <a href="#" class="login">Sign In</a>
-                    <a href="#" class="sign">Sign Up</a>
-                </div>
+            <div class="logo"><img src="{{ asset('imgs/logo.png') }}" alt="logo">
+            </div>
+            <ul class="links">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+            <div class="info-enter">
+                <a href="#" class="login">Sign In</a>
+                <a href="#" class="sign">Sign Up</a>
             </div>
         </div>
-        <div class="content">
-            <div class="container banner">
+        <div class="container">
+            <!-- <div class="banner">
                 <div class="banner-left">
                     <h1 class="title">Get Your Ticket Online, Easy and Safely</h1>
                     <a href="">Get Ticket Now</a>
@@ -62,10 +61,11 @@
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="long-image">
-            <img src="{{ asset('imgs/longImage.png') }}" alt="">
-            <img src="{{ asset('imgs/bus.png') }}" alt="" class="bus">
+            <div class="long-image">
+                <img src="{{ asset('imgs/longImage.png') }}" alt="">
+                <img src="{{ asset('imgs/bus.png') }}" alt="" class="bus">
+            </div> -->
+
         </div>
     </div>
     <!-- End Landing Page -->
