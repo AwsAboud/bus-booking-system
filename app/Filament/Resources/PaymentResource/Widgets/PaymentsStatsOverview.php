@@ -19,11 +19,11 @@ class PaymentsStatsOverview extends BaseWidget
          $paymentAmountOfCurrentMonth = Payment::whereMonth('payment_date',$currentMonth)->count();
         return [
             //Display the payment amount in the current month
-            Card::make('Today\'s Earnings',$paymentAmountOfCurrentDay)
+            Card::make('Today\'s Earnings',$paymentAmountOfCurrentDay. ' $')
             ->description('Todays Earnings')
             ->color('success'),
             //Display the payment amount in the current day
-            Card::make('This Month Earnings',$paymentAmountOfCurrentMonth)
+            Card::make('This Month Earnings',$paymentAmountOfCurrentMonth. ' $')
             ->description('This Month Earnings')
             ->color('success'),
         ];
