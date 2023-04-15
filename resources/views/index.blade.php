@@ -32,7 +32,7 @@
             </div>
         </div>
         <div class="container">
-            <!-- <div class="banner">
+            <div class="banner">
                 <div class="banner-left">
                     <h1 class="title">Get Your Ticket Online, Easy and Safely</h1>
                     <a href="">Get Ticket Now</a>
@@ -55,7 +55,7 @@
                                 <option value="Damascus">
                                 <option value="Homs">
                             </datalist>
-                            <input type="date" name="date" id="" class="date" min="<?php echo date('Y-m-ad'); ?>"max="<?php echo date('Y-m-d', strtotime('+7 days')); ?>" >
+                            <input type="date" name="date" id="" class="date" min="<?php echo date('Y-m-ad'); ?>" max="<?php echo date('Y-m-d', strtotime('+7 days')); ?>">
                             <input type="submit" value="Find Ticket" class="submit">
                         </form>
                     </div>
@@ -64,7 +64,7 @@
             <div class="long-image">
                 <img src="{{ asset('imgs/longImage.png') }}" alt="">
                 <img src="{{ asset('imgs/bus.png') }}" alt="" class="bus">
-            </div> -->
+            </div>
 
         </div>
     </div>

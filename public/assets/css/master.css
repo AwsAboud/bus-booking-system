@@ -3,6 +3,7 @@
     font-family: "Georama", sans-serif;
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 a {
     text-decoration: none;
@@ -20,35 +21,26 @@ ul {
 .container {
     padding-left: 60px;
     padding-right: 60px;
-    margin-left: auto;
-    margin-right: auto;
 }
 /* End Global Rules */
 
 /* Start Landing Page */
 .landing-page {
     min-height: 100vh;
-    /* background: url(/imgs/download1.jpg);
-    background-size: 50%;
+    background: url(/imgs/download1.jpg);
+    background-size: 35%;
     background-repeat: no-repeat;
-    background-position: left; */
+    background-position:20% 50%;
     position: relative;
 }
 .landing-page .header-area {
     box-shadow: 0 0 10px #ddd;;
-    width: 100%;
     justify-content: space-between;
     height: 60px;
     align-items: center;
     display: flex;
     padding-left:60px;
     padding-right:60px;
-}
-.landing-page .info {
-    display: flex;
-    justify-content: space-between;
-    height: 60px;
-    align-items: center;
 }
 .landing-page  .logo img {
     max-width: 100px;
@@ -63,60 +55,51 @@ ul {
 .landing-page  .links a:hover {
     color: var(--main-color);
 }
-.landing-page  .info-enter{
-    display: flex;
-}
 .landing-page  .info-enter .login{
     margin-right: 30px;
 }
 .landing-page  .info-enter a {
     color: white;
-    font-weight: bold;
     background-color: var(--main-color);
     padding: 10px 20px;
     border-radius: 5px;
-
-    width: 60px;
-    text-align: center;
 }
 .landing-page  .info-enter a:hover,
 .landing-page .banner .banner-right .tab-content .submit:hover,
 .landing-page .banner .banner-left a:hover{
     background-color: var(--hover-color);
 }
-.landing-page .content {
+.landing-page .container .banner {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-}
-.landing-page .banner {
+    width: 90%;
     display: flex;
     justify-content: space-between;
-    /* width: 100%; */
+
 }
 .landing-page .banner .banner-left {
     width: 40%;
 }
+
 .landing-page .banner .banner-right {
-    width: 30%;
+    width: 40%;
 }
 .landing-page .banner .banner-left .title {
     color: var(--font-color);
-    font-weight: 600;
     font-size: 48px;
+    margin-bottom: 30px;
 }
 .landing-page .banner .banner-left a {
     background-color: var(--main-color);
     color: white;
+    padding: 10px;
     text-transform: uppercase;
-    font-size: 14px;
-    padding: 12px 25px;
     border-radius: 5px;
-    margin-top: 35px;
-    width: 110px;
-    word-spacing: 2px;
-    display: block;
-    font-weight: 600;
+    text-align: center;
+    width: 150px;
+    position: absolute;
+    bottom: 60px;
 }
 .landing-page .banner .banner-right .title{
     font-size: 22px;
@@ -154,10 +137,10 @@ ul {
 .landing-page .long-image {
     position: absolute;
     bottom: 0;
-    width: 100%;
+    left: 0;
 }
 .landing-page .long-image img:first-child {
-    width: 100%;
+   max-width:100%;
 }
 .landing-page .long-image .bus {
     position: absolute;
