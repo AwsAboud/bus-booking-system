@@ -17,6 +17,7 @@ ul {
     --font-color:#424248;
     --hover-color:#208f50;
     --border-color:rgba(14, 158, 77, 0.6);
+    --main-padding:100px;
 }
 .container {
     padding-left: 60px;
@@ -106,7 +107,8 @@ ul {
     margin-bottom:10px ;
 }
 .landing-page .banner .banner-right .tab-content{
-    background-color: #ddd;
+    background-color: #fff;
+    box-shadow: 0 0 15px 3px rgba(27, 39, 61, 0.1);
     border-radius: 5px;
 }
 .landing-page .banner .banner-right .tab-content form {
@@ -120,8 +122,8 @@ ul {
     margin-bottom: 20px;
 }
 .landing-page .banner .banner-right .tab-content input {
-    outline: none;
-    border: none;
+    outline: 1px solid var(--main-color);
+    border:1px solid var(--main-color)
 }
 .landing-page .banner .banner-right .tab-content .submit {
     background-color: var(--main-color);
@@ -161,6 +163,45 @@ ul {
     }
 }
 /* End Landing Page */
-/* Start responsive for Landing Page */
 
-/* End responsive for Landing Page */
+/* Start Images Page */
+.images-page {
+    padding-top: var(--main-padding);
+}
+.images-page .main-heading {
+    text-align: center;
+
+}
+.images-page .main-heading h1 {
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 35px;
+    color: #fff;
+    margin: 0 auto;
+    width: 300px;
+    border-radius: 5px;
+    padding: 10px;
+    background-color: var(--main-color);
+
+}
+.images-page .main-heading p{
+    font-size: 20px;
+    letter-spacing: 2.5px;
+    margin: 30px 0px;
+}
+.images-page .images-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 40px;
+}
+.images-page .images-container .box {
+
+}
+.images-page .images-container .box img {
+    width: 400px;
+    height: 350px;
+}
+.images-page .images-container .box h2 {
+    text-align: center;
+}
+/* End Images Page */

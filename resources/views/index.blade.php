@@ -68,6 +68,49 @@
         </div>
     </div>
     <!-- End Landing Page -->
+
+    <!-- Start Cities-Images -->
+    <div class="images-page">
+        <div class="container">
+            <div class="main-heading">
+                <h1>Travel with us</h1>
+                <p>Choose the place you want to travel to</p>
+            </div>
+            <div class="images-container">
+                <div class="box">
+                    <img src="{{ asset('imgs/latakia.jpg') }}" alt="">
+                    <h2>Latakia</h2>
+                    <p></p>
+                </div>
+                <div class="box">
+                    <img src="{{ asset('imgs/aleppo.jpg') }}" alt="">
+                    <h2>Aleppo</h2>
+                    <p></p>
+                </div>
+                <div class="box">
+                    <img src="{{ asset('imgs/damascus.jpg') }}" alt="">
+                    <h2>Damascus</h2>
+                    <p></p>
+                </div>
+                <div class="box">
+                    <img src="{{ asset('imgs/homs.jpg') }}" alt="">
+                    <h2>Homs</h2>
+                    <p></p>
+                </div>
+                <div class="box">
+                    <img src="{{ asset('imgs/hama.jpeg') }}" alt="">
+                    <h2>Hama</h2>
+                    <p></p>
+                </div>
+                <div class="box">
+                    <img src="{{ asset('imgs/tartous.jpg') }}" alt="">
+                    <h2>Tartous</h2>
+                    <p></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Cities=Images -->
 </body>
 
 </html>
