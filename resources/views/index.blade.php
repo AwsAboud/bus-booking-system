@@ -61,11 +61,10 @@
                     </div>
                 </div>
             </div>
-            <div class="long-image">
-                <img src="{{ asset('imgs/longImage.png') }}" alt="">
-                <img src="{{ asset('imgs/bus.png') }}" alt="" class="bus">
-            </div>
-
+        </div>
+        <div class="long-image">
+            <img src="{{ asset('imgs/longImage.png') }}" alt="">
+            <img src="{{ asset('imgs/bus.png') }}" alt="" class="bus">
         </div>
     </div>
     <!-- End Landing Page -->

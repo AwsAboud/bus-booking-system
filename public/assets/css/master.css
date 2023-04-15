@@ -162,15 +162,5 @@ ul {
 }
 /* End Landing Page */
 /* Start responsive for Landing Page */
-@media (max-width:480px) {
-    .links , .login,.sign,.long-image {
-        display: none;
-    }
-    .landing-page {
-        width: 750px;
-    }
-    .banner {
-        flex-direction: column;
-    }
-}
+
 /* End responsive for Landing Page */
