@@ -143,6 +143,8 @@ return [
         'path' => app_path('Filament/Widgets'),
         'register' => [
             Widgets\AccountWidget::class,
+            //display the charts on the main dashboard
+            App\Filament\Widgets\DashboardStatsOverview::class,
             //Widgets\FilamentInfoWidget::class,
             //BusStatsOverview::class,
             //DriverStatsOverview::class,

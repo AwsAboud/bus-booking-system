@@ -18,11 +18,11 @@ class BookingsStatsOverview extends BaseWidget
          $currentMonth = Carbon::now()->month;
          $numberOfCurrentMonthBookings = Booking::whereMonth('booking_date',$currentMonth)->count();
         return [
-            //Display the travels number in the  current day
+            //Display the bookings number in the  current day
             Card::make('Today\'s Bookings',$numberOfCurrentDayBookings)
             ->description('Todays Bookings')
             ->color('success'),
-            //Display the get travels number in the  current month
+            //Display the bookings number in the  current month
             Card::make('This Month Bookings',$numberOfCurrentMonthBookings)
             ->description('This Month Bookings')
             ->color('success'),
