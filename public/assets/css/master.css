@@ -60,17 +60,18 @@ html {
 .landing-page .header-area {
     box-shadow: 0 0 10px #ddd;;
     justify-content: space-between;
-    height: 60px;
+    min-height: 60px;
     align-items: center;
     display: flex;
     padding-left:60px;
     padding-right:60px;
 }
-.landing-page  .logo {
-    padding-right: 7px;
-}
 .landing-page  .logo img {
     max-width: 100px;
+}
+.landing-page .links {
+    padding-bottom: 10px;
+    padding-top: 10px;
 }
 .landing-page  .links li {
     display: inline-block;
@@ -122,7 +123,7 @@ html {
     color: var(--font-color);
     font-size: 40px;
     max-width: 400px;
-    margin-bottom: 60px;
+    margin-bottom: 40px;
 }
 .landing-page .banner .banner-left a {
     background-color: var(--main-color);
@@ -285,9 +286,7 @@ html {
     }
 }
 @media (max-width:992px) {
-    .long-image {
-        display: none;
-    }
+
 }
 @media (max-width:768px) {
     .container {
@@ -303,6 +302,14 @@ html {
     .landing-page .banner {
         flex-direction: column;
         row-gap: 30px;
+    }    .long-image {
+        display: none;
+    }
+    .header-area {
+        flex-direction: column;
+    }
+    .logo {
+        padding-top: 10px;
     }
     /* .images-page .images-container .box {
         margin: 0 auto;
