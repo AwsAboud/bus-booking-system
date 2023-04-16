@@ -70,7 +70,7 @@
     <!-- End Landing Page -->
 
     <!-- Start Cities-Images -->
-    <div class="images-page">
+    <!-- <div class="images-page">
         <div class="container">
             <div class="main-heading">
                 <h1>Travel with us</h1>
@@ -121,7 +121,7 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> -->
     <!-- End Cities=Images -->
 </body>
 
