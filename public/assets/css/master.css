@@ -273,9 +273,7 @@ html {
 }
 /* End Images Page */
 @media (max-width:480px) {
-    .landing-page .banner .banner-left .title {
-        font-size: 20px;
-    }
+
     .landing-page .header-area {
         justify-content: center;
         padding-left: 5px;
@@ -310,6 +308,9 @@ html {
     }
     .logo {
         padding-top: 10px;
+    }
+    .landing-page .banner .banner-left .title {
+        font-size: 20px;
     }
     /* .images-page .images-container .box {
         margin: 0 auto;
