@@ -17,15 +17,15 @@
 
 <body>
     <!-- Start Landing Page -->
-    <div class="landing-page">
+    <div class="landing-page" id="home">
         <div class="header-area">
             <div class="logo"><img src="{{ asset('imgs/logo.png') }}" alt="logo">
             </div>
             <ul class="links">
-                <li><a href="#">Home</a></li>
+                <li><a href="#home">Home</a></li>
                 <li><a href="#trips">Trips</a></li>
-                <li><a href="#">About</a></li>
-                <li><a href="#">Contact</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
             </ul>
             <div class="info-enter">
                 <a href="#" class="login">Sign In</a>
@@ -56,7 +56,7 @@
                                 <option value="Damascus">
                                 <option value="Homs">
                             </datalist>
-                            <input type="date" name="date" id="" class="date" min="<?php echo date('Y-m-ad'); ?>" max="<?php echo date('Y-m-d', strtotime('+7 days')); ?>">
+                            <input type="date" name="date" id="" class="date" min="<?php echo date('Y-m-d'); ?>" max="<?php echo date('Y-m-d', strtotime('+7 days')); ?>">
                             <input type="submit" value="Find Ticket" class="submit">
                         </form>
                     </div>

@@ -74,6 +74,9 @@ html {
 }
 .landing-page  .links li {
     display: inline-block;
+}
+.landing-page  .links li:not(:last-child) {
+
     margin-right: 30px;
 }
 .landing-page  .links a{
@@ -229,6 +232,7 @@ html {
     position: relative;
     box-shadow: 0 0 15px 3px rgba(27, 39, 61, 0.1);
     overflow: hidden;
+    margin: 0 auto;
 }
 .images-page .images-container .box img {
     width: 350px;
@@ -276,6 +280,9 @@ html {
         padding-left: 5px;
         padding-right: 5px;
     }
+    .images-page {
+        padding-top: 0px;
+    }
 }
 @media (max-width:992px) {
     .long-image {
@@ -297,4 +304,7 @@ html {
         flex-direction: column;
         row-gap: 30px;
     }
+    /* .images-page .images-container .box {
+        margin: 0 auto;
+    } */
 }
