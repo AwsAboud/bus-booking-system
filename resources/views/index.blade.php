@@ -23,6 +23,7 @@
             </div>
             <ul class="links">
                 <li><a href="#">Home</a></li>
+                <li><a href="#trips">Trips</a></li>
                 <li><a href="#">About</a></li>
                 <li><a href="#">Contact</a></li>
             </ul>
@@ -70,7 +71,7 @@
     <!-- End Landing Page -->
 
     <!-- Start Cities-Images -->
-    <div class="images-page">
+    <div class="images-page" id="trips">
         <div class="container">
             <div class="main-heading">
                 <h1>Travel with us</h1>
