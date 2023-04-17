@@ -138,9 +138,9 @@
                     </div>
                     <p>Delectus culpa laboriosam debitis saepe. Commodi earum minus ut obcaecati veniam deserunt est!</p>
                     <div class="icons">
-                        <a href=""><i></i></a>
-                        <a href=""><i></i></a>
-                        <a href=""><i></i></a>
+                        <a href=""><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href=""><i class="fa-brands fa-twitter"></i></a>
+                        <a href=""><i class="fa-brands fa-instagram"></i></a>
                     </div>
                 </div>
                 <div class="useful-links">
