@@ -7,6 +7,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Main File Css -->
     <link rel="stylesheet" href="{{asset('assets/css/master.css')}}">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="{{asset('assets/css/font-awesome.min.css')}}">
+    <link rel="stylesheet" href="{{asset('assets/css/all.min.css')}}">
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -124,6 +127,53 @@
         </div>
     </div>
     <!-- End Cities=Images -->
+
+    <!-- Start Footer -->
+    <div class="footer">
+        <div class="footer-top">
+            <div class="container">
+                <div class="social">
+                    <div class="logo">
+                        <img src="{{ asset('imgs/logo.png') }}" alt="logo">
+                    </div>
+                    <p>Delectus culpa laboriosam debitis saepe. Commodi earum minus ut obcaecati veniam deserunt est!</p>
+                    <div class="icons">
+                        <a href=""><i></i></a>
+                        <a href=""><i></i></a>
+                        <a href=""><i></i></a>
+                    </div>
+                </div>
+                <div class="useful-links">
+                    <h2 class="title-footer">Usefil Links</h2>
+                    <ul class="footer-links">
+                        <li><a href=""></a>About</li>
+                        <li><a href=""></a>About</li>
+                        <li><a href=""></a>About</li>
+                        <li><a href=""></a>About</li>
+                    </ul>
+                </div>
+                <div class="policies">
+                    <h2 class="title-footer">Policies</h2>
+                    <ul class="footer-links">
+                        <li><a href=""></a>About</li>
+                        <li><a href=""></a>About</li>
+                        <li><a href=""></a>About</li>
+                        <li><a href=""></a>About</li>
+                    </ul>
+                </div>
+                <div class="contact-info">
+                    <h2 class="title-footer">Contact Info</h2>
+                    <ul class="footer-links">
+                        <li><a href=""></a>About</li>
+                        <li><a href=""></a>About</li>
+                        <li><a href=""></a>About</li>
+                        <li><a href=""></a>About</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Footer -->
 </body>
 
 </html>
