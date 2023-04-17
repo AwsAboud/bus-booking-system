@@ -226,26 +226,26 @@ html {
 }
 .images-page .images-container .box {
     background-color: var(--main-color);
-    width: 370px;
-    height: 370px;
-    padding: 10px;
+    width: 350px;
+    height: 300px;
+    padding: 5px;
     border-radius: 5px;
     position: relative;
-    box-shadow: 0 0 15px 3px rgba(27, 39, 61, 0.1);
+    /* box-shadow: 0 0 15px 3px rgba(27, 39, 61, 0.1); */
     overflow: hidden;
     margin: 0 auto;
 }
 .images-page .images-container .box img {
-    width: 350px;
+    width: 340px;
     border-radius: 5px;
-    height: 350px;
+    height: 290px;
 
 }
 .images-page .images-container .box .content {
     background-color: rgb(255 255 255 / 84%);
     position: absolute;
     text-align: center;
-    width: calc(100% - 20px);
+    width: calc(100% - 10px);
     left: 50%;
     transform: translateX(-50%);
     bottom: -100%;
@@ -253,7 +253,7 @@ html {
     transition: 0.3s;
 }
 .images-page .images-container .box:hover .content {
-    bottom: 10px;
+    bottom: 5px;
 }
 .images-page .images-container .box .content h2 {
     margin-bottom: 20px;
