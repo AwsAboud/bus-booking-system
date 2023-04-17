@@ -8,7 +8,6 @@
     <!-- Main File Css -->
     <link rel="stylesheet" href="{{asset('assets/css/master.css')}}">
     <!-- Font Awesome -->
-    <link rel="stylesheet" href="{{asset('assets/css/font-awesome.min.css')}}">
     <link rel="stylesheet" href="{{asset('assets/css/all.min.css')}}">
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -146,34 +145,40 @@
                 <div class="useful-links">
                     <h2 class="title-footer">Usefil Links</h2>
                     <ul class="footer-links">
-                        <li><a href=""></a>About</li>
-                        <li><a href=""></a>About</li>
-                        <li><a href=""></a>About</li>
-                        <li><a href=""></a>About</li>
+                        <li><a href="">About</a></li>
+                        <li><a href="">About</a></li>
+                        <li><a href="">About</a></li>
+                        <li><a href="">About</a></li>
                     </ul>
                 </div>
                 <div class="policies">
                     <h2 class="title-footer">Policies</h2>
                     <ul class="footer-links">
-                        <li><a href=""></a>About</li>
-                        <li><a href=""></a>About</li>
-                        <li><a href=""></a>About</li>
-                        <li><a href=""></a>About</li>
+                        <li><a href="">About</a></li>
+                        <li><a href="">About</a></li>
+                        <li><a href="">About</a></li>
+                        <li><a href="">About</a></li>
                     </ul>
                 </div>
                 <div class="contact-info">
                     <h2 class="title-footer">Contact Info</h2>
                     <ul class="footer-links">
-                        <li><a href=""></a>About</li>
-                        <li><a href=""></a>About</li>
-                        <li><a href=""></a>About</li>
-                        <li><a href=""></a>About</li>
+                        <li><a href="">About</a></li>
+                        <li><a href="">About</a></li>
+                        <li><a href="">About</a></li>
+                        <li><a href="">About</a></li>
                     </ul>
                 </div>
             </div>
         </div>
     </div>
     <!-- End Footer -->
+
+    <div style="padding: 60px;">
+        <h1>nothing</h1>
+        <p>luqman ali</p>
+        <i class="fa-brands fa-facebook-messenger"></i>
+    </div>
 </body>
 
 </html>
