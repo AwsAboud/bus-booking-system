@@ -8,7 +8,8 @@
     <!-- Main File Css -->
     <link rel="stylesheet" href="{{asset('assets/css/master.css')}}">
     <!-- Font Awesome -->
-    <link rel="stylesheet" href="{{asset('assets/css/all.min.css')}}">
+    <!-- <link rel="stylesheet" href="{{asset('assets/css/all.min.css')}}"> -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -173,12 +174,6 @@
         </div>
     </div>
     <!-- End Footer -->
-
-    <div style="padding: 60px;">
-        <h1>nothing</h1>
-        <p>luqman ali</p>
-        <i class="fa-brands fa-facebook-messenger"></i>
-    </div>
 </body>
 
 </html>
