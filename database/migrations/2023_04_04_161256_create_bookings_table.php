@@ -1,8 +1,9 @@
 <?php
 
-use Illuminate\Database\Migrations\Migration;
-use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Schema;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Database\Migrations\Migration;
 
 class CreateBookingsTable extends Migration
 {
@@ -18,7 +19,7 @@ class CreateBookingsTable extends Migration
             $table->foreignId('travels_schedule_id')->constrained('travels_schedule')
                 ->onDelete('cascade')
                 ->onUpdate('cascade');
-            $table->foreignId('customer_id')->constrained('customers')
+            $table->foreignId('user_id')->constrained('users')
                 ->onDelete('cascade')
                 ->onUpdate('cascade');
             $table->unsignedInteger('number_of_seats');

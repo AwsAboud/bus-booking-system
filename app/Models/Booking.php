@@ -2,10 +2,12 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
+use App\Models\User;
+use App\Models\TravelsSchedule;
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasOne;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 
 class Booking extends Model
@@ -19,9 +21,9 @@ class Booking extends Model
         'total_price',
         'booking_date',
     ];
-    public function customer(){
+    public function user(){
 
-        return $this->belongsTo(Customer::class);
+        return $this->belongsTo(User::class);
      }
 
     public function payment(){

@@ -7,8 +7,8 @@ use App\Models\Bus;
 use App\Models\Driver;
 use App\Models\Booking;
 use App\Models\Payment;
-use App\Models\Customer;
 use App\Models\TravelsSchedule;
+use App\Models\User;
 use Filament\Widgets\StatsOverviewWidget\Card;
 use Filament\Widgets\StatsOverviewWidget as BaseWidget;
 
@@ -61,7 +61,7 @@ class DashboardStatsOverview extends BaseWidget
         ]),
 
              //get the number of  the company Customers
-            Card::make('Total Customers', Customer::all()->count())
+            Card::make('Total Customers', User::all()->count())
             ->description('Total Customers')
             ->color('success')
             ->extraAttributes([
