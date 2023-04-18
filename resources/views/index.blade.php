@@ -28,7 +28,7 @@
                 <li><a href="#home">Home</a></li>
                 <li><a href="#trips">Trips</a></li>
                 <li><a href="#about">About</a></li>
-                <li><a href="#contact">Contact</a></li>
+                <li><a href="/contact" target="_blank">Contact</a></li>
             </ul>
             <div class="info-enter">
                 <a href="#" class="login">Sign In</a>
