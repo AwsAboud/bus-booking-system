@@ -143,31 +143,30 @@
                         <a href=""><i class="fa-brands fa-instagram"></i></a>
                     </div>
                 </div>
-                <div class="useful-links">
+                <div class="useful-links all">
                     <h2 class="title-footer">Usefil Links</h2>
                     <ul class="footer-links">
+                        <li><a href="">Home</a></li>
+                        <li><a href="">Trips</a></li>
                         <li><a href="">About</a></li>
-                        <li><a href="">About</a></li>
-                        <li><a href="">About</a></li>
-                        <li><a href="">About</a></li>
+                        <li><a href="">Contact</a></li>
                     </ul>
                 </div>
-                <div class="policies">
+                <div class="policies all">
                     <h2 class="title-footer">Policies</h2>
                     <ul class="footer-links">
-                        <li><a href="">About</a></li>
-                        <li><a href="">About</a></li>
-                        <li><a href="">About</a></li>
-                        <li><a href="">About</a></li>
+                        <li><a href="">Privacy Policy</a></li>
+                        <li><a href="">Terms and Conditions</a></li>
+                        <li><a href="">Ticket Policies</a></li>
+                        <li><a href="">Refund Policy</a></li>
                     </ul>
                 </div>
-                <div class="contact-info">
+                <div class="contact-info all">
                     <h2 class="title-footer">Contact Info</h2>
                     <ul class="footer-links">
-                        <li><a href="">About</a></li>
-                        <li><a href="">About</a></li>
-                        <li><a href="">About</a></li>
-                        <li><a href="">About</a></li>
+                        <li><a href="">Syria Latakia</a></li>
+                        <li><a href="">+963932048737</a></li>
+                        <li><a href="">luqman1it@gmail.com</a></li>
                     </ul>
                 </div>
             </div>
