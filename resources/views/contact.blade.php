@@ -30,15 +30,15 @@
             </div>
             <div class="info">
                 <div class="box">
-                    <h3>Our Address</h3>
+                    <h3 class="address">Our Address</h3>
                     <p>Syria Latakia</p>
                 </div>
                 <div class="box">
-                    <h3>Call Us</h3>
+                    <h3 class="call">Call Us</h3>
                     <p>+963932048737</p>
                 </div>
                 <div class="box">
-                    <h3>Email Us</h3>
+                    <h3 class="email">Email Us</h3>
                     <p>luqman1it@gmail.com</p>
                 </div>
             </div>
