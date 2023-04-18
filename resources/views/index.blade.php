@@ -138,16 +138,16 @@
                     </div>
                     <p>Delectus culpa laboriosam debitis saepe. Commodi earum minus ut obcaecati veniam deserunt est!</p>
                     <div class="icons">
-                        <a href=""><i class="fa-brands fa-facebook-f"></i></a>
-                        <a href=""><i class="fa-brands fa-twitter"></i></a>
-                        <a href=""><i class="fa-brands fa-instagram"></i></a>
+                        <a href="https://www.facebook.com"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="https://www.twitter.com"><i class="fa-brands fa-twitter"></i></a>
+                        <a href="htpps://www.instagram.com"><i class="fa-brands fa-instagram"></i></a>
                     </div>
                 </div>
                 <div class="useful-links all">
                     <h2 class="title-footer">Usefil Links</h2>
                     <ul class="footer-links">
                         <li><a href="">Home</a></li>
-                        <li><a href="">Trips</a></li>
+                        <li><a href="#trips">Trips</a></li>
                         <li><a href="">About</a></li>
                         <li><a href="">Contact</a></li>
                     </ul>

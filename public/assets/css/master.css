@@ -282,6 +282,9 @@ html {
     .images-page {
         padding-top: 0px;
     }
+    .footer .footer-top .container {
+        text-align: center;
+    }
 }
 @media (max-width:992px) {
 
@@ -329,9 +332,6 @@ html {
     grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
     gap: 40px;
     color: rgba(255, 255, 255, 0.85);
-}
-.footer .footer-top .container .social {
-    /* text-align: center; */
 }
 .footer .footer-top .container .logo {
     margin-bottom: 20px;
