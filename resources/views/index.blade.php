@@ -7,6 +7,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Main File Css -->
     <link rel="stylesheet" href="{{asset('assets/css/master.css')}}">
+    <!-- Font Awesome -->
+    <!-- <link rel="stylesheet" href="{{asset('assets/css/all.min.css')}}"> -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -25,7 +28,7 @@
                 <li><a href="#home">Home</a></li>
                 <li><a href="#trips">Trips</a></li>
                 <li><a href="#about">About</a></li>
-                <li><a href="#contact">Contact</a></li>
+                <li><a href="/contact" target="_blank">Contact</a></li>
             </ul>
             <div class="info-enter">
                 <a href="{{ route('login') }}" class="login">Sign In</a>
@@ -124,6 +127,52 @@
         </div>
     </div>
     <!-- End Cities=Images -->
+
+    <!-- Start Footer -->
+    <!-- <div class="footer">
+        <div class="footer-top">
+            <div class="container">
+                <div class="social">
+                    <div class="logo">
+                        <img src="{{ asset('imgs/logo.png') }}" alt="logo">
+                    </div>
+                    <p>Delectus culpa laboriosam debitis saepe. Commodi earum minus ut obcaecati veniam deserunt est!</p>
+                    <div class="icons">
+                        <a href="https://www.facebook.com"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="https://www.twitter.com"><i class="fa-brands fa-twitter"></i></a>
+                        <a href="htpps://www.instagram.com"><i class="fa-brands fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="useful-links all">
+                    <h2 class="title-footer">Usefil Links</h2>
+                    <ul class="footer-links">
+                        <li><a href="">Home</a></li>
+                        <li><a href="#trips">Trips</a></li>
+                        <li><a href="">About</a></li>
+                        <li><a href="">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="policies all">
+                    <h2 class="title-footer">Policies</h2>
+                    <ul class="footer-links">
+                        <li><a href="">Privacy Policy</a></li>
+                        <li><a href="">Terms and Conditions</a></li>
+                        <li><a href="">Ticket Policies</a></li>
+                        <li><a href="">Refund Policy</a></li>
+                    </ul>
+                </div>
+                <div class="contact-info all">
+                    <h2 class="title-footer">Contact Info</h2>
+                    <ul class="footer-links">
+                        <li><a href="">Syria Latakia</a></li>
+                        <li><a href="">+963932048737</a></li>
+                        <li><a href="">luqman1it@gmail.com</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div> -->
+    <!-- End Footer -->
 </body>
 
 </html>
