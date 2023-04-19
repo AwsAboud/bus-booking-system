@@ -28,7 +28,7 @@
                 <li><a href="#home">Home</a></li>
                 <li><a href="#trips">Trips</a></li>
                 <li><a href="#about">About</a></li>
-                <li><a href="" target="_blank">Contact</a></li>
+                <li><a href="#contact">Contact</a></li>
             </ul>
 
             <div class="info-enter">
@@ -51,9 +51,9 @@
                         {{-- get the user name if the user was authenticated --}}
                         @auth
                         Hi
-                         <span style="color:forestgreen">{{auth()->user()->name}}</span> !
-                         @endauth
-                          Choose Your Ticket:
+                        <span style="color:forestgreen">{{auth()->user()->name}}</span> !
+                        @endauth
+                        Choose Your Ticket:
                     </h4>
                     <div class="tab-content">
                         <form action="">

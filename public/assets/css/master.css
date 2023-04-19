@@ -226,19 +226,18 @@ html {
 }
 .images-page .images-container .box {
     background-color: var(--main-color);
-    width: 350px;
-    height: 300px;
+    width: 290px;
+    height: 290px;
     padding: 5px;
     border-radius: 5px;
     position: relative;
     /* box-shadow: 0 0 15px 3px rgba(27, 39, 61, 0.1); */
     overflow: hidden;
-    margin: 0 auto;
 }
 .images-page .images-container .box img {
-    width: 340px;
+    width: 280px;
     border-radius: 5px;
-    height: 290px;
+    height: 280px;
 
 }
 .images-page .images-container .box .content {
