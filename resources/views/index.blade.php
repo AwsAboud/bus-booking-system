@@ -129,7 +129,7 @@
     <!-- End Cities=Images -->
 
     <!-- Start Footer -->
-    <!-- <div class="footer">
+    <div class="footer">
         <div class="footer-top">
             <div class="container">
                 <div class="social">
@@ -171,7 +171,7 @@
                 </div>
             </div>
         </div>
-    </div> -->
+    </div>
     <!-- End Footer -->
 </body>
 
