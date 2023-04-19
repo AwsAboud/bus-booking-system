@@ -30,10 +30,15 @@
                 <li><a href="#about">About</a></li>
                 <li><a href="" target="_blank">Contact</a></li>
             </ul>
+
             <div class="info-enter">
+                @guest
                 <a href="{{ route('login') }}" class="login">Sign In</a>
                 <a href="#" class="sign">Sign Up</a>
+                @endguest
             </div>
+
+
         </div>
         <div class="container">
             <div class="banner">
@@ -42,7 +47,14 @@
                     <a href="">Get Ticket Now</a>
                 </div>
                 <div class="banner-right">
-                    <h4 class="title">Choose Your Ticket:</h4>
+                    <h4 class="title">
+                        {{-- get the user name if the user was authenticated --}}
+                        @auth
+                        Hi
+                         <span style="color:forestgreen">{{auth()->user()->name}}</span> !
+                         @endauth
+                          Choose Your Ticket:
+                    </h4>
                     <div class="tab-content">
                         <form action="">
                             <input list="pickup" name="pickup" placeholder="Pickup Point">
