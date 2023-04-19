@@ -27,7 +27,7 @@ class DriverResource extends Resource
                 Forms\Components\TextInput::make('name')->required(),
                 Forms\Components\TextInput::make('phone_number')->required()
                 ->length(10),
-                Forms\Components\TextInput::make('password')->required()->minLength(8)->password(),
+                Forms\Components\TextInput::make('password')->password()->required(),
                 Forms\Components\TextInput::make('email')->email()->required(),
             ]);
     }

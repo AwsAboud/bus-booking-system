@@ -27,8 +27,7 @@ class UserResource extends Resource
                 Forms\Components\TextInput::make('user_name')->required(),
                 Forms\Components\TextInput::make('phone_number')->required()
                 ->length(10),
-                Forms\Components\TextInput::make('password')->required()
-                ->minLength(8)->password(),
+                Forms\Components\TextInput::make('password')->required()->password(),
                 Forms\Components\TextInput::make('email')->email()->required(),
                 Forms\Components\TextInput::make('balance')->required()
                 ->numeric()->default('0'),

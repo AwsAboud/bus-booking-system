@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "93a2f403f42b585cc79d1d31a6e5099b",
+    "content-hash": "2527c9173d9f349a7c0523276c9d1ec6",
     "packages": [
         {
             "name": "akaunting/laravel-money",
@@ -1564,6 +1564,63 @@
                 }
             ],
             "time": "2023-03-09T13:19:02+00:00"
+        },
+        {
+            "name": "laravel/breeze",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/laravel/breeze.git",
+                "reference": "0d1722193615f612dd8f654788cd9ae8e4b8b530"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/laravel/breeze/zipball/0d1722193615f612dd8f654788cd9ae8e4b8b530",
+                "reference": "0d1722193615f612dd8f654788cd9ae8e4b8b530",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/filesystem": "^8.42",
+                "illuminate/support": "^8.42",
+                "illuminate/validation": "^8.42",
+                "php": "^7.3|^8.0"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "2.x-dev"
+                },
+                "laravel": {
+                    "providers": [
+                        "Laravel\\Breeze\\BreezeServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Laravel\\Breeze\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Taylor Otwell",
+                    "email": "taylor@laravel.com"
+                }
+            ],
+            "description": "Minimal Laravel authentication scaffolding with Blade and Tailwind.",
+            "keywords": [
+                "auth",
+                "laravel"
+            ],
+            "support": {
+                "issues": "https://github.com/laravel/breeze/issues",
+                "source": "https://github.com/laravel/breeze"
+            },
+            "time": "2022-04-25T18:42:31+00:00"
         },
         {
             "name": "laravel/framework",
@@ -6870,6 +6927,65 @@
                 "source": "https://github.com/hamcrest/hamcrest-php/tree/v2.0.1"
             },
             "time": "2020-07-09T08:09:16+00:00"
+        },
+        {
+            "name": "kamona/kui-laravel-breeze",
+            "version": "v0.4.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Kamona-WD/kui-laravel-breeze.git",
+                "reference": "cf80c0c8f2956565ce7cb47f741dca5a7cc47e84"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Kamona-WD/kui-laravel-breeze/zipball/cf80c0c8f2956565ce7cb47f741dca5a7cc47e84",
+                "reference": "cf80c0c8f2956565ce7cb47f741dca5a7cc47e84",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^7.3|^8.0"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "KUI\\Breeze\\KUIBreezeServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "KUI\\Breeze\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Kamona-WD",
+                    "email": "ak3849909@gmail.com",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Different UI for laravel/breeze",
+            "homepage": "https://github.com/Kamona-WD/kui-laravel-breeze",
+            "keywords": [
+                "alpinejs",
+                "breeze",
+                "dashboard",
+                "laravel",
+                "react",
+                "tailwindcss",
+                "ui",
+                "vuejs"
+            ],
+            "support": {
+                "issues": "https://github.com/Kamona-WD/kui-laravel-breeze/issues",
+                "source": "https://github.com/Kamona-WD/kui-laravel-breeze/tree/v0.4.0"
+            },
+            "time": "2022-12-29T03:45:53+00:00"
         },
         {
             "name": "laravel/sail",

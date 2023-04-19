@@ -28,7 +28,7 @@
                 <li><a href="#contact">Contact</a></li>
             </ul>
             <div class="info-enter">
-                <a href="#" class="login">Sign In</a>
+                <a href="{{ route('login') }}" class="login">Sign In</a>
                 <a href="#" class="sign">Sign Up</a>
             </div>
         </div>
