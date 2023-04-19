@@ -94,42 +94,42 @@
             </div>
             <div class="images-container">
                 <div class="box">
-                    <img src="{{ asset('imgs/latakia.jpg') }}" alt="">
+                    <img src="{{ asset('imgs/latakia1.jpg') }}" alt="">
                     <div class="content">
                         <h2>Latakia</h2>
                         <p>See More</p>
                     </div>
                 </div>
                 <div class="box">
-                    <img src="{{ asset('imgs/aleppo.jpg') }}" alt="">
+                    <img src="{{ asset('imgs/aleppo1.jpg') }}" alt="">
                     <div class="content">
                         <h2>Aleppo</h2>
                         <p>See More</p>
                     </div>
                 </div>
                 <div class="box">
-                    <img src="{{ asset('imgs/damascus.jpg') }}" alt="">
+                    <img src="{{ asset('imgs/damascus1.jpg') }}" alt="">
                     <div class="content">
                         <h2>Damascus</h2>
                         <p>See More</p>
                     </div>
                 </div>
                 <div class="box">
-                    <img src="{{ asset('imgs/homs.jpg') }}" alt="">
+                    <img src="{{ asset('imgs/homs1.jpg') }}" alt="">
                     <div class="content">
                         <h2>Homs</h2>
                         <p>See More</p>
                     </div>
                 </div>
                 <div class="box">
-                    <img src="{{ asset('imgs/hama.jpeg') }}" alt="">
+                    <img src="{{ asset('imgs/hama1.jpg') }}" alt="">
                     <div class="content">
                         <h2>Hama</h2>
                         <p>See More</p>
                     </div>
                 </div>
                 <div class="box">
-                    <img src="{{ asset('imgs/tartous.jpg') }}" alt="">
+                    <img src="{{ asset('imgs/tartous1.jpg') }}" alt="">
                     <div class="content">
                         <h2>Tartous</h2>
                         <p>See More</p>
