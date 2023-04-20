@@ -77,7 +77,6 @@ html {
     display: inline-block;
 }
 .landing-page  .links li:not(:last-child) {
-
     margin-right: 30px;
 }
 .landing-page  .links a{
@@ -86,18 +85,27 @@ html {
 .landing-page  .links a:hover {
     color: var(--main-color);
 }
-.landing-page  .info-enter .login{
-    margin-right: 30px;
-}
 .landing-page  .info-enter a {
+    padding: 5px;
+    border-radius: 5px;
+    font-size: 18px;
+}
+.landing-page  .info-enter .log{
+    margin-right: 10px;
+    color: var(--main-color);
+}
+.landing-page  .info-enter .log:hover {
+    background-color: var(--main-color);
+    color: white;
+}
+.landing-page  .info-enter .register {
     color: white;
     background-color: var(--main-color);
-    padding: 10px 20px;
-    border-radius: 5px;
 }
-.landing-page  .info-enter a:hover,
+.landing-page  .info-enter .register:hover,
 .landing-page .banner .banner-right .tab-content .submit:hover,
-.landing-page .banner .banner-left a:hover{
+.landing-page .banner .banner-left a:hover,
+.contact .container .contact-form form .form-group .submit-contact{
     background-color: var(--hover-color);
 }
 .landing-page .container .banner {
@@ -205,13 +213,13 @@ html {
 .images-page .main-heading h1 {
     font-weight: bold;
     text-transform: uppercase;
-    font-size: 35px;
     color: #fff;
     margin: 0 auto;
-    width: 300px;
+    max-width: 260px;
     border-radius: 5px;
-    padding: 10px;
+    padding: 5px;
     background-color: var(--main-color);
+    max-width: fit-content;
 
 }
 .images-page .main-heading p{
@@ -221,39 +229,33 @@ html {
 }
 .images-page .images-container {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     gap: 40px;
 }
 .images-page .images-container .box {
-    background-color: var(--main-color);
-    width: 350px;
-    height: 300px;
-    padding: 5px;
-    border-radius: 5px;
     position: relative;
-    /* box-shadow: 0 0 15px 3px rgba(27, 39, 61, 0.1); */
     overflow: hidden;
-    margin: 0 auto;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px 2px #cdcbcb;
 }
 .images-page .images-container .box img {
-    width: 340px;
     border-radius: 5px;
-    height: 290px;
+    max-width: 100%;
+    width: 100%;
+    height: 100%;
 
 }
 .images-page .images-container .box .content {
     background-color: rgb(255 255 255 / 84%);
     position: absolute;
     text-align: center;
-    width: calc(100% - 10px);
-    left: 50%;
-    transform: translateX(-50%);
+    width: 100%;
     bottom: -100%;
     padding: 20px;
     transition: 0.3s;
 }
 .images-page .images-container .box:hover .content {
-    bottom: 5px;
+    bottom: 0px;
 }
 .images-page .images-container .box .content h2 {
     margin-bottom: 20px;
@@ -472,5 +474,66 @@ html {
 }
 .contact .container .info .box p {
     color: #777;
+}
+.contact .container .contact-form {
+    padding-top: var(--main-padding);
+}
+.contact .container .contact-form .contact-title {
+    font-size: 22px;
+    margin-bottom: 30px;
+}
+.contact .container .contact-form form label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 600;
+    color: #1f1f1f;
+    font-size: 14px;
+}
+.contact .container .contact-form form {
+    display: flex;
+    padding-right: 60px;
+    flex-direction: column;
+    flex: 1;
+}
+.contact .container .contact-form form .form-group {
+    width: 100%;
+    padding: 10px 0px;
+}
+.contact .container .contact-form form .form-group input:not(.submit-contact),
+.contact .container .contact-form form .form-group textarea{
+    width: 80%;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 3px 6px 8px 0px #999494;
+    border: 1px solid rgba(27, 39, 61, 0.1);
+    line-height: 1;
+    outline: 0 !important;
+}
+.contact .container .contact-form form .form-group input:not(.submit-contact){
+    height: 40px;
+}
+
+.contact .container .contact-form form .form-group input:focus,
+.contact .container .contact-form form .form-group textarea:focus {
+    border: 2px solid var(--main-color);
+
+}
+.contact .container .contact-form form .form-group .submit-contact {
+    background-color: var(--main-color);
+    border: none;
+    padding: 10px;
+    font-size: 22px;
+    color: white;
+    border-radius: 5px;
+}
+.contact .container .contact-form {
+    display: flex;
+    /* justify-content: space-between; */
+    flex-wrap: wrap;
+    align-items: center;
+}
+.contact .container .contact-form .image-contact img{
+    max-width: 100%;
+
 }
 /* End Page Contact */
