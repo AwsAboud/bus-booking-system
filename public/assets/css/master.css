@@ -77,7 +77,6 @@ html {
     display: inline-block;
 }
 .landing-page  .links li:not(:last-child) {
-
     margin-right: 30px;
 }
 .landing-page  .links a{
@@ -86,16 +85,24 @@ html {
 .landing-page  .links a:hover {
     color: var(--main-color);
 }
-.landing-page  .info-enter .login{
-    margin-right: 30px;
-}
 .landing-page  .info-enter a {
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 18px;
+}
+.landing-page  .info-enter .login{
+    margin-right: 10px;
+    color: var(--main-color);
+}
+.landing-page  .info-enter .login:hover {
+    background-color: var(--main-color);
+    color: white;
+}
+.landing-page  .info-enter .register {
     color: white;
     background-color: var(--main-color);
-    padding: 10px 20px;
-    border-radius: 5px;
 }
-.landing-page  .info-enter a:hover,
+.landing-page  .info-enter .register:hover,
 .landing-page .banner .banner-right .tab-content .submit:hover,
 .landing-page .banner .banner-left a:hover{
     background-color: var(--hover-color);

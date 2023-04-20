@@ -34,7 +34,7 @@
             <div class="info-enter">
                 @guest
                 <a href="{{ route('login') }}" class="login">Sign In</a>
-                <a href="#" class="sign">Sign Up</a>
+                <a href="#" class="register">Register</a>
                 @endguest
             </div>
 
