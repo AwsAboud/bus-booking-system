@@ -23,10 +23,6 @@ Route::get('/', function () {
 Route::get('/welcome', function () {
     return view('welcome');
 });
-route::get('/contact', function () {
-    return view(('contact'));
-});
-
 
 Route::get('/dashboard', function () {
     return view('dashboard');
