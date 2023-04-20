@@ -33,8 +33,10 @@
 
             <div class="info-enter">
                 @guest
-                <a href="{{ route('login') }}" class="login">Sign In</a>
+                <a href="#" class="log out">logout</a>
+                <a href="{{ route('login') }}" class="log in">Sign In</a>
                 <a href="#" class="register">Register</a>
+
                 @endguest
             </div>
 

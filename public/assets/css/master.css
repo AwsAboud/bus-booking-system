@@ -86,15 +86,15 @@ html {
     color: var(--main-color);
 }
 .landing-page  .info-enter a {
-    padding: 5px 10px;
+    padding: 5px;
     border-radius: 5px;
     font-size: 18px;
 }
-.landing-page  .info-enter .login{
+.landing-page  .info-enter .log{
     margin-right: 10px;
     color: var(--main-color);
 }
-.landing-page  .info-enter .login:hover {
+.landing-page  .info-enter .log:hover {
     background-color: var(--main-color);
     color: white;
 }
