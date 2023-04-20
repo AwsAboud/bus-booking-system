@@ -226,8 +226,9 @@ html {
 }
 .images-page .images-container .box {
     position: relative;
-    box-shadow: 0 0 15px 3px rgba(27, 39, 61, 0.1);
     overflow: hidden;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px 2px #cdcbcb;
 }
 .images-page .images-container .box img {
     border-radius: 5px;
