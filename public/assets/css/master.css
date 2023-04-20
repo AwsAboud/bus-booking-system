@@ -104,7 +104,8 @@ html {
 }
 .landing-page  .info-enter .register:hover,
 .landing-page .banner .banner-right .tab-content .submit:hover,
-.landing-page .banner .banner-left a:hover{
+.landing-page .banner .banner-left a:hover,
+.contact .container .contact-form form .form-group .submit-contact{
     background-color: var(--hover-color);
 }
 .landing-page .container .banner {
@@ -473,5 +474,66 @@ html {
 }
 .contact .container .info .box p {
     color: #777;
+}
+.contact .container .contact-form {
+    padding-top: var(--main-padding);
+}
+.contact .container .contact-form .contact-title {
+    font-size: 22px;
+    margin-bottom: 30px;
+}
+.contact .container .contact-form form label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 600;
+    color: #1f1f1f;
+    font-size: 14px;
+}
+.contact .container .contact-form form {
+    display: flex;
+    padding-right: 60px;
+    flex-direction: column;
+    flex: 1;
+}
+.contact .container .contact-form form .form-group {
+    width: 100%;
+    padding: 10px 0px;
+}
+.contact .container .contact-form form .form-group input:not(.submit-contact),
+.contact .container .contact-form form .form-group textarea{
+    width: 80%;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 3px 6px 8px 0px #999494;
+    border: 1px solid rgba(27, 39, 61, 0.1);
+    line-height: 1;
+    outline: 0 !important;
+}
+.contact .container .contact-form form .form-group input:not(.submit-contact){
+    height: 40px;
+}
+
+.contact .container .contact-form form .form-group input:focus,
+.contact .container .contact-form form .form-group textarea:focus {
+    border: 1px solid var(--main-color);
+
+}
+.contact .container .contact-form form .form-group .submit-contact {
+    background-color: var(--main-color);
+    border: none;
+    padding: 10px;
+    font-size: 22px;
+    color: white;
+    border-radius: 5px;
+}
+.contact .container .contact-form {
+    display: flex;
+    /* justify-content: space-between; */
+    flex-wrap: wrap;
+    align-items: center;
+}
+.contact .container .contact-form .image-contact img{
+    max-width: 500px;
+
 }
 /* End Page Contact */

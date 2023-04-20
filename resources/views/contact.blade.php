@@ -42,9 +42,42 @@
                     <p>luqman1it@gmail.com</p>
                 </div>
             </div>
+            <div class="contact-form">
+                <form action="">
+                    <h4 class="contact-title">Have any Questions?</h4>
+                    <div class="form-group">
+                        <label for="name">Name :</label>
+                        <input type="text" name="name" id="name" class="form-input" placeholder="Name">
+                    </div>
+                    <div class="form-group">
+                        <label for="subject">Subject :</label>
+                        <input type="text" name="subject" id="subject" class="form-input" placeholder="Subject">
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email :</label>
+                        <input type="email" name="email" id="email" class="form-input" placeholder="Email">
+                    </div>
+                    <div class="form-group">
+                        <label for="msg">msg :</label>
+                        <textarea name="msg" id="msg" cols="30" rows="10" placeholder="Your Msg"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <input type="submit" value="Send Us Message" class="submit-contact">
+                    </div>
+                </form>
+                <div class="image-contact">
+                    <img src="{{ asset('imgs/download2.jpg') }}" alt="">
+                </div>
+            </div>
         </div>
     </div>
     <!-- End Page Contact -->
+
+    <!-- Start Footer -->
+    <div class="footer-contact">
+
+    </div>
+    <!-- End Footer -->
 </body>
 
 </html>

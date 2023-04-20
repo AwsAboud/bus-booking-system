@@ -23,7 +23,9 @@ Route::get('/', function () {
 Route::get('/welcome', function () {
     return view('welcome');
 });
-
+route::get('/contact', function () {
+    return view(('contact'));
+});
 
 
 Route::get('/dashboard', function () {
@@ -49,5 +51,6 @@ Route::get('/buttons/icon', function () {
 Route::get('/buttons/text-icon', function () {
     return view('buttons-showcase.text-icon');
 })->middleware(['auth'])->name('buttons.text-icon');
+
 
 require __DIR__ . '/auth.php';
