@@ -5,6 +5,16 @@
 
         <form method="POST" action="{{ route('register') }}">
             @csrf
+            <!-- head phrase -->
+            <label style="color:forestgreen;
+            font-size:25px;
+            text-align:center;
+            font-style:italic;
+            font-family:sans-serif'Times New Roman',;
+            margin-left:70px;">
+            Fast Like an
+            <span style="color:purple;">Airplain</span> !
+        </label>
 
             <div class="grid gap-6">
                 <!-- Name -->
