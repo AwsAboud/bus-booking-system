@@ -70,6 +70,8 @@
                                 <option value="Aleppo">
                                 <option value="Damascus">
                                 <option value="Homs">
+                                <option value="Hama">
+                                <option value="Tartous">
                             </datalist>
                             <input list="dropping" name="destination" placeholder="Dropping Point">
                             <datalist id="dropping">
@@ -77,6 +79,8 @@
                                 <option value="Aleppo">
                                 <option value="Damascus">
                                 <option value="Homs">
+                                <option value="Hama">
+                                <option value="Tartous">
                             </datalist>
                             <input type="date" name="schedule_date" id="" class="date" min="<?php echo date('Y-m-d'); ?>" max="<?php echo date('Y-m-d', strtotime('+7 days')); ?>">
                             <input type="submit" value="Find Ticket" class="submit">
