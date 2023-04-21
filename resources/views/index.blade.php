@@ -32,10 +32,12 @@
             </ul>
 
             <div class="info-enter">
+                @auth
+                <a href="{{ route('logout') }}" class="log out">logout</a>
+                @endauth
                 @guest
-                <a href="#" class="log out">logout</a>
                 <a href="{{ route('login') }}" class="log in">Sign In</a>
-                <a href="#" class="register">Register</a>
+                <a href="{{ route('register') }}" class="register">Register</a>
 
                 @endguest
             </div>
@@ -57,23 +59,26 @@
                         @endauth
                         Choose Your Ticket:
                     </h4>
+                    {{-- search for trips --}}
                     <div class="tab-content">
-                        <form action="">
-                            <input list="pickup" name="pickup" placeholder="Pickup Point">
+
+                        <form action="{{route('trip.search')}}" method="GET">
+                            @csrf
+                            <input list="pickup" name="starting_point" placeholder="Pickup Point">
                             <datalist id="pickup">
                                 <option value="Latakia">
                                 <option value="Aleppo">
                                 <option value="Damascus">
                                 <option value="Homs">
                             </datalist>
-                            <input list="dropping" name="dropping" placeholder="Dropping Point">
+                            <input list="dropping" name="destination" placeholder="Dropping Point">
                             <datalist id="dropping">
                                 <option value="Latakia">
                                 <option value="Aleppo">
                                 <option value="Damascus">
                                 <option value="Homs">
                             </datalist>
-                            <input type="date" name="date" id="" class="date" min="<?php echo date('Y-m-d'); ?>" max="<?php echo date('Y-m-d', strtotime('+7 days')); ?>">
+                            <input type="date" name="schedule_date" id="" class="date" min="<?php echo date('Y-m-d'); ?>" max="<?php echo date('Y-m-d', strtotime('+7 days')); ?>">
                             <input type="submit" value="Find Ticket" class="submit">
                         </form>
                     </div>
