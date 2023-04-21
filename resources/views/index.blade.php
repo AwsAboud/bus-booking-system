@@ -64,7 +64,7 @@
 
                         <form action="{{route('trip.search')}}" method="GET">
                             @csrf
-                            <input list="pickup" name="starting_point" placeholder="Pickup Point">
+                            <input list="pickup" name="starting_point" placeholder="Pickup Point" required>
                             <datalist id="pickup">
                                 <option value="Latakia">
                                 <option value="Aleppo">
@@ -73,7 +73,7 @@
                                 <option value="Hama">
                                 <option value="Tartous">
                             </datalist>
-                            <input list="dropping" name="destination" placeholder="Dropping Point">
+                            <input list="dropping" name="destination" placeholder="Dropping Point" required>
                             <datalist id="dropping">
                                 <option value="Latakia">
                                 <option value="Aleppo">
@@ -82,7 +82,7 @@
                                 <option value="Hama">
                                 <option value="Tartous">
                             </datalist>
-                            <input type="date" name="schedule_date" id="" class="date" min="<?php echo date('Y-m-d'); ?>" max="<?php echo date('Y-m-d', strtotime('+7 days')); ?>">
+                            <input type="date" name="schedule_date" id="" class="date" min="<?php echo date('Y-m-d'); ?>" max="<?php echo date('Y-m-d', strtotime('+7 days')); ?>" required>
                             <input type="submit" value="Find Ticket" class="submit">
                         </form>
                     </div>
