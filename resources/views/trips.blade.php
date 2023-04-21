@@ -14,13 +14,11 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Georama:wght@300;400&display=swap" rel="stylesheet">
-    <title>bus booking</title>
-
+    <title>trips</title>
 </head>
 
 <body>
-    <!-- Start Landing Page -->
-    <div class="landing-page page" id="home">
+    <div class="trips page">
         <div class="header-area">
             <div class="logo"><img src="{{ asset('imgs/logo.png') }}" alt="logo">
             </div>
@@ -30,7 +28,6 @@
                 <li><a href="#">About</a></li>
                 <li><a href="#">Contact</a></li>
             </ul>
-
             <div class="info-enter">
                 @auth
                 <a href="{{ route('logout') }}" class="log out">logout</a>
@@ -41,27 +38,22 @@
 
                 @endguest
             </div>
-
-
         </div>
+        <div class="bg-trips">
+            <div class="arrow-bus">
+                <img src="{{ asset('imgs/Group.png') }}" alt="">
+                <span class="pickup">Latakia</span>
+                <span class="date">4/4/2023</span>
+                <span class="dropping">Damascus</span>
+            </div>
+        </div>
+    </div>
+    <div class="trips-banner">
         <div class="container">
-            <div class="banner">
-                <div class="banner-left">
-                    <h1 class="title">Get Your Ticket Online, Easy and Safely</h1>
-                    <a href="">Get Ticket Now</a>
-                </div>
+            <div class="ticket">
                 <div class="banner-right">
-                    <h4 class="title">
-                        {{-- get the user name if the user was authenticated --}}
-                        @auth
-                        Hi
-                        <span style="color:forestgreen">{{auth()->user()->name}}</span> !
-                        @endauth
-                        Choose Your Ticket:
-                    </h4>
                     {{-- search for trips --}}
                     <div class="tab-content">
-
                         <form action="{{route('trip.search')}}" method="GET">
                             @csrf
                             <input list="pickup" name="starting_point" placeholder="Pickup Point" required>
@@ -87,69 +79,43 @@
                         </form>
                     </div>
                 </div>
-            </div>
-        </div>
-        <div class="long-image">
-            <img src="{{ asset('imgs/longImage.png') }}" alt="">
-            <img src="{{ asset('imgs/bus.png') }}" alt="" class="bus">
-        </div>
-    </div>
-    <!-- End Landing Page -->
+                <div class="appointment">
+                    <div class="appoint-ticket">
+                        <div class="title-trip">Trip</div>
+                        <div class="details">
+                            <div class="first point">
+                                <h3 class="first-packup">Latakia</h3>
+                                <span>8:00</span>
+                            </div>
+                            <i class="fa-solid fa-arrow-right"></i>
+                            <div class="second point">
+                                <h3 class="second-dropp">Damascus</h3>
+                                <span>9:00</span>
+                            </div>
+                            <a href="" class="reserv">reservation</a>
+                        </div>
 
-    <!-- Start Cities-Images -->
-    <div class="images-page" id="trips">
-        <div class="container">
-            <div class="main-heading">
-                <h1>Travel with us</h1>
-                <p>Choose the place you want to travel to</p>
-            </div>
-            <div class="images-container">
-                <div class="box">
-                    <img src="{{ asset('imgs/latakia1.jpg') }}" alt="">
-                    <div class="content">
-                        <h2>Latakia</h2>
-                        <p>See More</p>
                     </div>
-                </div>
-                <div class="box">
-                    <img src="{{ asset('imgs/aleppo1.jpg') }}" alt="">
-                    <div class="content">
-                        <h2>Aleppo</h2>
-                        <p>See More</p>
-                    </div>
-                </div>
-                <div class="box">
-                    <img src="{{ asset('imgs/damascus1.jpg') }}" alt="">
-                    <div class="content">
-                        <h2>Damascus</h2>
-                        <p>See More</p>
-                    </div>
-                </div>
-                <div class="box">
-                    <img src="{{ asset('imgs/homs1.jpg') }}" alt="">
-                    <div class="content">
-                        <h2>Homs</h2>
-                        <p>See More</p>
-                    </div>
-                </div>
-                <div class="box">
-                    <img src="{{ asset('imgs/hama1.jpg') }}" alt="">
-                    <div class="content">
-                        <h2>Hama</h2>
-                        <p>See More</p>
-                    </div>
-                </div>
-                <div class="box">
-                    <img src="{{ asset('imgs/tartous1.jpg') }}" alt="">
-                    <div class="content">
-                        <h2>Tartous</h2>
-                        <p>See More</p>
+                    <div class="appoint-ticket">
+                        <div class="title-trip">Trip</div>
+                        <div class="details">
+                            <div class="first point">
+                                <h3 class="first-packup">Latakia</h3>
+                                <span>8:00</span>
+                            </div>
+                            <i class="fa-solid fa-arrow-right"></i>
+                            <div class="second point">
+                                <h3 class="second-dropp">Damascus</h3>
+                                <span>9:00</span>
+                            </div>
+                            <a href="" class="reserv">reservation</a>
+                        </div>
+
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <!-- End Cities=Images -->
 
     <!-- Start Footer -->
     <div class="footer">
@@ -196,8 +162,6 @@
         </div>
     </div>
     <!-- End Footer -->
-
-    <!-- <script src="{{ asset('javascript/master.js') }}"></script> -->
 </body>
 
 </html>
