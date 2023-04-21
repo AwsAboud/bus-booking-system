@@ -20,7 +20,7 @@
 
 <body>
     <!-- Start Landing Page -->
-    <div class="landing-page" id="home">
+    <div class="landing-page page" id="home">
         <div class="header-area">
             <div class="logo"><img src="{{ asset('imgs/logo.png') }}" alt="logo">
             </div>

@@ -18,6 +18,7 @@ ul {
     --hover-color:#208f50;
     --border-color:rgba(14, 158, 77, 0.6);
     --main-padding:100px;
+    --footer-color:rgba(27, 39, 61, 0.99);
 }
 html {
     scroll-behavior: smooth;
@@ -57,7 +58,7 @@ html {
     background-position:20% 50%;
     position: relative;
 }
-.landing-page .header-area {
+.page .header-area {
     box-shadow: 0 0 10px #ddd;;
     justify-content: space-between;
     min-height: 60px;
@@ -66,39 +67,39 @@ html {
     padding-left:60px;
     padding-right:60px;
 }
- .logo img {
+.logo img {
     max-width: 100px;
 }
-.landing-page .links {
+.page .links {
     padding-bottom: 10px;
     padding-top: 10px;
 }
-.landing-page  .links li {
+.page  .links li {
     display: inline-block;
 }
-.landing-page  .links li:not(:last-child) {
+.page  .links li:not(:last-child) {
     margin-right: 30px;
 }
-.landing-page  .links a{
+.page  .links a{
     color: var(--second-color);
 }
-.landing-page  .links a:hover {
+.page  .links a:hover {
     color: var(--main-color);
 }
-.landing-page  .info-enter a {
+.page  .info-enter a {
     padding: 5px;
     border-radius: 5px;
     font-size: 18px;
 }
-.landing-page  .info-enter .log{
+.page  .info-enter .log{
     margin-right: 10px;
     color: var(--main-color);
 }
-.landing-page  .info-enter .log:hover {
+.page  .info-enter .log:hover {
     background-color: var(--main-color);
     color: white;
 }
-.landing-page  .info-enter .register {
+.page  .info-enter .register {
     color: white;
     background-color: var(--main-color);
 }
@@ -124,7 +125,7 @@ html {
     padding-right: 30px;
 }
 
-.landing-page .banner .banner-right {
+ .banner-right {
     flex: 1;
 }
 .landing-page .banner .banner-left .title {
@@ -140,30 +141,30 @@ html {
     text-transform: uppercase;
     border-radius: 5px;
 }
-.landing-page .banner .banner-right .title{
+ .banner-right .title{
     font-size: 22px;
     margin-bottom:10px ;
 }
-.landing-page .banner .banner-right .tab-content{
+ .banner .banner-right .tab-content{
     background-color: #fff;
     box-shadow: 0 0 15px 3px rgba(27, 39, 61, 0.1);
     border-radius: 5px;
 }
-.landing-page .banner .banner-right .tab-content form {
+ .banner .banner-right .tab-content form {
     padding: 15px;
     display: flex;
     flex-direction: column;
 }
-.landing-page .banner .banner-right .tab-content input:not(:last-child) {
+ .banner-right .tab-content input:not(:last-child) {
     padding: 10px;
     border-radius: 5px;
     margin-bottom: 20px;
 }
-.landing-page .banner .banner-right .tab-content input {
+ .banner-right .tab-content input {
     outline: 1px solid var(--main-color);
     border:1px solid var(--main-color)
 }
-.landing-page .banner .banner-right .tab-content .submit {
+ .banner-right .tab-content .submit {
     background-color: var(--main-color);
     color: #fff;
     padding: 10px;
@@ -287,6 +288,20 @@ html {
     .footer .footer-top .container {
         text-align: center;
     }
+    .trips .bg-trips .arrow-bus img {
+        width: 200px;
+    }
+    .trips-banner .banner-right .tab-content form {
+        flex-direction: column;
+    }
+    .trips-banner .banner-right .tab-content form input {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+    .trips-banner .container .ticket .appointment .appoint-ticket .details {
+        flex-direction: column;
+    }
+
 }
 @media (max-width:992px) {
 
@@ -326,7 +341,7 @@ html {
     padding-top: var(--main-padding);
 }
 .footer .footer-top {
-    background-color: rgba(27, 39, 61, 0.99);
+    background-color: var(--footer-color);
     padding: 60px 0;
 }
 .footer .footer-top .container {
@@ -538,5 +553,90 @@ html {
 /* End Page Contact */
 
 /* Start Page Trips */
+.trips .bg-trips {
+    background-color: var(--footer-color);
+    width: 100%;
+    height: 200px;
+    position: relative;
+}
+.trips .bg-trips .arrow-bus {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+}
+.trips .bg-trips .arrow-bus img {
+    position: relative;
+    max-width: 500px;
+}
+.trips .bg-trips .arrow-bus span {
+    position: absolute;
+    color: white;
+    bottom: -30px;
+}
+.trips .bg-trips .arrow-bus .pickup {
+    left: -10px;
+}
+.trips .bg-trips .arrow-bus .date {
+    left: 50%;
+    transform: translateX(-50%);
+}
+.trips .bg-trips .arrow-bus .dropping {
+    right: -17px;
+}
+.trips-banner {
+    /* padding-top: 30px; */
+}
+.trips-banner  .banner-right .tab-content form{
+    /* flex-direction: row; */
+    display: flex;
+    justify-content: space-between;
+}
+.trips-banner .banner-right .tab-content input {
+    margin: 0px;
+    width: 20%;
+}
+.trips-banner .container .ticket {
+    background-color: rgb(255, 255, 255);
+    box-shadow: rgba(27, 39, 61, 0.1) 0px 0px 15px 3px;
+    border-radius: 5px;
+    padding: 31px 10px 5px 10px;
+}
+.trips-banner .container .ticket .appointment {
 
+}
+.trips-banner .container .ticket .appointment .appoint-ticket{
+
+    box-shadow: rgba(27, 39, 61, 0.1) 0px 0px 15px 3px;
+    margin-top: 30px;
+}
+.trips-banner .container .ticket .appointment .appoint-ticket .title-trip {
+    text-align: center;
+    background-color: var(--main-color);
+    color: white;
+    padding: 10px 0px;
+}
+.trips-banner .container .ticket .appointment .appoint-ticket .details {
+    padding: 20px 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: var(--footer-color);
+}
+.trips-banner .container .ticket .appointment .appoint-ticket .details i {
+    color: var(--main-color);
+    font-size: 22px;
+}
+.trips-banner .container .ticket .appointment .appoint-ticket .details .reserv {
+    background-color: var(--footer-color);
+    padding: 10px;
+    border-radius: 5px;
+    color: white;
+}
+.trips-banner .container .ticket .appointment .appoint-ticket .details h3 {
+    margin-bottom: 5px;
+}
+.trips-banner .container .ticket .appointment .appoint-ticket .details .point {
+    text-align: center;
+}
 /* End Page Trips */
