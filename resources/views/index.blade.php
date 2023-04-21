@@ -32,10 +32,12 @@
             </ul>
 
             <div class="info-enter">
+                @auth
+                <a href="{{ route('logout') }}" class="log out">logout</a>
+                @endauth
                 @guest
-                <a href="#" class="log out">logout</a>
                 <a href="{{ route('login') }}" class="log in">Sign In</a>
-                <a href="#" class="register">Register</a>
+                <a href="{{ route('register') }}" class="register">Register</a>
 
                 @endguest
             </div>
