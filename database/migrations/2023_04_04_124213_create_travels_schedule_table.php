@@ -27,6 +27,7 @@ class CreateTravelsScheduleTable extends Migration
             $table->time('departure_time', $precision = 0);
             $table->time('estimate_arrival_time', $precision = 0)->nullable();
             $table->unsignedInteger('price');
+            $table->unsignedInteger('available_seats');
             $table->text('remarks')->nullable();
             $table->timestamps();
         });
