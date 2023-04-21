@@ -584,9 +584,6 @@ html {
 .trips .bg-trips .arrow-bus .dropping {
     right: -17px;
 }
-.trips-banner {
-    /* padding-top: 30px; */
-}
 .trips-banner  .banner-right .tab-content form{
     /* flex-direction: row; */
     display: flex;
@@ -601,9 +598,6 @@ html {
     box-shadow: rgba(27, 39, 61, 0.1) 0px 0px 15px 3px;
     border-radius: 5px;
     padding: 31px 10px 5px 10px;
-}
-.trips-banner .container .ticket .appointment {
-
 }
 .trips-banner .container .ticket .appointment .appoint-ticket{
 
