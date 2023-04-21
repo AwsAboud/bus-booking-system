@@ -28,13 +28,15 @@
                 <li><a href="#home">Home</a></li>
                 <li><a href="#trips">Trips</a></li>
                 <li><a href="#about">About</a></li>
-                <li><a href="" target="_blank">Contact</a></li>
+                <li><a href="#">Contact</a></li>
             </ul>
 
             <div class="info-enter">
                 @guest
-                <a href="{{ route('login') }}" class="login">Sign In</a>
-                <a href="{{ route('register') }}" class="sign">Sign Up</a>
+                <a href="#" class="log out">logout</a>
+                <a href="{{ route('login') }}" class="log in">Sign In</a>
+                <a href="#" class="register">Register</a>
+
                 @endguest
             </div>
 
@@ -51,9 +53,9 @@
                         {{-- get the user name if the user was authenticated --}}
                         @auth
                         Hi
-                         <span style="color:forestgreen">{{auth()->user()->name}}</span> !
-                         @endauth
-                          Choose Your Ticket:
+                        <span style="color:forestgreen">{{auth()->user()->name}}</span> !
+                        @endauth
+                        Choose Your Ticket:
                     </h4>
                     {{-- search for trips --}}
                     <div class="tab-content">
@@ -97,42 +99,42 @@
             </div>
             <div class="images-container">
                 <div class="box">
-                    <img src="{{ asset('imgs/latakia.jpg') }}" alt="">
+                    <img src="{{ asset('imgs/latakia1.jpg') }}" alt="">
                     <div class="content">
                         <h2>Latakia</h2>
                         <p>See More</p>
                     </div>
                 </div>
                 <div class="box">
-                    <img src="{{ asset('imgs/aleppo.jpg') }}" alt="">
+                    <img src="{{ asset('imgs/aleppo1.jpg') }}" alt="">
                     <div class="content">
                         <h2>Aleppo</h2>
                         <p>See More</p>
                     </div>
                 </div>
                 <div class="box">
-                    <img src="{{ asset('imgs/damascus.jpg') }}" alt="">
+                    <img src="{{ asset('imgs/damascus1.jpg') }}" alt="">
                     <div class="content">
                         <h2>Damascus</h2>
                         <p>See More</p>
                     </div>
                 </div>
                 <div class="box">
-                    <img src="{{ asset('imgs/homs.jpg') }}" alt="">
+                    <img src="{{ asset('imgs/homs1.jpg') }}" alt="">
                     <div class="content">
                         <h2>Homs</h2>
                         <p>See More</p>
                     </div>
                 </div>
                 <div class="box">
-                    <img src="{{ asset('imgs/hama.jpeg') }}" alt="">
+                    <img src="{{ asset('imgs/hama1.jpg') }}" alt="">
                     <div class="content">
                         <h2>Hama</h2>
                         <p>See More</p>
                     </div>
                 </div>
                 <div class="box">
-                    <img src="{{ asset('imgs/tartous.jpg') }}" alt="">
+                    <img src="{{ asset('imgs/tartous1.jpg') }}" alt="">
                     <div class="content">
                         <h2>Tartous</h2>
                         <p>See More</p>
@@ -188,6 +190,8 @@
         </div>
     </div>
     <!-- End Footer -->
+
+    <!-- <script src="{{ asset('javascript/master.js') }}"></script> -->
 </body>
 
 </html>

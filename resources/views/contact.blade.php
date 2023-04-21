@@ -42,9 +42,84 @@
                     <p>luqman1it@gmail.com</p>
                 </div>
             </div>
+            <div class="contact-form">
+                <form action="">
+                    <h4 class="contact-title">Have any Questions?</h4>
+                    <div class="form-group">
+                        <label for="name">Name :</label>
+                        <input type="text" name="name" id="name" class="form-input" placeholder="Name">
+                    </div>
+                    <div class="form-group">
+                        <label for="subject">Subject :</label>
+                        <input type="text" name="subject" id="subject" class="form-input" placeholder="Subject">
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email :</label>
+                        <input type="email" name="email" id="email" class="form-input" placeholder="Email">
+                    </div>
+                    <div class="form-group">
+                        <label for="msg">msg :</label>
+                        <textarea name="msg" id="msg" cols="30" rows="10" placeholder="Your Msg"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <input type="submit" value="Send Us Message" class="submit-contact">
+                    </div>
+                </form>
+                <div class="image-contact">
+                    <img src="{{ asset('imgs/problem2.jpg') }}" alt="">
+                </div>
+            </div>
         </div>
     </div>
     <!-- End Page Contact -->
+
+    <!-- Start Footer -->
+    <div class="footer">
+        <div class="footer-top">
+            <div class="container">
+                <div class="social">
+                    <div class="logo">
+                        <img src="{{ asset('imgs/logo.png') }}" alt="logo">
+                    </div>
+                    <p>Delectus culpa laboriosam debitis saepe. Commodi earum minus ut obcaecati veniam deserunt est!</p>
+                    <div class="icons">
+                        <a href="https://www.facebook.com"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="https://www.twitter.com"><i class="fa-brands fa-twitter"></i></a>
+                        <a href="htpps://www.instagram.com"><i class="fa-brands fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="useful-links all">
+                    <h2 class="title-footer">Usefil Links</h2>
+                    <ul class="footer-links">
+                        <li><a href="">Home</a></li>
+                        <li><a href="#trips">Trips</a></li>
+                        <li><a href="">About</a></li>
+                        <li><a href="">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="policies all">
+                    <h2 class="title-footer">Policies</h2>
+                    <ul class="footer-links">
+                        <li><a href="">Privacy Policy</a></li>
+                        <li><a href="">Terms and Conditions</a></li>
+                        <li><a href="">Ticket Policies</a></li>
+                        <li><a href="">Refund Policy</a></li>
+                    </ul>
+                </div>
+                <div class="contact-info all">
+                    <h2 class="title-footer">Contact Info</h2>
+                    <ul class="footer-links">
+                        <li><a href="">Syria Latakia</a></li>
+                        <li><a href="">+963932048737</a></li>
+                        <li><a href="">luqman1it@gmail.com</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Footer -->
+
+    <!-- <script src="{{ asset('javascript/master.js') }}"></script> -->
 </body>
 
 </html>
