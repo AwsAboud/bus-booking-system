@@ -25,7 +25,6 @@ Route::get('/', function () {
 Route::get('/welcome', function () {
     return view('welcome');
 });
-
 Route::get('/hash', function () {
     return  Hash::make('adminadmin');
 });
