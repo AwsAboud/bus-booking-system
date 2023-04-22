@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\TravelsSchedule;
+use Illuminate\Support\Facades\Auth;
 
 class BookingController extends Controller
 {
@@ -12,9 +13,12 @@ class BookingController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    //show all trips that the user has booked
     public function index()
     {
-        //
+        $user = Auth::user();
+        $userBookings = $user->bookings ;
+        return view('test',['userBookings'=> $userBookings]);
     }
 
     /**
@@ -93,7 +97,7 @@ class BookingController extends Controller
 
         if( $from && $to && $date){
             //get the available trips from the TravelsSchedule table
-            $avaliable_trips = TravelsSchedule::where([
+            $avaliableTrips = TravelsSchedule::where([
                 ['starting_point','like','%' . $from. '%'],
                 ['destination','like','%' . $to .'%'],
                 ['schedule_date','like','%' . $date .'%'],
@@ -103,7 +107,7 @@ class BookingController extends Controller
 
         // if the user did not inter a date
         elseif( $from && $to){
-            $avaliable_trips = TravelsSchedule::where([
+            $avaliableTrips = TravelsSchedule::where([
                 ['starting_point','like','%' . $from. '%'],
                 ['destination','like','%' . $to .'%'],
             ])->get();
@@ -112,14 +116,14 @@ class BookingController extends Controller
 
         // if the user intered only the starting point
         elseif($from){
-                $avaliable_trips = TravelsSchedule::where(
+                $avaliableTrips = TravelsSchedule::where(
                     'starting_point','like','%' . $from. '%'
                 )->get();
 
         }
         //End of elseif
 
-        return view('test',['avaliable_trips' => $avaliable_trips]);
+        return view('trips',['avaliableTrips' => $avaliableTrips]);
  }
  // End of the search method
 
