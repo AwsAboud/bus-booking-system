@@ -29,7 +29,7 @@ Route::get('/hash', function () {
     return  Hash::make('adminadmin');
 });
 
-Route::view('/contact','contact');
+Route::view('/contact', 'contact');
 //Route::view('/trips','trips');
 
 //search for trips

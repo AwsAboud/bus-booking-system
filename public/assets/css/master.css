@@ -635,3 +635,66 @@ html {
     text-align: center;
 }
 /* End Page Trips */
+
+/* Start Page Confirm */
+.confirm {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+}
+.confirm .container {
+    padding-top: 60px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    height: 100%;
+    width: 70%;
+
+}
+.confirm .container .form-left {
+    background-color: #fff;
+    box-shadow: 0 0 15px 3px rgba(27, 39, 61, 0.1);
+    padding: 30px 60px;
+}
+.confirm .container .form-left h1 {
+    margin-bottom: 30px;
+    text-align: center;
+    color: var(--main-color);
+}
+.confirm .container .form-left .packge {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 1px dotted var(--main-color);
+}
+.confirm .container .form-left .packge h3 {
+    margin-right: 100px;
+}
+.confirm .container .form-left span {
+    width: 100px;
+}
+.confirm .container .form-left input {
+    width: 100px;
+    outline: none;
+    border: 1px solid var(--main-color);
+    border-radius: 5px;
+    padding: 5px;
+
+}
+.confirm .container .form-left .continue {
+    display: block;
+    border: #fff;
+    margin: 0 auto;
+    padding: 5px 20px;
+    background-color: var(--main-color);
+    color: white;
+    font-size: 22px;
+    border-radius: 5px;
+}
+
+
+/* End Page Confirm */
