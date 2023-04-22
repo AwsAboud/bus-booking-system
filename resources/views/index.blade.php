@@ -28,7 +28,7 @@
                 <li><a href="#home">Home</a></li>
                 <li><a href="#trips">Trips</a></li>
                 <li><a href="#">About</a></li>
-                <li><a href="#">Contact</a></li>
+                <li><a href="{{url('/contact')}}">Contact</a></li>
             </ul>
 
             <div class="info-enter">
@@ -186,6 +186,7 @@
                         <li><a href="">Syria Latakia</a></li>
                         <li><a href="">+963932048737</a></li>
                         <li><a href="">luqman1it@gmail.com</a></li>
+                        <li><a href="">awsaboud7@gmail.com</a></li>
                     </ul>
                 </div>
             </div>

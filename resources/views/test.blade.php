@@ -7,10 +7,21 @@
     <title>Document</title>
 </head>
 <body>
-    @if(count($avaliable_trips) > 0)
+    @if(count($avaliableTrips) > 0)
   <ul>
-    @foreach($avaliable_trips as $trip)
+    @foreach($avaliableTrips as $trip)
       <li>{{ $trip->starting_point }} to {{ $trip->destination }} on {{ $trip->schedule_date }}</li>
+    @endforeach
+  </ul>
+@else
+  <p>No bus trips found.</p>
+@endif
+
+dy>
+    @if(count($userBookings) > 0)
+  <ul>
+    @foreach( $userBookings as $userBooking)
+      <li>{{ $userBooking->starting_point }} to {{ $userBooking->destination }} on {{ $userBooking->schedule_date }}</li>
     @endforeach
   </ul>
 @else

@@ -16,7 +16,7 @@
             font-family:sans-serif'Times New Roman',;
             margin-left:70px;">
             Fast Like an
-            <span style="color:purple;">Airplain</span> !
+            <span style="color:#a446fc;">Airplain</span> !
 
         </label>
             <div class="grid gap-6">

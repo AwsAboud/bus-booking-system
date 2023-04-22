@@ -30,6 +30,8 @@ Route::get('/hash', function () {
     return  Hash::make('adminadmin');
 });
 
+Route::view('/contact','contact');
+
 //search for trips
 Route::get('/search-for-trip', [BookingController::class, 'search'])->name('trip.search');
 
