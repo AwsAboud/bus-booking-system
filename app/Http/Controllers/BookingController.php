@@ -123,7 +123,7 @@ class BookingController extends Controller
         }
         //End of elseif
 
-        return view('test',['$avaliableTrips' => $avaliableTrips]);
+        return view('trips',['avaliableTrips' => $avaliableTrips]);
  }
  // End of the search method
 

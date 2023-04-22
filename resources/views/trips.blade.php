@@ -42,10 +42,20 @@
         <div class="bg-trips">
             <div class="arrow-bus">
                 <img src="{{ asset('imgs/Group.png') }}" alt="">
-                <span class="pickup">Latakia</span>
-                <span class="date">4/4/2023</span>
-                <span class="dropping">Damascus</span>
+                {{--
+                    we only need the first item from the $avaliableTrips collection
+                    to retrieve starting_point,destination and date to put them in the header image.
+                --}}
+                {{-- @if(isset($avaliableTrips) && count($avaliableTrips) > 0)) --}}
+
+                {{-- if the $avaliableTrips not empty --}}
+                @if( ! $avaliableTrips->isEmpty() )
+                <span class="pickup">{{$avaliableTrips[0]->starting_point}}</span>
+                <span class="date">{{$avaliableTrips[0]->schedule_date}}</span>
+                <span class="dropping">{{$avaliableTrips[0]->destination}}</span>
+                @endif
             </div>
+
         </div>
     </div>
     <div class="trips-banner">
@@ -80,38 +90,33 @@
                     </div>
                 </div>
                 <div class="appointment">
+                    {{-- retreive availabe trips from database --}}
+                @if(isset($avaliableTrips))
+                    @foreach($avaliableTrips as $trip)
                     <div class="appoint-ticket">
                         <div class="title-trip">Trip</div>
                         <div class="details">
                             <div class="first point">
-                                <h3 class="first-packup">Latakia</h3>
-                                <span>8:00</span>
+                                <h3 class="first-packup">{{$trip->starting_point }}</h3>
+                                <span>{{date('g:ia',strtotime($trip->departure_time))}}</span>
                             </div>
                             <i class="fa-solid fa-arrow-right"></i>
                             <div class="second point">
-                                <h3 class="second-dropp">Damascus</h3>
-                                <span>9:00</span>
+                                <h3 class="second-dropp">{{$trip->destination }}</h3>
+                            <span>{{date('g:ia',strtotime($trip->estimate_arrival_time))}}</span>
                             </div>
                             <a href="" class="reserv">reservation</a>
                         </div>
 
                     </div>
-                    <div class="appoint-ticket">
-                        <div class="title-trip">Trip</div>
-                        <div class="details">
-                            <div class="first point">
-                                <h3 class="first-packup">Latakia</h3>
-                                <span>8:00</span>
-                            </div>
-                            <i class="fa-solid fa-arrow-right"></i>
-                            <div class="second point">
-                                <h3 class="second-dropp">Damascus</h3>
-                                <span>9:00</span>
-                            </div>
-                            <a href="" class="reserv">reservation</a>
-                        </div>
-
+                    @endforeach
+                    @else
+                    <div class="title-trip">Trip</div>
+                    <div class="details">
+                    <center><p>No bus trips found.</p></center>
                     </div>
+                    </div>
+                    @endif
                 </div>
             </div>
         </div>
@@ -156,6 +161,7 @@
                         <li><a href="">Syria Latakia</a></li>
                         <li><a href="">+963932048737</a></li>
                         <li><a href="">luqman1it@gmail.com</a></li>
+                        <li><a href="">awsaboud7@gmail.com</a></li>
                     </ul>
                 </div>
             </div>

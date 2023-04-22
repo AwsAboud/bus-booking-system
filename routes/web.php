@@ -30,6 +30,7 @@ Route::get('/hash', function () {
 });
 
 Route::view('/contact','contact');
+//Route::view('/trips','trips');
 
 //search for trips
 Route::get('/search-for-trip', [BookingController::class, 'search'])->name('trip.search');
