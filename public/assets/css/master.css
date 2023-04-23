@@ -730,14 +730,14 @@ padding-top: var(--main-padding);
     max-width: 100%;
 
 }
-.address {
+.address-about {
     padding-top: var(--main-padding);
 }
-.address h1 {
+.address-about h1 {
     margin-bottom: 20px;
     color: var(--main-color);
 }
-iframe {
+.address-about iframe {
     max-width: 100%;
 }
 /* End Page About */
