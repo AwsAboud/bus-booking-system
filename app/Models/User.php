@@ -5,12 +5,13 @@ namespace App\Models;
 use App\Models\Booking;
 use Laravel\Sanctum\HasApiTokens;
 use Illuminate\Notifications\Notifiable;
+use Filament\Models\Contracts\FilamentUser;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
-use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Relations\HasMany;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 
-class User extends Authenticatable
+class User extends Authenticatable implements FilamentUser
 {
     use HasApiTokens, HasFactory, Notifiable;
 
@@ -49,5 +50,14 @@ class User extends Authenticatable
 
     public function bookings(){
         return $this->hasMany(Booking::class);
+    }
+
+    //By default filament let all users in user table to access to admin section
+    //this function let us customize which users can access to admin panal
+
+    public function canAccessFilament(): bool
+    {
+        //only users which has  is_admin = true can acsess
+        return $this->is_admin == true ;
     }
 }

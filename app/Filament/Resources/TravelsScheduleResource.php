@@ -57,6 +57,8 @@ class TravelsScheduleResource extends Resource
                 Forms\Components\TextInput::make('price')
                 ->numeric()->required()
                 ->label('Price Per Seat'),
+                Forms\Components\TextInput::make('available_seats')
+                ->numeric()->required(),
                 Forms\Components\TextInput::make('remarks'),
 
             ]);
@@ -75,6 +77,7 @@ class TravelsScheduleResource extends Resource
                 Tables\Columns\TextColumn::make('departure_time')->searchable(),
                 Tables\Columns\TextColumn::make('estimate_arrival_time'),
                 Tables\Columns\TextColumn::make('price')->searchable(),
+                Tables\Columns\TextColumn::make('available_seats'),
                 Tables\Columns\TextColumn::make('remarks'),
 
             ])
