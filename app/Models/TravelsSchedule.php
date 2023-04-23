@@ -20,6 +20,7 @@ class TravelsSchedule extends Model
         'departure_time',
         'estimate_arrival_time',
         'price',
+        'available_seats',
         'remarks'
     ];
 

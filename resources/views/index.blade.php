@@ -33,7 +33,9 @@
 
             <div class="info-enter">
                 @auth
+                <form action="{{route('logout')}}" method="POST">
                 <a href="{{ route('logout') }}" class="log out">logout</a>
+                </form>
                 @endauth
                 @guest
                 <a href="{{ route('login') }}" class="log in">Sign In</a>
