@@ -41,7 +41,7 @@
             </div>
         </div>
     </div>
-    <div class="address">
+    <div class="address-about">
         <div class="container">
             <h1 class="title-address">Our Address</h1>
             <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2642.6248826174965!2d35.809865125230864!3d35.52263493867154!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1526ac18a2d4d5cd%3A0x3dc7dc57373f03b4!2z2KzYp9mF2LnYqSDYqti02LHZitmG!5e1!3m2!1sar!2sus!4v1682277973122!5m2!1sar!2sus" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
