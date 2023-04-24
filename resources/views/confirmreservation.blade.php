@@ -25,45 +25,50 @@
                 <h1>Confirm Reservation</h1>
                 <div class="packge">
                     <h3 class="name">First Name :</h3>
-                    <span class="">Luqman</span>
+                    <span class="">{{auth()->user()->name}}</span>
                 </div>
                 <div class="packge">
                     <h3 class="name">Phone :</h3>
-                    <span class="">0932048737</span>
+                    <span class="">{{auth()->user()->phone_number}}</span>
                 </div>
                 <div class="packge">
                     <h3 class="name">Pickup Point :</h3>
-                    <span class="">Latakia</span>
+                    <span class="">{{$tripDetails->starting_point}}</span>
                 </div>
                 <div class="packge">
                     <h3 class="name">Dropping Point :</h3>
-                    <span class="">Damascus</span>
+                    <span class="">{{$tripDetails->destination}}</span>
                 </div>
                 <div class="packge">
                     <h3 class="name">Date :</h3>
-                    <span class="">4/4/2023</span>
+                    <span class="">{{$tripDetails->schedule_date}}</span>
                 </div>
                 <div class="packge">
                     <h3 class="name">Start :</h3>
-                    <span class="">8 : 00</span>
+                    <span class="">{{date('g:ia',strtotime($tripDetails->departure_time))}}</span>
                 </div>
                 <div class="packge">
                     <h3 class="name">End :</h3>
-                    <span class="">9 : 00</span>
+                    <span class="">{{date('g:ia',strtotime($tripDetails->estimate_arrival_time))}}</span>
                 </div>
                 <div class="packge">
-                    <h3 class="name">Number bus :</h3>
-                    <span class="">1</span>
+                    <h3 class="name">Bus Number :</h3>
+                    <span class="">{{$tripDetails->bus->bus_number}}</span>
                 </div>
                 <div class="packge">
-                    <h3 class="name">Price :</h3>
-                    <span class="">1000</span>
+                    <h3 class="name">Price Per Seat :</h3>
+                    <span class="">{{$tripDetails->price . ' S.P'}} </span>
                 </div>
                 <div class="packge">
                     <h3>Number Of Seats</h3>
-                    <input type="number" name="" id="" min="1" max="5" value="1">
+                    <form action="{{route('booking.store',['scheduleId' => $tripDetails->id])}}" method="post">
+                    @csrf
+                    <input type="number" name="number_of_seats" id="" min="1" max="5" value="1">
+
                 </div>
-                <button class="continue">Continue</button>
+                <input type="submit" class="continue" value="confirm" >
+                {{-- <button class="continue">Continue</button> --}}
+                </form>
             </div>
         </div>
     </div>

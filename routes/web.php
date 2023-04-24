@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\TravelController;
 use App\Http\Controllers\BookingController;
 use App\Http\Controllers\ProfileController;
 
@@ -30,11 +31,14 @@ Route::get('/hash', function () {
 });
 
 Route::view('/contact', 'contact');
-//Route::view('/trips','trips');
+Route::view('/confirm','confirmReservation');
 
 //search for trips
-Route::get('/search-for-trip', [BookingController::class, 'search'])->name('trip.search');
+Route::get('/search-for-trip', [TravelController::class, 'search'])->name('trip.search');
+Route::get('/trip-details/{tripId}',[TravelController::class, 'show'])
+->middleware('auth')->name('trip-details');
 
+Route::post('/book-trip/{scheduleId}',[BookingController::class, 'store'])->name('booking.store');
 
 
 Route::get('/dashboard', function () {

@@ -105,7 +105,7 @@
                                 <h3 class="second-dropp">{{$trip->destination }}</h3>
                             <span>{{date('g:ia',strtotime($trip->estimate_arrival_time))}}</span>
                             </div>
-                            <a href="" class="reserv">reservation</a>
+                            <a href="{{ route('trip-details', ['tripId' => $trip->id]) }}" class="reserv">reservation</a>
                         </div>
 
                     </div>
