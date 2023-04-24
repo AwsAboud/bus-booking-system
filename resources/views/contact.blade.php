@@ -95,7 +95,7 @@
                         <li><a href="">Home</a></li>
                         <li><a href="#trips">Trips</a></li>
                         <li><a href="">About</a></li>
-                        <li><a href="">Contact</a></li>
+                        <li><a href="{{url('/contact')}}">Contact</a></li>
                     </ul>
                 </div>
                 <div class="policies all">
