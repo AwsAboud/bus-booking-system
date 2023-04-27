@@ -93,7 +93,7 @@
                 </div>
                 <div class="appointment">
                     {{-- retreive availabe trips from database --}}
-                @if(isset($avaliableTrips))
+                    @if(isset($avaliableTrips))
                     @foreach($avaliableTrips as $trip)
                     <div class="appoint-ticket">
                         <div class="title-trip">Trip</div>
@@ -105,7 +105,7 @@
                             <i class="fa-solid fa-arrow-right"></i>
                             <div class="second point">
                                 <h3 class="second-dropp">{{$trip->destination }}</h3>
-                            <span>{{date('g:ia',strtotime($trip->estimate_arrival_time))}}</span>
+                                <span>{{date('g:ia',strtotime($trip->estimate_arrival_time))}}</span>
                             </div>
                             <a href="{{ route('trip-details', ['tripId' => $trip->id]) }}" class="reserv">reservation</a>
                         </div>
@@ -115,13 +115,15 @@
                     @else
                     <div class="title-trip">Trip</div>
                     <div class="details">
-                    <center><p>No bus trips found.</p></center>
+                        <center>
+                            <p>No bus trips found.</p>
+                        </center>
                     </div>
-                    </div>
-                    @endif
                 </div>
+                @endif
             </div>
         </div>
+    </div>
     </div>
 
     <!-- Start Footer -->
@@ -145,7 +147,7 @@
                         <li><a href="">Home</a></li>
                         <li><a href="#trips">Trips</a></li>
                         <li><a href="">About</a></li>
-                        <li><a href="">Contact</a></li>
+                        <li><a href="{{url('/contact')}}">Contact</a></li>
                     </ul>
                 </div>
                 <div class="policies all">

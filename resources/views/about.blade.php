@@ -18,11 +18,84 @@
 </head>
 
 <body>
-    <div class="about contact">
+    <div class="contact">
         <div class="bgcontact">
-            <h1 class="title-contact">Contact Us</h1>
+            <h1 class="title-contact">About</h1>
         </div>
     </div>
+
+    <!-- Start Page about  -->
+    <div class="about">
+        <div class="container">
+            <div class="about-content">
+                <h1 class="title-about">Know Few Words About Autobus</h1>
+                <p>Lorem Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                    Nulla sit reprehenderit non voluptas quam quod facilis, doloribus impedit magni.
+                    Numquam ipsum placeat ullam alias temporibus non quas aperiam odio pariatur.
+                    Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                    Eos eveniet inventore blanditiis maxime doloremque minima. Quisquam, ex! Architecto laudantium culpa cupiditate hic facere est magni, possimus repudiandae, rerum eius omnis.lore Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque excepturi sed possimus recusandae temporibus tempore, aspernatur, autem sequi natus iste fugit. Eaque vero temporibus illum quis beatae quam officia ad.ri sed possimus recusandae temporibus tempore, aspernatur, autem sequi natus iste fugit. Eaque vero temporibus sed possimus recusandae temporibus tempore,
+                    aspernatur, autem sequi natus iste fugit. Eaque vero temporibus illum quis beatae quam officia ad.</p>
+            </div>
+            <div class="image">
+                <img src="{{('imgs/about-bus.jpg')}}" alt="">
+            </div>
+        </div>
+    </div>
+    <div class="address-about">
+        <div class="container">
+            <h1 class="title-address">Our Address</h1>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2642.6248826174965!2d35.809865125230864!3d35.52263493867154!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1526ac18a2d4d5cd%3A0x3dc7dc57373f03b4!2z2KzYp9mF2LnYqSDYqti02LHZitmG!5e1!3m2!1sar!2sus!4v1682277973122!5m2!1sar!2sus" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+
+    </div>
+    <!-- End Page about -->
+
+    <!-- Start Footer -->
+    <div class="footer">
+        <div class="footer-top">
+            <div class="container">
+                <div class="social">
+                    <div class="logo">
+                        <img src="{{ asset('imgs/logo.png') }}" alt="logo">
+                    </div>
+                    <p>Delectus culpa laboriosam debitis saepe. Commodi earum minus ut obcaecati veniam deserunt est!</p>
+                    <div class="icons">
+                        <a href="https://www.facebook.com"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="https://www.twitter.com"><i class="fa-brands fa-twitter"></i></a>
+                        <a href="htpps://www.instagram.com"><i class="fa-brands fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="useful-links all">
+                    <h2 class="title-footer">Usefil Links</h2>
+                    <ul class="footer-links">
+                        <li><a href="">Home</a></li>
+                        <li><a href="#trips">Trips</a></li>
+                        <li><a href="">About</a></li>
+                        <li><a href="">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="policies all">
+                    <h2 class="title-footer">Policies</h2>
+                    <ul class="footer-links">
+                        <li><a href="">Privacy Policy</a></li>
+                        <li><a href="">Terms and Conditions</a></li>
+                        <li><a href="">Ticket Policies</a></li>
+                        <li><a href="">Refund Policy</a></li>
+                    </ul>
+                </div>
+                <div class="contact-info all">
+                    <h2 class="title-footer">Contact Info</h2>
+                    <ul class="footer-links">
+                        <li><a href="">Syria Latakia</a></li>
+                        <li><a href="">+963932048737</a></li>
+                        <li><a href="">luqman1it@gmail.com</a></li>
+                        <li><a href="">awsaboud7@gmail.com</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Footer -->
 </body>
 
 </html>
