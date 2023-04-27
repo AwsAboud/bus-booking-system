@@ -32,8 +32,9 @@
         x-cloak
     >
         <div class="flex flex-col min-h-screen text-gray-900 bg-gray-100 dark:bg-dark-eval-0 dark:text-gray-200"
-        style="background-image: url('{{ asset("imgs/plain.jpg") }}');
-         background-size: cover;">
+        {{-- style="background-image: url('{{ asset("imgs/plain.jpg") }}');
+         background-size: cover;" --}}
+         >
             {{ $slot }}
 
             <x-footer />

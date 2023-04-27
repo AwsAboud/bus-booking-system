@@ -14,6 +14,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Georama:wght@300;400&display=swap" rel="stylesheet">
+
     <title>bus booking</title>
 
 </head>
@@ -173,8 +174,8 @@
                     <ul class="footer-links">
                         <li><a href="">Home</a></li>
                         <li><a href="#trips">Trips</a></li>
-                        <li><a href="">About</a></li>
-                        <li><a href="">Contact</a></li>
+                        <li><a href="{{url('about')}}">About</a></li>
+                        <li><a href="{{url('contact')}}">Contact</a></li>
                     </ul>
                 </div>
                 <div class="policies all">
@@ -199,8 +200,9 @@
         </div>
     </div>
     <!-- End Footer -->
-
     <!-- <script src="{{ asset('javascript/master.js') }}"></script> -->
+    @include('sweetalert::alert')
+
 </body>
 
 </html>

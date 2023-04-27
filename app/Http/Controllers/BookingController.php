@@ -8,6 +8,8 @@ use Illuminate\Http\Request;
 use App\Models\TravelsSchedule;
 use PhpParser\Node\Stmt\Return_;
 use Illuminate\Support\Facades\Auth;
+use RealRashid\SweetAlert\Facades\Alert;
+
 
 class BookingController extends Controller
 {
@@ -81,6 +83,9 @@ class BookingController extends Controller
         $newPayment->booking_id = $bookingId;
         $newPayment->payment_amount = $totalPrice;
         $newPayment->save();
+        Alert::success('Success Title', 'your reservation has made sucsessfully');
+
+
         }
         else {
             //tell user that there is no enough balance in his account to book the trip

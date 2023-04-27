@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\TravelController;
 use App\Http\Controllers\BookingController;
 use App\Http\Controllers\ProfileController;
+use RealRashid\SweetAlert\Facades\Alert;
 
 /*
 |--------------------------------------------------------------------------
@@ -23,7 +24,9 @@ Route::get('/', function () {
     return view('index');
 })->name('home');
 
+
 Route::get('/welcome', function () {
+    Alert::warning('title');
     return view('welcome');
 });
 Route::get('/hash', function () {
@@ -31,7 +34,7 @@ Route::get('/hash', function () {
 });
 
 Route::view('/contact', 'contact');
-Route::view('/confirm','confirmReservation');
+Route::view('/about','about');
 
 //search for trips
 Route::get('/search-for-trip', [TravelController::class, 'search'])->name('trip.search');

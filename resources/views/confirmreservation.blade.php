@@ -14,6 +14,12 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Georama:wght@300;400&display=swap" rel="stylesheet">
+    <!-- Sweet Alert CSS -->
+<link rel="stylesheet" href="{{ asset('vendor/sweetalert2/sweetalert2.min.css') }}">
+
+<!-- Sweet Alert JS -->
+<script src="{{ asset('vendor/sweetalert2/sweetalert2.min.js') }}"></script>
+
     <title>ConfirmReservation</title>
 </head>
 
@@ -24,7 +30,7 @@
             <div class="form-left">
                 <h1>Confirm Reservation</h1>
                 <div class="packge">
-                    <h3 class="name">First Name :</h3>
+                    <h3 class="name">Name :</h3>
                     <span class="">{{auth()->user()->name}}</span>
                 </div>
                 <div class="packge">
@@ -73,6 +79,8 @@
         </div>
     </div>
     <!-- End Page Confirm -->
+    @include('sweetalert::alert')
+
 </body>
 
 </html>
