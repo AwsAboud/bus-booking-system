@@ -19,11 +19,11 @@ class DashboardStatsOverview extends BaseWidget
     {
          //get the payment amount in the current day
          $currentDate = Carbon::now()->toDateString();
-         $paymentAmountOfCurrentDay = Payment::whereDate('payment_date',$currentDate)->count();
+         $paymentAmountOfCurrentDay = Payment::whereDate('payment_date',$currentDate)->sum('payment_amount');
 
          //get the payment amount in the current month
          $currentMonth = Carbon::now()->month;
-         $paymentAmountOfCurrentMonth = Payment::whereMonth('payment_date',$currentMonth)->count();
+         $paymentAmountOfCurrentMonth = Payment::whereMonth('payment_date',$currentMonth)->sum('payment_amount');
 
          //get travels number in the  current day
         $currentDate = Carbon::now()->toDateString();
@@ -46,7 +46,7 @@ class DashboardStatsOverview extends BaseWidget
             ->description('Total Drivers')
             ->color('success')
             ->extraAttributes([
-                     'onclick' => 'window.open("http://127.0.0.1:8000/admin/bookings","_self")',
+                     'onclick' => 'window.open("http://127.0.0.1:8000/admin/drivers","_self")',
 
             ]),
 
@@ -61,17 +61,17 @@ class DashboardStatsOverview extends BaseWidget
         ]),
 
              //get the number of  the company Customers
-            Card::make('Total Customers', User::all()->count())
-            ->description('Total Customers')
+            Card::make('Total Users', User::all()->count())
+            ->description('Total Users')
             ->color('success')
             ->extraAttributes([
                 // go to customers bage
-                'onclick' => 'window.open("http://127.0.0.1:8000/admin/customers","_self")'
+                'onclick' => 'window.open("http://127.0.0.1:8000/admin/users","_self")'
 
         ]),
 
             //Display the payment amount in the current month
-            Card::make('Today\'s Earnings',$paymentAmountOfCurrentDay. ' $')
+            Card::make('Today\'s Earnings',$paymentAmountOfCurrentDay. ' S.P')
             ->description('Todays Earnings')
             ->color('success')
             ->extraAttributes([
@@ -81,7 +81,7 @@ class DashboardStatsOverview extends BaseWidget
         ]),
 
             //Display the payment amount in the current day
-            Card::make('This Month Earnings',$paymentAmountOfCurrentMonth . ' $')
+            Card::make('This Month Earnings',$paymentAmountOfCurrentMonth . ' S.P')
             ->description('This Month Earnings')
             ->color('success')
             ->extraAttributes([
