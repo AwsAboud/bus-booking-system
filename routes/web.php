@@ -25,17 +25,13 @@ Route::get('/', function () {
 })->name('home');
 
 
-Route::get('/welcome', function () {
-    Alert::warning('title');
-    return view('welcome');
-});
 Route::get('/hash', function () {
     return  Hash::make('adminadmin');
 });
-
 Route::view('/contact', 'contact');
 Route::view('/about','about');
-
+//Route::view('/test','test');
+Route::get('/test', [BookingController::class, 'index']);
 //search for trips
 Route::get('/search-for-trip', [TravelController::class, 'search'])->name('trip.search');
 Route::get('/trip-details/{tripId}',[TravelController::class, 'show'])

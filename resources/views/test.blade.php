@@ -7,7 +7,7 @@
     <title>Document</title>
 </head>
 <body>
-    @if(count($avaliableTrips) > 0)
+    {{-- @if( isset($avaliableTrips))
   <ul>
     @foreach($avaliableTrips as $trip)
       <li>{{ $trip->starting_point }} to {{ $trip->destination }} on {{ $trip->schedule_date }}</li>
@@ -15,17 +15,23 @@
   </ul>
 @else
   <p>No bus trips found.</p>
+@endif --}}
+@if( ! empty($userBookingsDetails))
+    @foreach( $userBookingsDetails as $bookDetils )
+        total :{{$bookDetils->total_price}}
+        {{--
+            / Retrieve the travel details associated with this booking.
+             $travel_details = $booking->travelsSchedule;
+
+        // You can now use the `$travel_details` variable to access the booking's travel details.
+        // For example:
+        echo $travel_details->starting_point . '<br>';
+     echo $travel_details->destination . '<br>';
+            --}}
+    @endforeach
+@else
+  <p> You do not made any booking </p>
 @endif
 
-dy>
-    @if(count($userBookings) > 0)
-  <ul>
-    @foreach( $userBookings as $userBooking)
-      <li>{{ $userBooking->starting_point }} to {{ $userBooking->destination }} on {{ $userBooking->schedule_date }}</li>
-    @endforeach
-  </ul>
-@else
-  <p>No bus trips found.</p>
-@endif
 </body>
 </html>

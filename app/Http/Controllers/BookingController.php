@@ -21,9 +21,11 @@ class BookingController extends Controller
     //show all trips that the user has booked
     public function index()
     {
+        //retrieve the User instance from the database.
         $user = Auth::user();
-        $userBookings = $user->bookings ;
-        return view('test',['userBookings'=> $userBookings]);
+        //retrieve the User's bookings using the `bookings()` method in User model
+        $userBookingsDetails = $user->bookings;
+        return view('test',['userBookingsDetails'=> $userBookingsDetails]);
     }
 
     /**
@@ -83,14 +85,15 @@ class BookingController extends Controller
         $newPayment->booking_id = $bookingId;
         $newPayment->payment_amount = $totalPrice;
         $newPayment->save();
-        Alert::success('Success Title', 'your reservation has made sucsessfully');
+        Alert::success('Success Title', 'your reservation has made');
 
 
         }
         else {
             //tell user that there is no enough balance in his account to book the trip
+            Alert::error('error Title', 'you do not have enought balance');
         }
-
+        //Alert::success('Success!', 'Your request has been processed.');
         return redirect()->route('home');
     }
 
@@ -103,17 +106,17 @@ class BookingController extends Controller
      */
     public function show($id)
     {
-        /*
-        -You can use Eloquent's with() method to eager load the bus relationship
-        for the TravelsSchedule model.
-        -This will retrieve the TravelsSchedule with the given ID,
-         along with its related bus model.
-        The bus_number attribute of the related bus model can then be
-        accessed using $trip->bus->bus_number.
+        // /*
+        // -You can use Eloquent's with() method to eager load the bus relationship
+        // for the TravelsSchedule model.
+        // -This will retrieve the TravelsSchedule with the given ID,
+        //  along with its related bus model.
+        // The bus_number attribute of the related bus model can then be
+        // accessed using $trip->bus->bus_number.
 
-        */
-        $tripDetails = TravelsSchedule::with('bus')->findOrFail($id);
-        return view('confirmReservation',['tripDetails'=> $tripDetails]);
+        // */
+        // $tripDetails = TravelsSchedule::with('bus')->findOrFail($id);
+        // return view('confirmReservation',['tripDetails'=> $tripDetails]);
     }
 
     /**
