@@ -33,16 +33,16 @@
             </ul>
 
             <div class="info-enter">
-                @auth
-                <form action="{{route('logout')}}" method="POST">
-                    <a href="{{ route('logout') }}" class="log out">logout</a>
-                </form>
-                @endauth
-                @guest
-                <a href="{{ route('login') }}" class="log in">Sign In</a>
-                <a href="{{ route('register') }}" class="register">Register</a>
-
-                @endguest
+                <div class="dropdown">
+                    <button class="dropbtn">User Name</button>
+                    <div class="dropdown-content">
+                        <a href="#" class="profile">Profile</a>
+                        <a href="#" class="appointment">Appointment</a>
+                        <a href="#" class="logout">Log Out</a>
+                    </div>
+                </div>
+                <a href="" class="log in">Sign In</a>
+                <a href="" class="register">Register</a>
             </div>
 
 
