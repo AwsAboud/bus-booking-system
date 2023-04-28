@@ -28,18 +28,16 @@
             <ul class="links">
                 <li><a href="#home">Home</a></li>
                 <li><a href="#trips">Trips</a></li>
-                <li><a href="{{url('/about')}}">About</a></li>
+                <li><a href="#">About</a></li>
                 <li><a href="{{url('/contact')}}">Contact</a></li>
             </ul>
 
             <div class="info-enter">
-                {{-- @auth --}}
-                <a href="#" class="log out" onclick="event.preventDefault() ; document.getElementById('logout-form').submit();">Logout</a>
-                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                    @csrf
+                @auth
+                <form action="{{route('logout')}}" method="POST">
+                    <a href="{{ route('logout') }}" class="log out">logout</a>
                 </form>
-                {{-- <a href="{{ route('logout') }}" class="log out">logout</a> --}}
-                {{-- @endauth --}}
+                @endauth
                 @guest
                 <a href="{{ route('login') }}" class="log in">Sign In</a>
                 <a href="{{ route('register') }}" class="register">Register</a>
