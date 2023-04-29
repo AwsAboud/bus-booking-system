@@ -33,16 +33,22 @@
             </ul>
 
             <div class="info-enter">
+                @auth
                 <div class="dropdown">
-                    <button class="dropbtn">User Name</button>
+                    <button class="dropbtn">{{auth()->user()->name}}</button>
                     <div class="dropdown-content">
                         <a href="#" class="profile">Profile</a>
                         <a href="#" class="appointment">Appointment</a>
-                        <a href="#" class="logout">Log Out</a>
+                        <a href="#" class="logout" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout</a>
+                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                            @csrf
+                        </form>
                     </div>
                 </div>
-                <a href="" class="log in">Sign In</a>
-                <a href="" class="register">Register</a>
+                @else
+                <a href="{{route('login')}}" class="log in">Sign In</a>
+                <a href="{{route('register')}}" class="register">Register</a>
+                @endauth
             </div>
 
 

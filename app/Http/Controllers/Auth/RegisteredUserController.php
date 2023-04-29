@@ -50,7 +50,7 @@ class RegisteredUserController extends Controller
         event(new Registered($user));
 
         Auth::login($user);
-
+        alert()->image('Welcome !','We are so glade to join our family ' . auth()->user()->name,'/imgs/logo.png','60%','50%','Image Alt');
         return redirect(RouteServiceProvider::HOME);
     }
 }
