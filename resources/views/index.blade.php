@@ -73,7 +73,7 @@
 
                         <form action="{{route('trip.search')}}" method="GET">
                             @csrf
-                            <input list="pickup" name="starting_point" placeholder="Pickup Point" required>
+                            <input list="pickup" name="starting_point" placeholder="Pickup Point">
                             <datalist id="pickup">
                                 <option value="Latakia">
                                 <option value="Aleppo">
@@ -82,7 +82,7 @@
                                 <option value="Hama">
                                 <option value="Tartous">
                             </datalist>
-                            <input list="dropping" name="destination" placeholder="Dropping Point" required>
+                            <input list="dropping" name="destination" placeholder="Dropping Point">
                             <datalist id="dropping">
                                 <option value="Latakia">
                                 <option value="Aleppo">
@@ -91,7 +91,7 @@
                                 <option value="Hama">
                                 <option value="Tartous">
                             </datalist>
-                            <input type="date" name="schedule_date" id="" class="date" min="<?php echo date('Y-m-d'); ?>" max="<?php echo date('Y-m-d', strtotime('+7 days')); ?>" required>
+                            <input type="date" name="schedule_date" id="" class="date" min="<?php echo date('Y-m-d'); ?>" max="<?php echo date('Y-m-d', strtotime('+7 days')); ?>">
                             <input type="submit" value="Find Ticket" class="submit">
                         </form>
                     </div>
@@ -210,5 +210,14 @@
     @include('sweetalert::alert')
 
 </body>
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+<script>
+    let tab = document.querySelectorAll(".tab-content form input");
+    tab.forEach((ele) => {
+        ele.onclick = function() {
+            swal("You Are Not Registered!", "Please Register");
+        }
+    })
+</script>
 
 </html>
