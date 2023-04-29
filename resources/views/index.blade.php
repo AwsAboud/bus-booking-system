@@ -57,7 +57,7 @@
             <div class="banner">
                 <div class="banner-left">
                     <h1 class="title">Get Your Ticket Online, Easy and Safely</h1>
-                    <a href="">Get Ticket Now</a>
+                    <a href="#">Get Ticket Now</a>
                 </div>
                 <div class="banner-right">
                     <h4 class="title">
@@ -210,5 +210,20 @@
     @include('sweetalert::alert')
 
 </body>
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+<script>
+    let tabContent = document.querySelectorAll(".tab-content form input");
+    let getTicketNow = document.querySelector(".banner .banner-left a");
+
+    function AlertFunction() {
+        swal("You Are Not Registered!", "Please Register");
+    }
+
+    tabContent.forEach((ele) => {
+        ele.addEventListener("click", AlertFunction);
+    })
+
+    getTicketNow.addEventListener("click", AlertFunction)
+</script>
 
 </html>

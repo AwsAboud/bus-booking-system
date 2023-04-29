@@ -803,3 +803,62 @@ padding-top: var(--main-padding);
     max-width: 100%;
 }
 /* End Page About */
+
+/* Start Appointment Page */
+.appointmentMain {
+    background-color: #f7f7f7;
+    min-height: 100vh;
+}
+.appointmentMain .your-appointment {
+    margin-top: 60px;
+}
+.appointmentMain .your-appointment .title-appointment {
+    /* text-align: center; */
+}
+.appointmentMain .your-appointment {
+    /* text-align: center; */
+}
+.appointmentMain .your-appointment .options {
+    background-color: white;
+    width: fit-content;
+    display: flex;
+    margin: 20px auto;
+    border-radius: 20px;
+}
+.appointmentMain .your-appointment .options a {
+    border-radius: 20px;
+    padding: 20px;
+    color: var(--main-color);
+}
+.appointmentMain .your-appointment  .options .activenow {
+    background-color: var(--main-color);
+    color: white;
+}
+.appointmentMain .your-appointment .list  {
+    background-color: #fff;
+}
+.appointmentMain .your-appointment .list .title-list {
+    background-color: var(--main-color);
+    color: white;
+    padding: 10px;
+}
+.appointmentMain .your-appointment .list .list-content {
+    display: flex;
+    padding: 10px;
+    border-bottom: 1px solid green;
+    justify-content: space-between;
+}
+.appointmentMain .your-appointment .list .list-content h3 {
+    width: 100px;
+}
+.appointmentMain .your-appointment .list .info {
+    display: flex;
+    padding: 20px 10px 20px 10px;
+    justify-content: space-between;
+    border-bottom: 1px solid green;
+}
+.appointmentMain .your-appointment .list .info p {
+    width: 100px;
+}
+
+/* End Appointment Page */
