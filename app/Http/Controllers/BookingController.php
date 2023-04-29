@@ -91,7 +91,7 @@ class BookingController extends Controller
         }
         else {
             //tell user that there is no enough balance in his account to book the trip
-            Alert::error('error Title', 'you do not have enought balance');
+            Alert::error('Oops...', 'you do not have enought balance');
         }
         //Alert::success('Success!', 'Your request has been processed.');
         return redirect()->route('home');
