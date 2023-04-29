@@ -29,15 +29,15 @@ Route::get('/hash', function () {
     return  Hash::make('adminadmin');
 });
 Route::view('/contact', 'contact');
-Route::view('/about','about');
+Route::view('/about', 'about');
 //Route::view('/test','test');
 Route::get('/test', [BookingController::class, 'index']);
 //search for trips
 Route::get('/search-for-trip', [TravelController::class, 'search'])->name('trip.search');
-Route::get('/trip-details/{tripId}',[TravelController::class, 'show'])
-->middleware('auth')->name('trip-details');
+Route::get('/trip-details/{tripId}', [TravelController::class, 'show'])
+    ->middleware('auth')->name('trip-details');
 
-Route::post('/book-trip/{scheduleId}',[BookingController::class, 'store'])->name('booking.store');
+Route::post('/book-trip/{scheduleId}', [BookingController::class, 'store'])->name('booking.store');
 
 
 Route::get('/dashboard', function () {

@@ -18,7 +18,51 @@
 </head>
 
 <body>
+    <div class="appointment">
+        <div class="container">
+            <div class="your-appointment">
+                <!-- <h1 class="title-appointment">Your Appointment List :</h1> -->
+                <div class="options" id="myDIV">
+                    <a href="#" class="btn activenow">Completed</a href="#">
+                    <a href="#" class="btn">No Completed</a href="#">
+                </div>
+                <div class="list">
+                    <h4 class="title-list">List Of Appointment</h4>
+                    <div class="list-content">
+                        <h3>App ID</h3>
+                        <h3>Bus Id</h3>
+                        <h3>starting</h3>
+                        <h3>destination</h3>
+                        <h3>Date</h3>
+                        <h3>Start</h3>
+                        <h3>End</h3>
 
+                    </div>
+                    <div class="info">
+                        <p>1</p>
+                        <p>1</p>
+                        <p>Latakia</p>
+                        <p>Damascus</p>
+                        <p>2/2/2023</p>
+                        <p>8:00</p>
+                        <p>9:00</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let header = document.getElementById("myDIV");
+        let btns = header.getElementsByClassName("btn");
+        for (let i = 0; i < btns.length; i++) {
+            btns[i].addEventListener("click", function() {
+                let current = document.getElementsByClassName("activenow");
+                current[0].className = current[0].className.replace(" activenow", "");
+                this.className += " activenow";
+            });
+        }
+    </script>
 </body>
 
 </html>
