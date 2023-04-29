@@ -18,7 +18,38 @@
 </head>
 
 <body>
-    <div class="appointment">
+    <div class="appointmentMain page">
+        <div class="header-area">
+            <div class="logo"><img src="{{ asset('imgs/logo.png') }}" alt="logo">
+            </div>
+            <ul class="links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#trips">Trips</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="{{url('/contact')}}">Contact</a></li>
+            </ul>
+
+            <div class="info-enter">
+                @auth
+                <div class="dropdown">
+                    <button class="dropbtn">{{auth()->user()->name}}</button>
+                    <div class="dropdown-content">
+                        <a href="#" class="profile">Profile</a>
+                        <a href="#" class="appointment">Appointment</a>
+                        <a href="#" class="logout" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout</a>
+                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                            @csrf
+                        </form>
+                    </div>
+                </div>
+                @else
+                <a href="{{route('login')}}" class="log in">Sign In</a>
+                <a href="{{route('register')}}" class="register">Register</a>
+                @endauth
+            </div>
+
+
+        </div>
         <div class="container">
             <div class="your-appointment">
                 <!-- <h1 class="title-appointment">Your Appointment List :</h1> -->

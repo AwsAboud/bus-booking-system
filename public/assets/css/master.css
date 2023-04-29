@@ -805,60 +805,59 @@ padding-top: var(--main-padding);
 /* End Page About */
 
 /* Start Appointment Page */
-.appointment {
+.appointmentMain {
     background-color: #f7f7f7;
     min-height: 100vh;
-    padding-top: 60px;
 }
-.appointment .your-appointment {
+.appointmentMain .your-appointment {
+    margin-top: 60px;
+}
+.appointmentMain .your-appointment .title-appointment {
     /* text-align: center; */
 }
-.appointment .your-appointment .title-appointment {
+.appointmentMain .your-appointment {
     /* text-align: center; */
 }
-.appointment .your-appointment {
-    /* text-align: center; */
-}
-.appointment .your-appointment .options {
+.appointmentMain .your-appointment .options {
     background-color: white;
     width: fit-content;
     display: flex;
     margin: 20px auto;
     border-radius: 20px;
 }
-.appointment .your-appointment .options a {
+.appointmentMain .your-appointment .options a {
     border-radius: 20px;
     padding: 20px;
     color: var(--main-color);
 }
-.appointment .your-appointment  .options .activenow {
+.appointmentMain .your-appointment  .options .activenow {
     background-color: var(--main-color);
     color: white;
 }
-.appointment .your-appointment .list  {
+.appointmentMain .your-appointment .list  {
     background-color: #fff;
 }
-.appointment .your-appointment .list .title-list {
+.appointmentMain .your-appointment .list .title-list {
     background-color: var(--main-color);
     color: white;
     padding: 10px;
 }
-.appointment .your-appointment .list .list-content {
+.appointmentMain .your-appointment .list .list-content {
     display: flex;
     padding: 10px;
     border-bottom: 1px solid green;
     justify-content: space-between;
 }
-.appointment .your-appointment .list .list-content h3 {
+.appointmentMain .your-appointment .list .list-content h3 {
     width: 100px;
 }
-.appointment .your-appointment .list .info {
+.appointmentMain .your-appointment .list .info {
     display: flex;
     padding: 20px 10px 20px 10px;
     justify-content: space-between;
     border-bottom: 1px solid green;
 }
-.appointment .your-appointment .list .info p {
+.appointmentMain .your-appointment .list .info p {
     width: 100px;
 }
 
