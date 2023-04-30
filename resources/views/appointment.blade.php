@@ -23,7 +23,7 @@
             <div class="logo"><img src="{{ asset('imgs/logo.png') }}" alt="logo">
             </div>
             <ul class="links">
-                <li><a href="#home">Home</a></li>
+                <li><a href="{{route('home')}}">Home</a></li>
                 <li><a href="#trips">Trips</a></li>
                 <li><a href="#">About</a></li>
                 <li><a href="{{url('/contact')}}">Contact</a></li>
@@ -54,30 +54,43 @@
             <div class="your-appointment">
                 <!-- <h1 class="title-appointment">Your Appointment List :</h1> -->
                 <div class="options" id="myDIV">
-                    <a href="#" class="btn activenow">Completed</a href="#">
-                    <a href="#" class="btn">No Completed</a href="#">
+                    <a href="{{url('/bookings/finished')}}" class="btn activenow">Completed</a>
+                    <a href="{{url('/bookings/not-finished')}}" class="btn">Not Completed</a>
                 </div>
                 <div class="list">
                     <h4 class="title-list">List Of Appointment</h4>
                     <div class="list-content">
-                        <h3>App ID</h3>
-                        <h3>Bus Id</h3>
-                        <h3>starting</h3>
+                        <h3>Bus Number</h3>
+                        <h3>starting Point</h3>
                         <h3>destination</h3>
                         <h3>Date</h3>
                         <h3>Start</h3>
                         <h3>End</h3>
+                        <h3>Price Per Seat</h3>
+                        <h3>Number of Seats</h3>
+                        <h3>Totla Price</h3>
+                        <h3>Booked At </h3>
 
                     </div>
+                    @if( ! empty($userBookingsDetails))
+                    @foreach($userBookingsDetails as $booking)
                     <div class="info">
-                        <p>1</p>
-                        <p>1</p>
-                        <p>Latakia</p>
-                        <p>Damascus</p>
-                        <p>2/2/2023</p>
-                        <p>8:00</p>
-                        <p>9:00</p>
+                        {{-- حتى جبنا رقم الباص Eloquent لاحظ كيف استخدمنا علاقات ال  --}}
+                        <p>{{$booking->travelsSchedule->bus->bus_number}}</p>
+                        {{-- Retrieve the travel details associated with this booking. --}}
+                        <p>{{$booking->travelsSchedule->starting_point}}</p>
+                        <p>{{$booking->travelsSchedule->destination}}</p>
+                        <p>{{$booking->travelsSchedule->schedule_date}}</p>
+                        <p>{{$booking->travelsSchedule->departure_time}}</p>
+                        <p>{{$booking->travelsSchedule->estimate_arrival_time}}</p>
+                        <p>{{$booking->price_per_seat}}</p>
+                        <p>{{$booking->number_of_seats}}</p>
+                        <p>{{$booking->total_price}}</p>
+                        <p>{{$booking->booking_date}}</p>
                     </div>
+                    @endforeach
+                    @endif
+
                 </div>
             </div>
         </div>
