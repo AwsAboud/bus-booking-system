@@ -12,6 +12,7 @@ use Illuminate\Support\Facades\Auth;
 use RealRashid\SweetAlert\Facades\Alert;
 
 
+
 class BookingController extends Controller
 {
     /**
@@ -110,7 +111,7 @@ class BookingController extends Controller
             Alert::error('Oops...', 'you do not have enought balance');
         }
         //Alert::success('Success!', 'Your request has been processed.');
-        return redirect()->route('home');
+        return redirect()->route('bookings.index');
     }
 
 

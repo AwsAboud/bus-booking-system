@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\TravelController;
 use App\Http\Controllers\BookingController;
+use App\Http\Controllers\MessageController;
 use App\Http\Controllers\ProfileController;
 use RealRashid\SweetAlert\Facades\Alert;
 
@@ -25,20 +26,27 @@ Route::get('/', function () {
 })->name('home');
 
 
-Route::get('/hash', function () {
-    return  Hash::make('adminadmin');
-});
 Route::view('/contact', 'contact');
 //Route::view('/bookings', 'appointment');
 Route::view('/about', 'about');
-//Route::view('/test','test');
-Route::get('/bookings/{status?}', [BookingController::class, 'index'])->name('bookings.index');
-//search for trips
-Route::get('/search-for-trip', [TravelController::class, 'search'])->name('trip.search');
-Route::get('/trip-details/{tripId}', [TravelController::class, 'show'])
-    ->middleware('auth')->name('trip-details');
 
-Route::post('/book-trip/{scheduleId}', [BookingController::class, 'store'])->name('booking.store');
+Route::post('/send-message',[MessageController::class,'store'])->name('message.store');
+
+Route::middleware('auth')->group(function(){
+    //Route::view('/test','test');
+    Route::get('/bookings/{status?}', [BookingController::class, 'index'])->name('bookings.index');
+    //search for trips
+    Route::get('/search-for-trip', [TravelController::class, 'search'])->name('trip.search');
+    Route::get('/trip-details/{tripId}', [TravelController::class, 'show'])->name('trip-details');
+
+    Route::post('/book-trip/{scheduleId}', [BookingController::class, 'store'])->name('booking.store');
+
+});
+
+Route::get('/hash', function () {
+    return  Hash::make('adminadmin');
+});
+
 
 
 Route::get('/dashboard', function () {

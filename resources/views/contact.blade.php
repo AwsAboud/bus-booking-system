@@ -44,7 +44,8 @@
                 </div>
             </div>
             <div class="contact-form">
-                <form action="">
+                <form action="{{route('message.store')}}" method="POST">
+                    @csrf
                     <h4 class="contact-title">Have any Questions?</h4>
                     <div class="form-group">
                         <label for="name">Name :</label>
@@ -52,15 +53,19 @@
                     </div>
                     <div class="form-group">
                         <label for="subject">Subject :</label>
-                        <input type="text" name="subject" id="subject" class="form-input" placeholder="Subject">
+                        <input type="text" name="title" id="subject" class="form-input" placeholder="Subject">
                     </div>
                     <div class="form-group">
                         <label for="email">Email :</label>
                         <input type="email" name="email" id="email" class="form-input" placeholder="Email">
                     </div>
                     <div class="form-group">
+                        <label for="phone">Phone :</label>
+                        <input type="text" name="phone" id="phone" class="form-input" placeholder="Phone">
+                    </div>
+                    <div class="form-group">
                         <label for="msg">msg :</label>
-                        <textarea name="msg" id="msg" cols="30" rows="10" placeholder="Your Msg"></textarea>
+                        <textarea name="message_body" id="msg" cols="30" rows="10" placeholder="Your Msg"></textarea>
                     </div>
                     <div class="form-group">
                         <input type="submit" value="Send Us Message" class="submit-contact">
