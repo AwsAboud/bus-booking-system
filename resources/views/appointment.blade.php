@@ -54,8 +54,15 @@
             <div class="your-appointment">
                 <!-- <h1 class="title-appointment">Your Appointment List :</h1> -->
                 <div class="options" id="myDIV">
+
+                    
+                    @if($is_completed)
                     <a href="{{url('/bookings/finished')}}" class="btn activenow">Completed</a>
                     <a href="{{url('/bookings/not-finished')}}" class="btn">Not Completed</a>
+                    @else
+                    <a href="{{url('/bookings/finished')}}" class="btn">Completed</a>
+                    <a href="{{url('/bookings/not-finished')}}" class="btn activenow">Not Completed</a>
+                    @endif
                 </div>
                 <div class="list">
                     <h4 class="title-list">List Of Appointment</h4>
@@ -95,7 +102,6 @@
             </div>
         </div>
     </div>
-
     <script>
         let header = document.getElementById("myDIV");
         let btns = header.getElementsByClassName("btn");
