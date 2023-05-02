@@ -12,6 +12,7 @@ use Illuminate\Support\Facades\Auth;
 use RealRashid\SweetAlert\Facades\Alert;
 
 
+
 class BookingController extends Controller
 {
     /**
@@ -24,22 +25,27 @@ class BookingController extends Controller
     {
        // dd($request);
         //retrieve the User instance from the database.
+        $is_completed = true;
         $user = Auth::user();
         //retrieve the User's bookings using the `bookings()` method in User model
         //$userBookingsDetails = $user->bookings()->paginate(10);
-        if($status == 'finished')
+        if($status == 'finished'){
         // retrieve the User's bookings with a schedule date before today's date
+        $is_completed = true;
         $userBookingsDetails = $user->bookings()->whereHas('travelsSchedule', function($query) {
             $query->where('schedule_date','<', Carbon::now()->toDateString());
         })->paginate(5);
+    }
 
-        elseif($status == 'not-finished')
+        elseif($status == 'not-finished'){
         // retrieve the User's bookings with a schedule date After today's date
         //Note: in Date the old date is bigger than the newer one ex : 1990 > 2000
+        $is_completed = false;
         $userBookingsDetails = $user->bookings()->whereHas('travelsSchedule', function($query) {
             $query->where('schedule_date','>', Carbon::now()->toDateString());
         })->paginate(5);
-        return view('appointment',['userBookingsDetails'=> $userBookingsDetails]);
+    }
+        return view('appointment',['userBookingsDetails' => $userBookingsDetails,'is_completed' => $is_completed]);
     }
 
     /**
@@ -110,7 +116,7 @@ class BookingController extends Controller
             Alert::error('Oops...', 'you do not have enought balance');
         }
         //Alert::success('Success!', 'Your request has been processed.');
-        return redirect()->route('home');
+        return redirect()->route('bookings.index');
     }
 
 
