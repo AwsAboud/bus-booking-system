@@ -19,7 +19,7 @@ class TravelsScheduleResource extends Resource
 {
     protected static ?string $model = TravelsSchedule::class;
 
-    protected static ?string $navigationIcon = 'heroicon-o-collection';
+    protected static ?string $navigationIcon = 'heroicon-o-table';
 
     public static function form(Form $form): Form
     {
