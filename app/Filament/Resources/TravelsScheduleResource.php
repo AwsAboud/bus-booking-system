@@ -14,6 +14,9 @@ use Illuminate\Database\Eloquent\SoftDeletingScope;
 use App\Filament\Resources\TravelsScheduleResource\Pages;
 use App\Filament\Resources\TravelsScheduleResource\RelationManagers;
 use App\Filament\Resources\TravelsScheduleResource\Widgets\TravelsStatsOverview;
+use App\Filament\Resources\TravelsScheduleResource\RelationManagers\BusRelationManager;
+use App\Filament\Resources\TravelsScheduleResource\RelationManagers\DriverRelationManager;
+use App\Filament\Resources\TravelsScheduleResource\RelationManagers\BookingsRelationManager;
 
 class TravelsScheduleResource extends Resource
 {
@@ -86,6 +89,7 @@ class TravelsScheduleResource extends Resource
             ])
             ->actions([
                 Tables\Actions\EditAction::make(),
+                Tables\Actions\DeleteAction::make(),
             ])
             ->bulkActions([
                 Tables\Actions\DeleteBulkAction::make(),
@@ -96,7 +100,9 @@ class TravelsScheduleResource extends Resource
 
     {
         return [
-            //
+            BusRelationManager::class,
+            DriverRelationManager::class,
+            BookingsRelationManager::class,
         ];
     }
 

@@ -16,7 +16,7 @@ class Booking extends Model
     use HasFactory;
     protected $fillable = [
         'travels_schedule_id',
-        'customer_id',
+        'user_id',
         'number_of_seats',
         'price_per_seat',
         'total_price',

@@ -13,6 +13,7 @@ use App\Filament\Resources\PaymentResource\Pages;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
 use App\Filament\Resources\PaymentResource\RelationManagers;
 use App\Filament\Resources\PaymentResource\Widgets\PaymentsStatsOverview;
+use App\Filament\Resources\PaymentResource\RelationManagers\BookingRelationManager;
 
 class PaymentResource extends Resource
 {
@@ -51,7 +52,7 @@ class PaymentResource extends Resource
     public static function getRelations(): array
     {
         return [
-            //
+            BookingRelationManager::class,
         ];
     }
 

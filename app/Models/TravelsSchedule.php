@@ -34,7 +34,7 @@ class TravelsSchedule extends Model
         return $this->belongsTo(Driver::class);
     }
 
-    public function Bookings (){
+    public function bookings (){
         return $this->hasMany(Booking::class);
     }
 }

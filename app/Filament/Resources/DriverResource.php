@@ -2,17 +2,18 @@
 
 namespace App\Filament\Resources;
 
-use App\Filament\Resources\DriverResource\Pages;
-use App\Filament\Resources\DriverResource\RelationManagers;
-use App\Models\Driver;
 use Filament\Forms;
-use Filament\Resources\Form;
-use Filament\Resources\Resource;
-use Filament\Resources\Table;
 use Filament\Tables;
+use App\Models\Driver;
+use Filament\Resources\Form;
+use Filament\Resources\Table;
+use Filament\Resources\Resource;
 use Illuminate\Database\Eloquent\Builder;
+use App\Filament\Resources\DriverResource\Pages;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
+use App\Filament\Resources\DriverResource\RelationManagers;
 use App\Filament\Resources\DriverResource\Widgets\DriverStatsOverview;
+use App\Filament\Resources\DriverResource\RelationManagers\TravelsScheduleRelationManager;
 
 class DriverResource extends Resource
 {
@@ -55,7 +56,7 @@ class DriverResource extends Resource
     public static function getRelations(): array
     {
         return [
-            //
+            TravelsScheduleRelationManager::class,
         ];
     }
 
