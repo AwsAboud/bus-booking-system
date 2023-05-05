@@ -13,6 +13,9 @@ use App\Filament\Resources\BookingResource\Pages;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
 use App\Filament\Resources\BookingResource\RelationManagers;
 use App\Filament\Resources\BookingResource\Widgets\BookingsStatsOverview;
+use App\Filament\Resources\BookingResource\RelationManagers\UserRelationManager;
+use App\Filament\Resources\BookingResource\RelationManagers\PaymentRelationManager;
+use App\Filament\Resources\BookingResource\RelationManagers\TravelsScheduleRelationManager;
 
 class BookingResource extends Resource
 {
@@ -26,7 +29,7 @@ class BookingResource extends Resource
             ->schema([
                 Forms\Components\TextInput::make('travels_schedule_id')->required()
                 ->numeric(),
-                Forms\Components\TextInput::make('customer_id')->required()
+                Forms\Components\TextInput::make('user_id')->required()
                 ->numeric(),
                 Forms\Components\TextInput::make('number_of_seats')->required()
                 ->numeric(),
@@ -44,11 +47,11 @@ class BookingResource extends Resource
             ->columns([
                 Tables\Columns\TextColumn::make('id')->sortable()->searchable(),
                 Tables\Columns\TextColumn::make('travels_schedule_id')->sortable(),
-                Tables\Columns\TextColumn::make('customer_id')->sortable(),
+                Tables\Columns\TextColumn::make('user_id')->sortable(),
                 Tables\Columns\TextColumn::make('number_of_seats'),
                 Tables\Columns\TextColumn::make('price_per_seat'),
                 Tables\Columns\TextColumn::make('total_price'),
-                Tables\Columns\TextColumn::make('booking_date')->sortable()->searchable(),
+                Tables\Columns\TextColumn::make('booking_date')->label('Booked At')->sortable()->searchable(),
             ])
             ->filters([
                 //
@@ -64,7 +67,9 @@ class BookingResource extends Resource
     public static function getRelations(): array
     {
         return [
-            //
+            UserRelationManager::class,
+            PaymentRelationManager::class,
+            TravelsScheduleRelationManager::class,
         ];
     }
 
