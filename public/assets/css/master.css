@@ -742,7 +742,7 @@ html {
 .confirm .container .form-left span {
     width: 100px;
 }
-.confirm .container .form-left input {
+.confirm .container .form-left .number {
     width: 100px;
     outline: none;
     border: 1px solid var(--main-color);
@@ -759,6 +759,7 @@ html {
     color: white;
     font-size: 22px;
     border-radius: 5px;
+    cursor: pointer;
 }
 /* End Page Confirm */
 

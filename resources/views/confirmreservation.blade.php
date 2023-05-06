@@ -15,10 +15,10 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Georama:wght@300;400&display=swap" rel="stylesheet">
     <!-- Sweet Alert CSS -->
-<link rel="stylesheet" href="{{ asset('vendor/sweetalert2/sweetalert2.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('vendor/sweetalert2/sweetalert2.min.css') }}">
 
-<!-- Sweet Alert JS -->
-<script src="{{ asset('vendor/sweetalert2/sweetalert2.min.js') }}"></script>
+    <!-- Sweet Alert JS -->
+    <script src="{{ asset('vendor/sweetalert2/sweetalert2.min.js') }}"></script>
 
     <title>ConfirmReservation</title>
 </head>
@@ -68,11 +68,11 @@
                 <div class="packge">
                     <h3>Number Of Seats</h3>
                     <form action="{{route('booking.store',['scheduleId' => $tripDetails->id])}}" method="post">
-                    @csrf
-                    <input type="number" name="number_of_seats" id="" min="1" max="5" value="1">
+                        @csrf
+                        <input class="number" type="number" name="number_of_seats" id="" min="1" max="5" value="1">
 
                 </div>
-                <input type="submit" class="continue" value="confirm" >
+                <input type="submit" class="continue" value="confirm">
                 {{-- <button class="continue">Continue</button> --}}
                 </form>
             </div>
