@@ -9,6 +9,7 @@ use Filament\Resources\Form;
 use Filament\Resources\Table;
 use App\Models\TravelsSchedule;
 use Filament\Resources\Resource;
+use Filament\Forms\Components\Select;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
 use App\Filament\Resources\TravelsScheduleResource\Pages;
@@ -29,7 +30,32 @@ class TravelsScheduleResource extends Resource
         return $form
             ->schema([
 
-                Forms\Components\TextInput::make('bus_id')->required(),
+                // to understand why we put label('Bus Number') for bus_id
+                //read the below commet
+                Select::make('bus_id')
+                ->label('Bus Number')
+                /*
+                --------------------------------------------------------------------------------
+                    - pluck($value, $key)[the definision for it Get an array with the
+                     values of givin $key
+                        (
+                        $valueيعني بالمشرمحي وقت العرض ع الشاشة رح تعرض ال
+                        $key ووقت التخزين بالدلتا رح تخزن
+                        )]
+                    so when we write pluck('bus_number', 'id') then if
+                    we slect bus_number = 11 it will store in
+                    the database the  [id] for the selected bus number (الكلام مو منطفي شوي بما انو )
+                    - we do this because the bus_number is  easier
+                    for admin to remember than the bus id
+                    - so to prevent conviosen for the adminUse  we
+                    put  label('Bus Number') for bus_id coulmn :)
+                    - visit the [ https://filamentphp.com/docs/2.x/forms/fields#select ]
+                    and whach the video in this page for more information
+                ---------------------------------------------------------------------------------
+                */
+                ->options(Bus::all()->pluck('bus_number', 'id'))
+                ->searchable()
+                ->reactive(),
                 Forms\Components\TextInput::make('driver_id')->required(),
                 Forms\Components\TextInput::make('starting_point')->required()
                 ->datalist([
@@ -62,6 +88,15 @@ class TravelsScheduleResource extends Resource
                 ->label('Price Per Seat'),
                 Forms\Components\TextInput::make('available_seats')
                 ->numeric()->required(),
+                // Select::make('available_seats')
+                // ->required()
+                // ->options(function(callable $get){
+                //     $bus = Bus::find($get('bus_id'))->first();
+
+                //     if($bus )
+                //     return  $bus->pluck('id','id');
+
+                // }),
                 Forms\Components\TextInput::make('remarks'),
 
             ]);
