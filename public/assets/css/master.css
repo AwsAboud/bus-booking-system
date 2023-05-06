@@ -110,7 +110,7 @@ html {
     position: absolute;
     background-color: #f9f9f9;
     min-width: 160px;
-    box-shadow: 0 0 10px #ddd;
+    box-shadow: 0px 4px 10px #ddd;
     z-index: 1;
   }
 
@@ -742,7 +742,7 @@ html {
 .confirm .container .form-left span {
     width: 100px;
 }
-.confirm .container .form-left input {
+.confirm .container .form-left .number {
     width: 100px;
     outline: none;
     border: 1px solid var(--main-color);
@@ -759,6 +759,7 @@ html {
     color: white;
     font-size: 22px;
     border-radius: 5px;
+    cursor: pointer;
 }
 /* End Page Confirm */
 
@@ -811,12 +812,6 @@ padding-top: var(--main-padding);
 }
 .appointmentMain .your-appointment {
     margin-top: 60px;
-}
-.appointmentMain .your-appointment .title-appointment {
-    /* text-align: center; */
-}
-.appointmentMain .your-appointment {
-    /* text-align: center; */
 }
 .appointmentMain .your-appointment .options {
     background-color: white;
