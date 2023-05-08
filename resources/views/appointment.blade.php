@@ -27,7 +27,7 @@
             <ul class="links">
                 <li><a href="{{route('home')}}">Home</a></li>
                 <li><a href="#trips">Trips</a></li>
-                <li><a href="#">About</a></li>
+                <li><a href="{{url('about')}}">About</a></li>
                 <li><a href="{{url('/contact')}}">Contact</a></li>
             </ul>
 
@@ -102,7 +102,7 @@
                 </div>
 
                 <div>
-                {{$userBookingsDetails->links('pagination::custom2')}}
+                    {{$userBookingsDetails->links('pagination::custom2')}}
                 </div>
             </div>
         </div>
