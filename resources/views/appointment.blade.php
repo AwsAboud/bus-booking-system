@@ -27,7 +27,7 @@
             <ul class="links">
                 <li><a href="{{route('home')}}">Home</a></li>
                 <li><a href="#trips">Trips</a></li>
-                <li><a href="#">About</a></li>
+                <li><a href="{{url('about')}}">About</a></li>
                 <li><a href="{{url('/contact')}}">Contact</a></li>
             </ul>
 
@@ -69,7 +69,6 @@
                 <div class="list">
                     <h4 class="title-list">List Of Appointment</h4>
                     <div class="list-content">
-                        <h3>Bus Number</h3>
                         <h3>starting Point</h3>
                         <h3>destination</h3>
                         <h3>Date</h3>
@@ -79,13 +78,13 @@
                         <h3>Number of Seats</h3>
                         <h3>Totla Price</h3>
                         <h3>Booked At </h3>
+                        <h3></h3>
 
                     </div>
                     @if( ! empty($userBookingsDetails))
                     @foreach($userBookingsDetails as $booking)
                     <div class="info">
                         {{-- حتى جبنا رقم الباص Eloquent لاحظ كيف استخدمنا علاقات ال  --}}
-                        <p>{{$booking->travelsSchedule->bus->bus_number}}</p>
                         {{-- Retrieve the travel details associated with this booking. --}}
                         <p>{{$booking->travelsSchedule->starting_point}}</p>
                         <p>{{$booking->travelsSchedule->destination}}</p>
@@ -96,13 +95,14 @@
                         <p>{{$booking->number_of_seats}}</p>
                         <p>{{$booking->total_price}}</p>
                         <p>{{$booking->booking_date}}</p>
+                        <p class="cancel">Cancel</p>
                     </div>
                     @endforeach
                     @endif
                 </div>
 
                 <div>
-                {{$userBookingsDetails->links('pagination::custom2')}}
+                    {{$userBookingsDetails->links('pagination::custom2')}}
                 </div>
             </div>
         </div>
