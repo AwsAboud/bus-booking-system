@@ -5,6 +5,7 @@ namespace App\Filament\Resources;
 use App\Models\Bus;
 use Filament\Forms;
 use Filament\Tables;
+use App\Models\Driver;
 use Filament\Resources\Form;
 use Filament\Resources\Table;
 use App\Models\TravelsSchedule;
@@ -55,8 +56,13 @@ class TravelsScheduleResource extends Resource
                 */
                 ->options(Bus::all()->pluck('bus_number', 'id'))
                 ->searchable()
+                ->required()
                 ->reactive(),
-                Forms\Components\TextInput::make('driver_id')->required(),
+                Select::make('driver_id')
+                ->label('Driver')
+                ->options(Driver::all()->pluck('name', 'id'))
+                ->searchable()->required(),
+                //Forms\Components\TextInput::make('driver_id')->required(),
                 Forms\Components\TextInput::make('starting_point')->required()
                 ->datalist([
                     'Aleppo',
