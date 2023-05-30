@@ -43,6 +43,9 @@ Route::middleware('auth')->group(function(){
 
 });
 
+//cancel booking
+Route::delete('/cancel-booking/{id}', [BookingController::class, 'cancelBooking'])->name('booking.cancel');
+
 Route::get('/hash', function () {
     return  Hash::make('adminadmin');
 });

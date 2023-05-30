@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use DateTime;
 use Carbon\Carbon;
 use App\Models\Booking;
 use App\Models\Payment;
@@ -10,7 +11,7 @@ use App\Models\TravelsSchedule;
 use PhpParser\Node\Stmt\Return_;
 use Illuminate\Support\Facades\Auth;
 use RealRashid\SweetAlert\Facades\Alert;
-
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 
 class BookingController extends Controller
@@ -88,16 +89,16 @@ class BookingController extends Controller
         //store the booking that user has made in the database
         $newBooking->save();
         //decrese available_seats
-        //$trip->vailable_seats -= $request->number_of_seats;
-        // $trip->save();
+        $trip->available_seats -= $request->number_of_seats;
+        $trip->save();
 
         /*
         [important] you can acsess to all $newBooking propirties
         (such as these that have default value or autoincrement such id )
         after saving the obkect
         */
-           // Get the booking_id
-           $bookingId = $newBooking->id;
+        // Get the booking_id
+        $bookingId = $newBooking->id;
 
         // cut the total price from the user balance
         $user->balance -= $totalPrice;
@@ -108,6 +109,10 @@ class BookingController extends Controller
         $newPayment->payment_amount = $totalPrice;
         $newPayment->save();
         Alert::success('Success Title', 'your reservation has made');
+        Alert::success('your reservation has made', 'you can cancel your reservation without any cut within one houre
+                                         after one hour we will cut 20% from total price
+                                         after three houres we will cut 100%  from totlal price
+                        ');
 
 
         }
@@ -161,7 +166,7 @@ class BookingController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+
     }
 
     /**
@@ -173,6 +178,60 @@ class BookingController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    public function cancelBooking($id){
+        $booking = Booking::findOrFail($id);
+        //dd($booking);
+        //add the canceld seats to travelSchedule
+        $trip = TravelsSchedule::findOrFail($booking->travels_schedule_id);
+        $trip->available_seats += $booking->number_of_seats;
+        $trip->save();
+
+        $payment = Payment::where('booking_id',$id)->first();
+       // dd($payment);
+        // check the time to cut the correct amount from the use
+        /*
+            To get the difference in minutes between $PaymentTime and $currentTime,
+            you can use the diff() method of the DateTime class which returns
+            a DateInterval object representing the difference between two dates or times.
+        */
+        $PaymentTime = new DateTime($payment->created_at);
+        $currentTime = new DateTime(now());
+        $interval = $PaymentTime->diff($currentTime);
+        $hours_diff = $interval->h;
+        //dd($hours_diff);
+        //retrieve the current authenticated user's object
+        $user = auth()->user();
+        //less than one hour cut nothing
+        if($hours_diff < 1){
+            //add the payment amount for the booking to user balance
+            $user->balance += $payment->payment_amount;
+            $user->save();
+            $payment->payment_amount = 0;
+            $payment->save();
+            Alert::success('Canceld Successfully', 'We return  all the payment amount money to your balance ');
+        }
+
+        //between one hour and two hours  cut 30% (return 70% to user)
+        elseif($hours_diff < 2 ){
+            $cttingAmount = ($payment->payment_amount * 30 /100);
+            $user->balance +=  ($payment->payment_amount - $cttingAmount);
+            $user->save();
+            $payment->payment_amount = $cttingAmount;
+            $payment->save();
+            Alert::success('Canceld Successfully', 'We cut 30% from total payment amount ');
+        }
+        //more than two hours  cut 100%
+        else {
+            Alert::success('Canceld Successfully', 'We cut 100% from total payment amount ');
+
+
+        }
+        //SOFT DELETE THE BOOKING RECORD
+        $booking->delete();
+        return redirect('/bookings');
+
     }
 
 
