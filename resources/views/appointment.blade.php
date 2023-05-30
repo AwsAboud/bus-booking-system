@@ -95,7 +95,16 @@
                         <p>{{$booking->number_of_seats}}</p>
                         <p>{{$booking->total_price}}</p>
                         <p>{{$booking->booking_date}}</p>
-                        <p class="cancel">Cancel</p>
+                        @if(! $is_completed)
+                        <form action="{{ route('booking.cancel',$booking->id) }}" method="POST">
+                            @csrf
+                            @method('DELETE')
+                            <button type="submit" class="cancel">Cancel</button>
+                        </form>
+                        {{-- <a href="{{route('booking.cancel', ['id' => $booking->id]) }}" class="cancel">Cancel</a> --}}
+                        @else
+                        <p class="cancel">Delete</p>
+                        @endif
                     </div>
                     @endforeach
                     @endif
@@ -118,6 +127,8 @@
             });
         }
     </script>
+    {{-- real rashid sweet alert --}}
+    @include('sweetalert::alert')
 </body>
 
 </html>
