@@ -18,6 +18,68 @@
 </head>
 
 <body>
+    <div class="profile page">
+        <div class="header-area">
+            <div class="logo"><img src="{{ asset('imgs/logo.png') }}" alt="logo">
+            </div>
+            <ul class="links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#trips">Trips</a></li>
+                <li><a href="{{url('about')}}">About</a></li>
+                <li><a href="{{url('/contact')}}">Contact</a></li>
+            </ul>
+
+            <div class="info-enter">
+                @auth
+                <div class="dropdown">
+                    <button class="dropbtn">{{auth()->user()->name}}</button>
+                    <div class="dropdown-content">
+                        <a href="prof" class="profile">Profile</a>
+                        <a href="{{route('bookings.index')}}" class="appointment">Appointment</a>
+                        <a href="#" class="logout" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout</a>
+                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                            @csrf
+                        </form>
+                    </div>
+                </div>
+                @else
+                <a href="{{route('login')}}" class="log in">Sign In</a>
+                <a href="{{route('register')}}" class="register">Register</a>
+                @endauth
+            </div>
+
+
+        </div>
+        <div class="container">
+            <div class="content">
+                <div class="image">
+                    <img src="{{ asset('imgs/Avatar-Profile-Vector.png') }}" alt="">
+                </div>
+                <div class="info-profile">
+                    <div class="box">
+                        <i class="fa-solid fa-signature"></i>
+                        <h1 class="head">Name</h1>
+                        <p class="words">luqman</p>
+                    </div>
+                    <div class="box">
+                        <i class="fa-solid fa-envelope"></i>
+                        <h1 class="head">Email</h1>
+                        <p class="words">luqman1it@gmail.com</p>
+                    </div>
+                    <div class="box">
+                        <i class="fa-solid fa-cake-candles"></i>
+                        <h1 class="head">Age</h1>
+                        <p class="words">23</p>
+                    </div>
+                    <div class="box">
+                        <i class="fa-solid fa-coins"></i>
+                        <h1 class="head">Balance</h1>
+                        <p class="words">200000</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
 </body>
 

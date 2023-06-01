@@ -869,3 +869,60 @@ padding-top: var(--main-padding);
     background-color: var(--hover-color);
 }
 /* End Appointment Page */
+
+/* Start Profile Page */
+.profile {
+
+}
+.profile .container {
+
+}
+.profile .container .content {
+    text-align: center;
+    padding: 30px 20px;
+}
+.profile .container .content .image {
+
+}
+.profile .container .content .image img {
+    width: 250px;
+}
+.profile .container .info-profile {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 40px;
+    padding-top: 30px;
+}
+.profile .container .info-profile .box {
+    box-shadow: 0 0 10px #ddd;;
+    padding: 20px 0px;
+
+}
+.profile .container .info-profile .box:nth-child(1) {
+    border-bottom: 4px solid #99e699;
+}
+.profile .container .info-profile .box:nth-child(2) {
+    border-bottom: 4px solid #99e699;
+}
+.profile .container .info-profile .box:nth-child(3) {
+    border-bottom: 4px solid #99e699;
+}
+.profile .container .info-profile .box:nth-child(4) {
+    border-bottom: 4px solid #99e699;
+}
+.profile .container .info-profile .box i {
+    font-size: 32px;
+    color: #248f24;
+}
+.profile .container .info-profile .box .head {
+    padding: 20px 0px;
+    color: var(--main-color);
+}
+.profile .container .info-profile .box .words {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+
+
+/* End Profile Page */
