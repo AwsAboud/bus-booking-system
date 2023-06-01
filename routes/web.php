@@ -30,9 +30,9 @@ Route::view('/contact', 'contact');
 //Route::view('/bookings', 'appointment');
 Route::view('/about', 'about');
 
-Route::post('/send-message',[MessageController::class,'store'])->name('message.store');
+Route::post('/send-message', [MessageController::class, 'store'])->name('message.store');
 
-Route::middleware('auth')->group(function(){
+Route::middleware('auth')->group(function () {
     //Route::view('/test','test');
     Route::get('/bookings/{status?}', [BookingController::class, 'index'])->name('bookings.index');
     //search for trips
@@ -40,7 +40,6 @@ Route::middleware('auth')->group(function(){
     Route::get('/trip-details/{tripId}', [TravelController::class, 'show'])->name('trip-details');
 
     Route::post('/book-trip/{scheduleId}', [BookingController::class, 'store'])->name('booking.store');
-
 });
 
 //cancel booking
