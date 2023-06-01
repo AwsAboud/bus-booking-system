@@ -871,18 +871,9 @@ padding-top: var(--main-padding);
 /* End Appointment Page */
 
 /* Start Profile Page */
-.profile {
-
-}
-.profile .container {
-
-}
 .profile .container .content {
     text-align: center;
     padding: 30px 20px;
-}
-.profile .container .content .image {
-
 }
 .profile .container .content .image img {
     width: 250px;
