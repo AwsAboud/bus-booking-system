@@ -889,18 +889,10 @@ padding-top: var(--main-padding);
     padding: 20px 0px;
 
 }
-.profile .container .info-profile .box:nth-child(1) {
-    border-bottom: 4px solid #99e699;
+.profile .container .info-profile .box {
+    border-bottom: 4px solid #32d932;
 }
-.profile .container .info-profile .box:nth-child(2) {
-    border-bottom: 4px solid #99e699;
-}
-.profile .container .info-profile .box:nth-child(3) {
-    border-bottom: 4px solid #99e699;
-}
-.profile .container .info-profile .box:nth-child(4) {
-    border-bottom: 4px solid #99e699;
-}
+
 .profile .container .info-profile .box i {
     font-size: 32px;
     color: #248f24;
