@@ -67,9 +67,9 @@
                         <p class="words">luqman1it@gmail.com</p>
                     </div>
                     <div class="box">
-                        <i class="fa-solid fa-cake-candles"></i>
-                        <h1 class="head">Age</h1>
-                        <p class="words">23</p>
+                        <i class="fa-solid fa-phone"></i>
+                        <h1 class="head">Phone</h1>
+                        <p class="words">0000000000</p>
                     </div>
                     <div class="box">
                         <i class="fa-solid fa-coins"></i>
