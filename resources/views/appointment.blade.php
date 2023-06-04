@@ -69,8 +69,9 @@
                 <div class="list">
                     <h4 class="title-list">List Of Appointment</h4>
                     <div class="list-content">
-                        <h3>starting Point</h3>
-                        <h3>destination</h3>
+                        {{-- <h3>Bus Number</h3> --}}
+                        <h3>Starting Point</h3>
+                        <h3>Destination</h3>
                         <h3>Date</h3>
                         <h3>Start</h3>
                         <h3>End</h3>
@@ -78,13 +79,13 @@
                         <h3>Number of Seats</h3>
                         <h3>Totla Price</h3>
                         <h3>Booked At </h3>
-                        <h3></h3>
 
                     </div>
                     @if( ! empty($userBookingsDetails))
                     @foreach($userBookingsDetails as $booking)
                     <div class="info">
                         {{-- حتى جبنا رقم الباص Eloquent لاحظ كيف استخدمنا علاقات ال  --}}
+                        {{-- <p>{{$booking->travelsSchedule->bus->bus_number}}</p> --}}
                         {{-- Retrieve the travel details associated with this booking. --}}
                         <p>{{$booking->travelsSchedule->starting_point}}</p>
                         <p>{{$booking->travelsSchedule->destination}}</p>
@@ -102,8 +103,6 @@
                             <button type="submit" class="cancel">Cancel</button>
                         </form>
                         {{-- <a href="{{route('booking.cancel', ['id' => $booking->id]) }}" class="cancel">Cancel</a> --}}
-                        @else
-                        <p class="cancel">Delete</p>
                         @endif
                     </div>
                     @endforeach

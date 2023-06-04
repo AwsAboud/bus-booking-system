@@ -59,22 +59,22 @@
                     <div class="box">
                         <i class="fa-solid fa-signature"></i>
                         <h1 class="head">Name</h1>
-                        <p class="words">luqman</p>
+                        <p class="words">{{auth()->user()->name}}</p>
                     </div>
                     <div class="box">
                         <i class="fa-solid fa-envelope"></i>
                         <h1 class="head">Email</h1>
-                        <p class="words">luqman1it@gmail.com</p>
+                        <p class="words">{{auth()->user()->email}}</p>
                     </div>
                     <div class="box">
                         <i class="fa-solid fa-phone"></i>
                         <h1 class="head">Phone</h1>
-                        <p class="words">0000000000</p>
+                        <p class="words">{{auth()->user()->phone_number}}</p>
                     </div>
                     <div class="box">
                         <i class="fa-solid fa-coins"></i>
                         <h1 class="head">Balance</h1>
-                        <p class="words">200000</p>
+                        <p class="words">{{auth()->user()->balance}}</p>
                     </div>
                 </div>
             </div>
