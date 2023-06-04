@@ -40,14 +40,18 @@ Route::middleware('auth')->group(function () {
     Route::get('/trip-details/{tripId}', [TravelController::class, 'show'])->name('trip-details');
 
     Route::post('/book-trip/{scheduleId}', [BookingController::class, 'store'])->name('booking.store');
+    //cancel booking
+    Route::delete('/cancel-booking/{id}', [BookingController::class, 'cancelBooking'])->name('booking.cancel');
+    //profile
+    Route::view('/user-profile', 'profile');
+
 });
 
-//cancel booking
-Route::delete('/cancel-booking/{id}', [BookingController::class, 'cancelBooking'])->name('booking.cancel');
 
 Route::get('/hash', function () {
     return  Hash::make('adminadmin');
 });
+
 
 
 
