@@ -15,6 +15,9 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Georama:wght@300;400&display=swap" rel="stylesheet">
     {{-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous"> --}}
+    {{-- sweet alert for confirm cancel popup --}}
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.19/dist/sweetalert2.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.19/dist/sweetalert2.min.js"></script>
 
     <title>Appointment</title>
 </head>
@@ -97,12 +100,38 @@
                         <p>{{$booking->total_price}}</p>
                         <p>{{$booking->booking_date}}</p>
                         @if(! $is_completed)
+                        {{-- /*
                         <form action="{{ route('booking.cancel',$booking->id) }}" method="POST">
                             @csrf
                             @method('DELETE')
                             <button type="submit" class="cancel">Cancel</button>
                         </form>
-                        {{-- <a href="{{route('booking.cancel', ['id' => $booking->id]) }}" class="cancel">Cancel</a> --}}
+                        */ --}}
+                        {{-- cancel booking --}}
+                        <form action="{{ route('booking.cancel', $booking->id) }}" method="POST" id="cancel-form">
+                            @csrf
+                            @method('DELETE')
+                            <button type="submit" class="cancel" onclick="confirmCancellation(event)">Cancel</button>
+                        </form>
+                        {{-- confirm cancel--}}
+                        <script>
+                            function confirmCancellation(event) {
+                                event.preventDefault();
+
+                                Swal.fire({
+                                    title: 'Confirmation',
+                                    text: 'Are you sure you want to cancel this booking?',
+                                    icon: 'question',
+                                    showCancelButton: true,
+                                    confirmButtonText: 'Yes',
+                                    cancelButtonText: 'No'
+                                }).then((result) => {
+                                    if (result.isConfirmed) {
+                                        event.target.submit();
+                                    }
+                                });
+                            }
+                        </script>
                         @endif
                     </div>
                     @endforeach
@@ -128,6 +157,7 @@
     </script>
     {{-- real rashid sweet alert --}}
     @include('sweetalert::alert')
+
 </body>
 
 </html>
