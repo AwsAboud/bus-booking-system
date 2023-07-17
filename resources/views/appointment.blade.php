@@ -102,9 +102,9 @@
                         @if(! $is_completed)
                         {{-- /*
                         <form action="{{ route('booking.cancel',$booking->id) }}" method="POST">
-                            @csrf
-                            @method('DELETE')
-                            <button type="submit" class="cancel">Cancel</button>
+                        @csrf
+                        @method('DELETE')
+                        <button type="submit" class="cancel">Cancel</button>
                         </form>
                         */ --}}
                         {{-- cancel booking --}}
