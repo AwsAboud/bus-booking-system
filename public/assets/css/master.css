@@ -861,9 +861,11 @@ padding-top: var(--main-padding);
     background-color: var(--main-color);
     color: white;
     border-radius: 10px;
-    padding: 8px;
+    padding: 8px 15px;
     text-align: center;
     cursor: pointer;
+    border: none;
+    font-size: 16px
 }
 .appointmentMain .your-appointment .list .info .cancel:hover {
     background-color: var(--hover-color);
