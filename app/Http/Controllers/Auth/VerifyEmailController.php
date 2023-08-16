@@ -3,8 +3,9 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
-use App\Providers\RouteServiceProvider;
 use Illuminate\Auth\Events\Verified;
+use App\Providers\RouteServiceProvider;
+use RealRashid\SweetAlert\Facades\Alert;
 use Illuminate\Foundation\Auth\EmailVerificationRequest;
 
 class VerifyEmailController extends Controller
@@ -24,7 +25,8 @@ class VerifyEmailController extends Controller
         if ($request->user()->markEmailAsVerified()) {
             event(new Verified($request->user()));
         }
-
+        //show sucsess message
+        Alert::success('Success!', 'Email verified successfully');
         return redirect()->intended(RouteServiceProvider::HOME.'?verified=1');
     }
 }

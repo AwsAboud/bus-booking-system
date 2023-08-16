@@ -208,7 +208,13 @@
     <!-- End Footer -->
     <!-- <script src="{{ asset('javascript/master.js') }}"></script> -->
     @include('sweetalert::alert')
+    <!-- Bootman widget -->
+    <div>
+    <script src='https://cdn.jsdelivr.net/npm/botman-web-widget@0/build/js/widget.js'></script>
+    </div>
 
+    {{-- botman web widget --}}
+    {{-- <script src='https://cdn.jsdelivr.net/npm/botman-web-widget@0/build/js/widget.js'></script> --}}
 </body>
 @guest
 <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
