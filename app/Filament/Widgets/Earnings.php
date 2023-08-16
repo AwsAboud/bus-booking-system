@@ -1,5 +1,7 @@
 <?php
 
+//memory floadهي الصفحة وقفت السيرفر ن الشغل  ع الغلب ل كويري عم يعمل
+//شوف شو الوضع او باسوء الاحوال علقها
 namespace App\Filament\Widgets;
 
 use Carbon\Carbon;
@@ -69,3 +71,4 @@ class Earnings extends LineChartWidget
     ];
 }
 }
+

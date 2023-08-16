@@ -22,6 +22,8 @@
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
+    {{-- recapatcha script --}}
+    <script src="https://www.google.com/recaptcha/api.js"></script>
 </head>
 
 <body>
@@ -62,5 +64,6 @@
             </x-button>
         </div>
     </div>
+    @stack('scripts')
 </body>
 </html>

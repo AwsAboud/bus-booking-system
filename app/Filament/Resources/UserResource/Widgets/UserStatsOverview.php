@@ -9,7 +9,8 @@ use Filament\Widgets\StatsOverviewWidget as BaseWidget;
 class UserStatsOverview extends BaseWidget
 {
     protected function getCards(): array
-    {$usersCount = User::where('is_admin', false)->count();
+    {
+        $usersCount = User::count();
         return [
              //get the number of  the company Customers
              Card::make('Total Customers',$usersCount)

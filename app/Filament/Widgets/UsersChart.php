@@ -82,13 +82,18 @@ class UsersChart extends LineChartWidget
         // Loop through the months until the current month and add the user count to the quantities array
         // If there are no users for a particular month, add a zero to the quantities array
         $currentMonth = Carbon::now()->month;
+        // this is to calculate the  total users exsist in each mounth
+        //if you what the number of users that joined evey mouth (not the total number)
+        //you can comment the line 88 & 94 ($totalUser = 0;) and uncommet the line 95(//array_push($quantities, $count);)
+        $totalUser = 0;
         foreach (range(1, $currentMonth) as $month) {
             $monthName = Carbon::createFromDate(null, $month, 1)->format('F');
             $label = $monthName;
-
             if (isset($users[$monthName])) {
                 $count = $users[$monthName]->count();
-                array_push($quantities, $count);
+                $totalUser +=  $count;
+                //array_push($quantities, $count);
+                array_push($quantities, $totalUser);
             } else {
                 array_push($quantities, 0);
             }

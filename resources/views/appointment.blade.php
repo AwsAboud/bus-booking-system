@@ -108,30 +108,48 @@
                         </form>
                         */ --}}
                         {{-- cancel booking --}}
+                        {{-- code here --}}
                         <form action="{{ route('booking.cancel', $booking->id) }}" method="POST" id="cancel-form">
                             @csrf
                             @method('DELETE')
-                            <button type="submit" class="cancel" onclick="confirmCancellation(event)">Cancel</button>
+                            <button type="button" class="cancel">Cancel</button>
                         </form>
-                        {{-- confirm cancel--}}
-                        <script>
-                            function confirmCancellation(event) {
-                                event.preventDefault();
 
-                                Swal.fire({
-                                    title: 'Confirmation',
-                                    text: 'Are you sure you want to cancel this booking?',
-                                    icon: 'question',
-                                    showCancelButton: true,
-                                    confirmButtonText: 'Yes',
-                                    cancelButtonText: 'No'
-                                }).then((result) => {
-                                    if (result.isConfirmed) {
-                                        event.target.submit();
-                                    }
+                        <script>
+                            document.addEventListener('DOMContentLoaded', function () {
+                                const cancelButtons = document.querySelectorAll('.cancel');
+
+                                function confirmCancellation(event) {
+                                    event.preventDefault();
+
+                                    const button = event.target;
+
+                                    Swal.fire({
+                                        title: 'Confirmation',
+                                        text: 'Are you sure you want to cancel this booking?',
+                                        icon: 'question',
+                                        showCancelButton: true,
+                                        confirmButtonText: 'Yes',
+                                        cancelButtonText: 'No'
+                                    }).then((result) => {
+                                        if (result.isConfirmed) {
+                                            const form = button.closest('form');
+                                            if (form) {
+                                                form.submit();
+                                            }
+                                        }
+                                    });
+                                }
+
+                                cancelButtons.forEach(function (button) {
+                                    button.addEventListener('click', confirmCancellation);
                                 });
-                            }
+                            });
                         </script>
+
+
+
+
                         @endif
                     </div>
                     @endforeach
@@ -161,3 +179,59 @@
 </body>
 
 </html>
+<form action="{{ route('booking.cancel', $booking->id) }}" method="POST" id="cancel-form">
+    @csrf
+    @method('DELETE')
+    <button type="submit" class="cancel" onclick="confirmCancellation(event)">Cancel</button>
+</form>
+{{-- confirm cancel--}}
+<script>
+    function confirmCancellation(event) {
+        event.preventDefault();
+
+        Swal.fire({
+            title: 'Confirmation',
+            text: 'Are you sure you want to cancel this booking?',
+            icon: 'question',
+            showCancelButton: true,
+            confirmButtonText: 'Yes',
+            cancelButtonText: 'No'
+        }).then((result) => {
+            if (result.isConfirmed) {
+                event.target.submit();
+            }
+        });
+    }
+</script>
+//the correct code
+<form action="{{ route('booking.cancel', $booking->id) }}" method="POST" id="cancel-form">
+    @csrf
+    @method('DELETE')
+    <button type="button" class="cancel">Cancel</button>
+</form>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const cancelButton = document.querySelector('.cancel');
+
+        if (cancelButton) {
+            cancelButton.addEventListener('click', function () {
+                Swal.fire({
+                    title: 'Confirmation',
+                    text: 'Are you sure you want to cancel this booking?',
+                    icon: 'question',
+                    showCancelButton: true,
+                    confirmButtonText: 'Yes',
+                    cancelButtonText: 'No'
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        const form = document.getElementById('cancel-form');
+                        if (form) {
+                            form.submit();
+                        }
+                    }
+                });
+            });
+        }
+    });
+</script>

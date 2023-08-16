@@ -2,14 +2,16 @@
 
 namespace App\Http\Controllers\Auth;
 
-use App\Http\Controllers\Controller;
+use Closure;
 use App\Models\User;
-use App\Providers\RouteServiceProvider;
-use Illuminate\Auth\Events\Registered;
 use Illuminate\Http\Request;
+use Illuminate\Validation\Rules;
+use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
-use Illuminate\Validation\Rules;
+use Illuminate\Auth\Events\Registered;
+use App\Providers\RouteServiceProvider;
+use Illuminate\Support\Facades\Http;
 
 class RegisteredUserController extends Controller
 {
@@ -33,11 +35,24 @@ class RegisteredUserController extends Controller
      */
     public function store(Request $request)
     {
+        //dd($request);
         $request->validate([
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'confirmed', Rules\Password::defaults()],
-            'phone_number' => ['required', 'string', 'max:10', 'unique:users']
+            'phone_number' => ['required', 'string', 'max:10', 'unique:users'],
+            // 'g-recaptcha-response' => ['required' ,
+            //         function (string $attribute, mixed $value, Closure $fail) {
+            //             $g_response = Http::asForm()->post("https://www.google.com/recaptcha/api/siteverify",[
+            //                 'secret' => config('services.recaptcha.secret_key'),
+            //                 'response' => $value,
+            //             ]);
+            //             //dd($g_response->json());
+            //             if (  $g_response->json('success')) {
+            //                 $fail("The {$attribute} is invalid.");
+            //             }
+            //         },
+            // ] ,
         ]);
 
         $user = User::create([

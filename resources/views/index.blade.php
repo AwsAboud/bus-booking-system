@@ -208,6 +208,14 @@
     <!-- End Footer -->
     <!-- <script src="{{ asset('javascript/master.js') }}"></script> -->
     @include('sweetalert::alert')
+    <script>
+        var botmanWidget = {
+            title : 'Viser Bus',
+           // mainColor: '#008866',
+           //bubbleBackground: '#FF5733',
+           //aboutText: 'Created by Aws ',
+        };
+    </script>
     <!-- Bootman widget -->
     <div>
     <script src='https://cdn.jsdelivr.net/npm/botman-web-widget@0/build/js/widget.js'></script>
