@@ -101,7 +101,7 @@ class DashboardStatsOverview extends BaseWidget
         ]),
 
             //Display the get travels number in the  current month
-            Card::make('This Month Travels', Driver::all()->count())
+            Card::make('This Month Travels', $numberOfCurrentMonthTravels )
             ->description('This Month Travels')
             ->color('success')
             ->extraAttributes([

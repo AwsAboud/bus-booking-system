@@ -3,7 +3,7 @@
         <!-- Validation Errors -->
         <x-auth-validation-errors class="mb-4" :errors="$errors" />
 
-        <form method="POST" action="{{ route('register') }}">
+        <form method="POST" action="{{ route('register') }}" id="register_form">
             @csrf
             <!-- head phrase -->
             <label style="color:forestgreen;
@@ -83,7 +83,11 @@
                 </div>
 
                 <div>
-                    <x-button class="justify-center w-full gap-2">
+                    <x-button class="g-recaptcha justify-center w-full gap-2"
+                    data-sitekey="{{config('services.recaptcha.site_key')}}"
+                    data-callback='onSubmit'
+                    data-action='register'
+                    >
                         <x-heroicon-o-user-add class="w-6 h-6" aria-hidden="true" />
 
                         <span>{{ __('Register') }}</span>
@@ -98,5 +102,13 @@
                 </p>
             </div>
         </form>
+        @push('scripts')
+          <script>
+            function onSubmit(token) {
+              document.getElementById("register_form").submit();
+            }
+           </script>
+
+        @endpush
     </x-auth-card>
 </x-guest-layout>
