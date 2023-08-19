@@ -85,7 +85,8 @@
                         <h3></h3>
 
                     </div>
-                    @if( ! empty($userBookingsDetails))
+                    @if(isset($userBookingsDetails) && $userBookingsDetails->isNotEmpty())
+
                     @foreach($userBookingsDetails as $booking)
                     <div class="info">
                         {{-- حتى جبنا رقم الباص Eloquent لاحظ كيف استخدمنا علاقات ال  --}}
