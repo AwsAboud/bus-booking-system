@@ -865,6 +865,7 @@ padding-top: var(--main-padding);
     text-align: center;
     cursor: pointer;
     border: none;
+    width: 100px;
     font-size: 16px
 }
 .appointmentMain .your-appointment .list .info .cancel:hover {
