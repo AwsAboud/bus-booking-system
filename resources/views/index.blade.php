@@ -91,7 +91,7 @@
                                 <option value="Hama">
                                 <option value="Tartous">
                             </datalist>
-                            <input type="date" name="schedule_date" id="" class="date" min="<?php echo date('Y-m-d'); ?>" max="<?php echo date('Y-m-d', strtotime('+7 days')); ?>" required>
+                            <input type="date" name="schedule_date" id="" class="date" min="<?php echo date('Y-m-d'); ?>" max="<?php echo date('Y-m-d', strtotime('+7 days')); ?>">
                             <input type="submit" value="Find Ticket" class="submit">
                         </form>
                     </div>

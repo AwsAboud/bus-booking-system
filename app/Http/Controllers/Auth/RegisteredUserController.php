@@ -47,9 +47,9 @@ class RegisteredUserController extends Controller
                             'secret' => config('services.recaptcha.secret_key'),
                             'response' => $value,
                         ]);
-                        //dd($g_response->json());
-                        if (  $g_response->json('success')) {
-                            $fail("The {$attribute} is invalid.");
+                       // dd($g_response->json());
+                        if (  ! $g_response->json('success')) {
+                            //$fail("The {$attribute} is invalid.");
                         }
                     },
             ] ,
