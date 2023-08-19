@@ -80,8 +80,9 @@
                         <h3>End</h3>
                         <h3>Price Per Seat</h3>
                         <h3>Number of Seats</h3>
-                        <h3>Totla Price</h3>
                         <h3>Booked At </h3>
+                        <h3>Totla Price</h3>
+                        <h3></h3>
 
                     </div>
                     @if( ! empty($userBookingsDetails))
@@ -97,8 +98,8 @@
                         <p>{{$booking->travelsSchedule->estimate_arrival_time}}</p>
                         <p>{{$booking->price_per_seat}}</p>
                         <p>{{$booking->number_of_seats}}</p>
-                        <p>{{$booking->total_price}}</p>
                         <p>{{$booking->booking_date}}</p>
+                        <p>{{$booking->total_price}}</p>
                         @if(! $is_completed)
                         {{-- /*
                         <form action="{{ route('booking.cancel',$booking->id) }}" method="POST">
