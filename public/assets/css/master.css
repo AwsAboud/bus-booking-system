@@ -681,12 +681,22 @@ html {
     padding: 20px 10px;
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    /* align-items: center; */
     color: var(--footer-color);
 }
 .trips-banner .container .ticket .appointment .appoint-ticket .details i {
     color: var(--main-color);
     font-size: 22px;
+    margin-bottom: 10px;
+}
+.trips-banner .container .ticket .appointment .appoint-ticket .details .date{
+    padding: 5px;
+    color: white;
+    background-color: var(--footer-color);
+    border-radius: 5px ;
+}
+.trips-banner .container .ticket .appointment .appoint-ticket .details .four {
+    margin: auto 0;
 }
 .trips-banner .container .ticket .appointment .appoint-ticket .details .reserv {
     background-color: var(--footer-color);
@@ -695,7 +705,7 @@ html {
     color: white;
 }
 .trips-banner .container .ticket .appointment .appoint-ticket .details h3 {
-    margin-bottom: 5px;
+    margin-bottom: 20px;
 }
 .trips-banner .container .ticket .appointment .appoint-ticket .details .point {
     text-align: center;
