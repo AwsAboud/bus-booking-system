@@ -104,7 +104,7 @@
                             </div>
                             <div class="midle point">
                                 <i class="fa-solid fa-arrow-right"></i>
-                                <p class="date">2023-21-8</p>
+                                <span class="date">2023-21-8</span>
                             </div>
                             <div class="second point">
                                 <h3 class="second-dropp">{{$trip->destination }}</h3>
