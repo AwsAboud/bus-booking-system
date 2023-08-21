@@ -608,6 +608,10 @@ html {
     color: white;
     border-radius: 5px;
 }
+.contact .container .contact-form form .form-group .submit-contact:hover {
+    background-color: var(--hover-color);
+    cursor: pointer;
+}
 .contact .container .contact-form {
     display: flex;
     flex-wrap: wrap;
@@ -801,15 +805,18 @@ padding-top: var(--main-padding);
     padding-right: 30px;
 }
 .about .container .about-content .title-about {
-    margin-bottom: 20px;
+    margin-bottom: 30px;
     color: var(--main-color);
 }
 .about .container .about-content p{
-    line-height: 1.5;
-    font-size: 18px;
+    line-height: 1.8;
+    font-size: 22px;
     color: rgb(66,66,72);
 }
-
+.about .container .about-content p a {
+    color: var(--main-color);
+    text-decoration: underline;
+}
 .about .container .image {
     flex: 1;
 }

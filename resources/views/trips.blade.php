@@ -139,7 +139,7 @@
                     <div class="logo">
                         <img src="{{ asset('imgs/logo.png') }}" alt="logo">
                     </div>
-                    <p>Delectus culpa laboriosam debitis saepe. Commodi earum minus ut obcaecati veniam deserunt est!</p>
+                    <p>We will be happy if you follow our company on social media</p>
                     <div class="icons">
                         <a href="https://www.facebook.com"><i class="fa-brands fa-facebook-f"></i></a>
                         <a href="https://www.twitter.com"><i class="fa-brands fa-twitter"></i></a>
