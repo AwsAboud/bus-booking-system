@@ -31,7 +31,7 @@
             <div class="info-enter">
                 @auth
                 <form action="{{route('logout')}}" method="POST">
-                <a href="{{ route('logout') }}" class="log out">logout</a>
+                    <a href="{{ route('logout') }}" class="log out">logout</a>
                 </form>
                 @endauth
                 @guest
@@ -102,12 +102,17 @@
                                 <h3 class="first-packup">{{$trip->starting_point }}</h3>
                                 <span>{{date('g:ia',strtotime($trip->departure_time))}}</span>
                             </div>
-                            <i class="fa-solid fa-arrow-right"></i>
+                            <div class="midle point">
+                                <i class="fa-solid fa-arrow-right"></i>
+                                <span class="date">2023-21-8</span>
+                            </div>
                             <div class="second point">
                                 <h3 class="second-dropp">{{$trip->destination }}</h3>
                                 <span>{{date('g:ia',strtotime($trip->estimate_arrival_time))}}</span>
                             </div>
-                            <a href="{{ route('trip-details', ['tripId' => $trip->id]) }}" class="reserv">reservation</a>
+                            <div class="four">
+                                <a href="{{ route('trip-details', ['tripId' => $trip->id]) }}" class="reserv">reservation</a>
+                            </div>
                         </div>
 
                     </div>

@@ -39,8 +39,8 @@
                 <div class="dropdown">
                     <button class="dropbtn">{{auth()->user()->name}}</button>
                     <div class="dropdown-content">
-                        <a href="#" class="profile">Profile</a>
-                        <a href="#" class="appointment">Appointment</a>
+                        <a href="{{url('user-profile')}}" class="profile">Profile</a>
+                        <a href="{{route('bookings.index')}}" class="appointment">Appointment</a>
                         <a href="#" class="logout" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout</a>
                         <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                             @csrf

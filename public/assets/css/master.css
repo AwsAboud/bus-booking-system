@@ -681,21 +681,41 @@ html {
     padding: 20px 10px;
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    /* align-items: center; */
     color: var(--footer-color);
 }
 .trips-banner .container .ticket .appointment .appoint-ticket .details i {
     color: var(--main-color);
     font-size: 22px;
+    margin-bottom: 20px;
+}
+.trips-banner .container .ticket .appointment .appoint-ticket .details .date{
+    padding: 5px;
+    color: white;
+    background-color: var(--main-color);
+    border-radius: 5px ;
+}
+.trips-banner .container .ticket .appointment .appoint-ticket .details .four {
+    margin: auto 0;
+}
+.trips-banner .container .ticket .appointment .appoint-ticket .details .point span {
+    background-color: var(--main-color);
+    color: white;
+    padding: 5px;
+    border-radius: 5px;
+    display: block;
 }
 .trips-banner .container .ticket .appointment .appoint-ticket .details .reserv {
-    background-color: var(--footer-color);
+    background-color: var(--main-color);
     padding: 10px;
     border-radius: 5px;
     color: white;
 }
+.trips-banner .container .ticket .appointment .appoint-ticket .details .reserv:hover{
+    background-color: var(--footer-color);
+}
 .trips-banner .container .ticket .appointment .appoint-ticket .details h3 {
-    margin-bottom: 5px;
+    margin-bottom: 20px;
 }
 .trips-banner .container .ticket .appointment .appoint-ticket .details .point {
     text-align: center;
@@ -761,6 +781,9 @@ html {
     font-size: 22px;
     border-radius: 5px;
     cursor: pointer;
+}
+.confirm .container .form-left .continue:hover {
+    background-color: var(--footer-color);
 }
 /* End Page Confirm */
 
@@ -869,7 +892,7 @@ padding-top: var(--main-padding);
     font-size: 16px
 }
 .appointmentMain .your-appointment .list .info .cancel:hover {
-    background-color: var(--hover-color);
+    background-color: var(--footer-color);
 }
 /* End Appointment Page */
 
