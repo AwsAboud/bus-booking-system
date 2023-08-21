@@ -29,12 +29,12 @@
         <div class="container">
             <div class="about-content">
                 <h1 class="title-about">Know Few Words About Autobus</h1>
-                <p>Lorem Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                    Nulla sit reprehenderit non voluptas quam quod facilis, doloribus impedit magni.
-                    Numquam ipsum placeat ullam alias temporibus non quas aperiam odio pariatur.
-                    Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                    Eos eveniet inventore blanditiis maxime doloremque minima. Quisquam, ex! Architecto laudantium culpa cupiditate hic facere est magni, possimus repudiandae, rerum eius omnis.lore Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque excepturi sed possimus recusandae temporibus tempore, aspernatur, autem sequi natus iste fugit. Eaque vero temporibus illum quis beatae quam officia ad.ri sed possimus recusandae temporibus tempore, aspernatur, autem sequi natus iste fugit. Eaque vero temporibus sed possimus recusandae temporibus tempore,
-                    aspernatur, autem sequi natus iste fugit. Eaque vero temporibus illum quis beatae quam officia ad.</p>
+                <p>Our company was established in 1999. We have branches in six Syrian cities, and we seek to open new branches in all Syrian cities
+                    We also have future visions to expand our company to become a cargo transportation company in addition to passenger transportation
+                    We always strive to make our trips safe and comfortable for all travelers
+                    Also, our prices are well studied and the address of the company is located below, in addition to that it is possible to contact us for inquiries or to file a complaint through the link
+                    <a href="{{url('/contact')}}">Contact</a>
+                </p>
             </div>
             <div class="image">
                 <img src="{{('imgs/about-bus.jpg')}}" alt="">
