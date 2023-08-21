@@ -608,6 +608,10 @@ html {
     color: white;
     border-radius: 5px;
 }
+.contact .container .contact-form form .form-group .submit-contact:hover {
+    background-color: var(--hover-color);
+    cursor: pointer;
+}
 .contact .container .contact-form {
     display: flex;
     flex-wrap: wrap;
