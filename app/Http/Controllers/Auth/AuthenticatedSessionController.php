@@ -33,7 +33,7 @@ class AuthenticatedSessionController extends Controller
 
         $request->session()->regenerate();
         //Alert::warning('Welcome',"Welcome Back");
-        alert()->image('Welcome back !','We are so glade to see you again ' . auth()->user()->name,'/imgs/logo.png','60%','50%','Image Alt');
+        alert()->image('Welcome back !','We are so glade to see you again ' . auth()->user()->name,'/imgs/logo.png','60%','70%','Image Alt');
 
         return redirect()->intended(RouteServiceProvider::HOME);
     }

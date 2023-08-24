@@ -41,18 +41,18 @@ class RegisteredUserController extends Controller
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'confirmed', Rules\Password::defaults()],
             'phone_number' => ['required', 'string', 'max:10', 'unique:users'],
-            'g-recaptcha-response' => ['required' ,
-                    function (string $attribute, mixed $value, Closure $fail) {
-                        $g_response = Http::asForm()->post("https://www.google.com/recaptcha/api/siteverify",[
-                            'secret' => config('services.recaptcha.secret_key'),
-                            'response' => $value,
-                        ]);
-                       // dd($g_response->json());
-                        if (  ! $g_response->json('success')) {
-                            //$fail("The {$attribute} is invalid.");
-                        }
-                    },
-            ] ,
+            // 'g-recaptcha-response' => ['required' ,
+            //         function (string $attribute, mixed $value, Closure $fail) {
+            //             $g_response = Http::asForm()->post("https://www.google.com/recaptcha/api/siteverify",[
+            //                 'secret' => config('services.recaptcha.secret_key'),
+            //                 'response' => $value,
+            //             ]);
+            //            // dd($g_response->json());
+            //             if (  ! $g_response->json('success')) {
+            //                 //$fail("The {$attribute} is invalid.");
+            //             }
+            //         },
+            // ] ,
 //             'g-recaptcha-response' => ['required',
 //     function (string $attribute, mixed $value, Closure $fail) {
 //         $g_response = Http::asForm()->post("https://www.google.com/recaptcha/api/siteverify", [
@@ -99,7 +99,7 @@ class RegisteredUserController extends Controller
         event(new Registered($user));
 
         Auth::login($user);
-        alert()->image('Welcome !','We are so glade to join our family ' . auth()->user()->name,'/imgs/logo.png','60%','50%','Image Alt');
+        alert()->image('Welcome !','We are so glade to join our family ' . auth()->user()->name,'/imgs/logo.png','60%','70%','Image Alt');
         return redirect(RouteServiceProvider::HOME);
     }
 }

@@ -25,12 +25,14 @@ class UserResource extends Resource
         return $form
             ->schema([
                 Forms\Components\TextInput::make('name')->required(),
-                Forms\Components\TextInput::make('user_name'),
+                //Forms\Components\TextInput::make('user_name'),
                 Forms\Components\TextInput::make('phone_number')->required()
                 ->length(10),
-                Forms\Components\TextInput::make('password')->required()->password(),
+                //Forms\Components\TextInput::make('password')->password(),
                 Forms\Components\TextInput::make('email')->email()->required(),
-                Forms\Components\TextInput::make('balance')->required()
+                // Forms\Components\TextInput::make('balance')->required()
+                // ->numeric()->default('0'),
+                Forms\Components\TextInput::make('balance')->label('Add Balance')
                 ->numeric()->default('0'),
             ]);
     }
@@ -41,7 +43,7 @@ class UserResource extends Resource
             ->columns([
                 Tables\Columns\TextColumn::make('id')->sortable(),
                 Tables\Columns\TextColumn::make('name')->searchable(),
-                Tables\Columns\TextColumn::make('user_name')->searchable(),
+                //Tables\Columns\TextColumn::make('user_name')->searchable(),
                 Tables\Columns\TextColumn::make('phone_number')->searchable(),
                 Tables\Columns\TextColumn::make('email')->searchable(),
                 Tables\Columns\TextColumn::make('balance')->searchable(),
@@ -51,6 +53,7 @@ class UserResource extends Resource
             ])
             ->actions([
                 Tables\Actions\EditAction::make(),
+                Tables\Actions\DeleteAction::make(),
             ])
             ->bulkActions([
                 Tables\Actions\DeleteBulkAction::make(),

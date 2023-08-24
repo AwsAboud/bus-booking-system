@@ -23,10 +23,10 @@
             <div class="logo"><img src="{{ asset('imgs/logo.png') }}" alt="logo">
             </div>
             <ul class="links">
-                <li><a href="#home">Home</a></li>
+                <li><a href="{{route('home')}}">Home</a></li>
                 <li><a href="#trips">Trips</a></li>
-                <li><a href="#">About</a></li>
-                <li><a href="#">Contact</a></li>
+                <li><a href="{{url('about')}}">About</a></li>
+                <li><a href="{{url('contact')}}">Contact</a></li>
             </ul>
             <div class="info-enter">
                 @auth
@@ -86,7 +86,7 @@
                                 <option value="Hama">
                                 <option value="Tartous">
                             </datalist>
-                            <input type="date" name="schedule_date" id="" class="date" min="<?php echo date('Y-m-d'); ?>" max="<?php echo date('Y-m-d', strtotime('+7 days')); ?>" required>
+                            <input type="date" name="schedule_date" id="" class="date" min="<?php echo date('Y-m-d'); ?>" max="<?php echo date('Y-m-d', strtotime('+10 days')); ?>" required>
                             <input type="submit" value="Find Ticket" class="submit">
                         </form>
                     </div>
@@ -104,7 +104,7 @@
                             </div>
                             <div class="midle point">
                                 <i class="fa-solid fa-arrow-right"></i>
-                                <span class="date">2023-21-8</span>
+                                <span class="date">{{$trip->schedule_date }}</span>
                             </div>
                             <div class="second point">
                                 <h3 class="second-dropp">{{$trip->destination }}</h3>

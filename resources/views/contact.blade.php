@@ -97,7 +97,7 @@
                 <div class="useful-links all">
                     <h2 class="title-footer">Usefil Links</h2>
                     <ul class="footer-links">
-                        <li><a href="">Home</a></li>
+                        <li><a href="{{route('home')}}">Home</a></li>
                         <li><a href="#trips">Trips</a></li>
                         <li><a href="{{url('about')}}">About</a></li>
                         <li><a href="{{url('/contact')}}">Contact</a></li>

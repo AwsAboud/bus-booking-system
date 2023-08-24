@@ -70,7 +70,7 @@
                     @endif
                 </div>
                 <div class="list">
-                    <h4 class="title-list">List Of Appointment</h4>
+                    <h4 class="title-list">List Of Reservations</h4>
                     <div class="list-content">
                         {{-- <h3>Bus Number</h3> --}}
                         <h3>Starting Point</h3>
@@ -82,8 +82,9 @@
                         <h3>Number of Seats</h3>
                         <h3>Booked At </h3>
                         <h3>Totla Price</h3>
-                        <h3></h3>
-
+                        @if(! $is_completed)
+                        <h3>Cancel</h3>
+                        @endif
                     </div>
                     @if(isset($userBookingsDetails) && $userBookingsDetails->isNotEmpty())
 
@@ -95,8 +96,8 @@
                         <p>{{$booking->travelsSchedule->starting_point}}</p>
                         <p>{{$booking->travelsSchedule->destination}}</p>
                         <p>{{$booking->travelsSchedule->schedule_date}}</p>
-                        <p>{{$booking->travelsSchedule->departure_time}}</p>
-                        <p>{{$booking->travelsSchedule->estimate_arrival_time}}</p>
+                        <p>{{date("H:i", strtotime($booking->travelsSchedule->departure_time))}}</p>
+                        <p>{{ date("H:i", strtotime($booking->travelsSchedule->estimate_arrival_time))}}</p>
                         <p>{{$booking->price_per_seat}}</p>
                         <p>{{$booking->number_of_seats}}</p>
                         <p>{{$booking->booking_date}}</p>

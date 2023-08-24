@@ -38,7 +38,7 @@
                     <button class="dropbtn">{{auth()->user()->name}}</button>
                     <div class="dropdown-content">
                         <a href="{{url('user-profile')}}" class="profile">profile</a>
-                        <a href="{{route('bookings.index')}}" class="appointment">Appointment</a>
+                        <a href="{{route('bookings.index')}}" class="appointment">My Reservation</a>
                         <a href="#" class="logout" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout</a>
                         <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                             @csrf
@@ -91,7 +91,7 @@
                                 <option value="Hama">
                                 <option value="Tartous">
                             </datalist>
-                            <input type="date" name="schedule_date" id="" class="date" min="<?php echo date('Y-m-d'); ?>" max="<?php echo date('Y-m-d', strtotime('+7 days')); ?>">
+                            <input type="date" name="schedule_date" id="" class="date" min="<?php echo date('Y-m-d'); ?>" max="<?php echo date('Y-m-d', strtotime('+10 days')); ?>">
                             <input type="submit" value="Find Ticket" class="submit">
                         </form>
                     </div>

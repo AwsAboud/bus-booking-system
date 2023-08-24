@@ -23,10 +23,10 @@
             <div class="logo"><img src="{{ asset('imgs/logo.png') }}" alt="logo">
             </div>
             <ul class="links">
-                <li><a href="#home">Home</a></li>
+                <li><a href="{{route('home')}}">Home</a></li>
                 <li><a href="#trips">Trips</a></li>
                 <li><a href="{{url('about')}}">About</a></li>
-                <li><a href="{{url('/contact')}}">Contact</a></li>
+                <li><a href="{{url('contact')}}">Contact</a></li>
             </ul>
 
             <div class="info-enter">

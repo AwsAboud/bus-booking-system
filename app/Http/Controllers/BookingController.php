@@ -108,11 +108,20 @@ class BookingController extends Controller
         $newPayment->booking_id = $bookingId;
         $newPayment->payment_amount = $totalPrice;
         $newPayment->save();
-        Alert::success('Success Title', 'your reservation has made');
-        Alert::success('your reservation has made', 'you can cancel your reservation without any cut within one houre
-                                         after one hour we will cut 20% from total price
+        // $msg = nl2br("Your reservation has been made, You can cancel your reservation without any charge within one hour
+        // After one hour, we will deduct 20% from the total price.
+        // After three hours, we will deduct 100% from the total price.");
+        // Alert::success($msg);
+
+       Alert::success('Success Title', 'your reservation has made');
+        Alert::success('your reservation has made', 'you can cancel your reservation without be any cut within one houre,
+                                         after one hour we will cut 20% from total price,
                                          after three houres we will cut 100%  from totlal price
                         ');
+
+        //$hi = "hi" . <br> " hi";
+        //alert()->success('SuccessAlert',"first line \r\n second line");
+
 
 
         }

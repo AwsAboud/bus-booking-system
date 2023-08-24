@@ -26,7 +26,8 @@ class MessageController extends Controller
         $message->message_body = $request->message_body;
 
         $message->save();
-        Alert::success('Success ', 'Thank you, we will replay as soon as possiable');
+        Alert::success('Success ', 'Thank you for your feedback, we will replay as soon as possiable','/imgs/logo.png','60%','70%','Image Alt');
+        //alert()->image('Thank you for your feedback, we will replay as soon as possiable','/imgs/logo.png','60%','70%','Image Alt');
         return redirect()->route('home');
     }
 }
