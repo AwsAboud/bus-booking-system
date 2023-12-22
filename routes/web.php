@@ -36,7 +36,7 @@ Route::middleware('auth')->group(function () {
     Route::get('/bookings/{status?}', [BookingController::class, 'index'])->name('bookings.index');
     //search for trips
     Route::get('/search-for-trip', [TravelController::class, 'search'])->name('trip.search');
-    Route::get('/trip-details/{tripId}', [TravelController::class, 'show'])->name('trip-details');
+    Route::get('/trip-details/{trip}', [TravelController::class, 'show'])->name('trip-details');
 
     Route::post('/book-trip/{scheduleId}', [BookingController::class, 'store'])->name('booking.store');
     //cancel booking

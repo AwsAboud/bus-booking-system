@@ -92,40 +92,37 @@
                     </div>
                 </div>
                 <div class="appointment">
-                    {{-- retreive availabe trips from database --}}
-                    @if(isset($avaliableTrips))
-                    @foreach($avaliableTrips as $trip)
                     <div class="appoint-ticket">
+                        {{-- retreive availabe trips from database --}}
+                        @if(count($avaliableTrips) > 0)
+                        @foreach($avaliableTrips as $trip)
+                            <div class="title-trip">Trip</div>
+                            <div class="details">
+                                <div class="first point">
+                                    <h3 class="first-packup">{{$trip->starting_point }}</h3>
+                                    <span>{{date('g:ia',strtotime($trip->departure_time))}}</span>
+                                </div>
+                                <div class="midle point">
+                                    <i class="fa-solid fa-arrow-right"></i>
+                                    <span class="date">{{$trip->schedule_date }}</span>
+                                </div>
+                                <div class="second point">
+                                    <h3 class="second-dropp">{{$trip->destination }}</h3>
+                                    <span>{{date('g:ia',strtotime($trip->estimate_arrival_time))}}</span>
+                                </div>
+                                <div class="four">
+                                    <a href="{{ route('trip-details', ['trip' => $trip->id]) }}" class="reserv">reservation</a>
+                                </div>
+                            </div>
+                        @endforeach
+                        @else
                         <div class="title-trip">Trip</div>
                         <div class="details">
-                            <div class="first point">
-                                <h3 class="first-packup">{{$trip->starting_point }}</h3>
-                                <span>{{date('g:ia',strtotime($trip->departure_time))}}</span>
-                            </div>
-                            <div class="midle point">
-                                <i class="fa-solid fa-arrow-right"></i>
-                                <span class="date">{{$trip->schedule_date }}</span>
-                            </div>
-                            <div class="second point">
-                                <h3 class="second-dropp">{{$trip->destination }}</h3>
-                                <span>{{date('g:ia',strtotime($trip->estimate_arrival_time))}}</span>
-                            </div>
-                            <div class="four">
-                                <a href="{{ route('trip-details', ['tripId' => $trip->id]) }}" class="reserv">reservation</a>
-                            </div>
+                                <p style="text-align:center;font-weight: bold;">No bus trips are available at the moment. Please check again later.</p>
+                        @endif
                         </div>
-
-                    </div>
-                    @endforeach
-                    @else
-                    <div class="title-trip">Trip</div>
-                    <div class="details">
-                        <center>
-                            <p>No bus trips found.</p>
-                        </center>
                     </div>
                 </div>
-                @endif
             </div>
         </div>
     </div>
