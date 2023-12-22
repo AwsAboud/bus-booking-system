@@ -67,7 +67,7 @@
                 </div>
                 <div class="packge">
                     <h3>Number Of Seats</h3>
-                    <form action="{{route('booking.store',['scheduleId' => $tripDetails->id])}}" method="post">
+                    <form action="{{route('booking.store',['trip' => $tripDetails->id])}}" method="post">
                         @csrf
                         <input class="number" type="number" name="number_of_seats" id="" min="1" max="5" value="1">
 

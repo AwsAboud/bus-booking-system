@@ -27,7 +27,6 @@ class MessageController extends Controller
 
         $message->save();
         Alert::success('Success ', 'Thank you for your feedback, we will replay as soon as possiable','/imgs/logo.png','60%','70%','Image Alt');
-        //alert()->image('Thank you for your feedback, we will replay as soon as possiable','/imgs/logo.png','60%','70%','Image Alt');
         return redirect()->route('home');
     }
 }
