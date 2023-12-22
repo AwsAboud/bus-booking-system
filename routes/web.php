@@ -38,9 +38,9 @@ Route::middleware('auth')->group(function () {
     Route::get('/search-for-trip', [TravelController::class, 'search'])->name('trip.search');
     Route::get('/trip-details/{trip}', [TravelController::class, 'show'])->name('trip-details');
 
-    Route::post('/book-trip/{scheduleId}', [BookingController::class, 'store'])->name('booking.store');
+    Route::post('/book-trip/{trip}', [BookingController::class, 'store'])->name('booking.store');
     //cancel booking
-    Route::delete('/cancel-booking/{id}', [BookingController::class, 'cancelBooking'])->name('booking.cancel');
+    Route::delete('/cancel-booking/{booking}', [BookingController::class, 'cancelBooking'])->name('booking.cancel');
     //profile
     Route::view('/user-profile', 'profile');
 

@@ -24,27 +24,30 @@ class BookingController extends Controller
     //show all trips that the user has booked
     public function index($status = 'finished')
     {
-       // dd($request);
-        //retrieve the User instance from the database.
         $is_completed = true;
+        //Retrieve the Current Authenticated User
         $user = Auth::user();
-        //retrieve the User's bookings using the `bookings()` method in User model
-        //$userBookingsDetails = $user->bookings()->paginate(10);
-        if($status == 'finished'){
         // retrieve the User's bookings with a schedule date before today's date
+        if($status == 'finished'){
         $is_completed = true;
         $userBookingsDetails = $user->bookings()->whereHas('travelsSchedule', function($query) {
             $query->where('schedule_date','<', Carbon::now()->toDateString());
-        })->paginate(5);
+        })
+        ->latest()
+        ->paginate(5);
     }
 
         elseif($status == 'not-finished'){
         // retrieve the User's bookings with a schedule date After today's date
         //Note: in Date the old date is bigger than the newer one ex : 1990 > 2000
         $is_completed = false;
-        $userBookingsDetails = $user->bookings()->whereHas('travelsSchedule', function($query) {
+        $userBookingsDetails = $user
+        ->bookings()
+        ->whereHas('travelsSchedule', function($query) {
             $query->where('schedule_date','>', Carbon::now()->toDateString());
-        })->paginate(5);
+        })
+        ->latest()
+        ->paginate(5);
     }
         return view('appointment',['userBookingsDetails' => $userBookingsDetails,'is_completed' => $is_completed]);
     }
@@ -54,9 +57,8 @@ class BookingController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
-    {
-        //
+    public function createBooking($id){
+
     }
 
     /**
@@ -65,16 +67,16 @@ class BookingController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request,$scheduleId)
+    public function store(Request $request,TravelsSchedule $trip)
     {
-        //return view('index');
+        //This function need to update it is so massy and violate SRP
+
         //validate request
         $request->validate([
             'number_of_seats' => 'required',
         ]);
 
         //get the TravelsSchedule details for the trip that user whant to book
-        $trip = TravelsSchedule::findOrFail($scheduleId);
         $user = auth()->user();
         $totalPrice = ($trip->price * $request->number_of_seats);
         //make sure that the user have enought money (balance) to book the trip
@@ -88,16 +90,10 @@ class BookingController extends Controller
         $newBooking->total_price = $totalPrice;
         //store the booking that user has made in the database
         $newBooking->save();
+
         //decrese available_seats
         $trip->available_seats -= $request->number_of_seats;
         $trip->save();
-
-        /*
-        [important] you can acsess to all $newBooking propirties
-        (such as these that have default value or autoincrement such id )
-        after saving the obkect
-        */
-        // Get the booking_id
         $bookingId = $newBooking->id;
 
         // cut the total price from the user balance
@@ -108,111 +104,36 @@ class BookingController extends Controller
         $newPayment->booking_id = $bookingId;
         $newPayment->payment_amount = $totalPrice;
         $newPayment->save();
-        // $msg = nl2br("Your reservation has been made, You can cancel your reservation without any charge within one hour
-        // After one hour, we will deduct 20% from the total price.
-        // After three hours, we will deduct 100% from the total price.");
-        // Alert::success($msg);
-
-       Alert::success('Success Title', 'your reservation has made');
+        Alert::success('Success Title', 'your reservation has made');
         Alert::success('your reservation has made', 'you can cancel your reservation without be any cut within one houre,
-                                         after one hour we will cut 20% from total price,
-                                         after three houres we will cut 100%  from totlal price
-                        ');
-
-        //$hi = "hi" . <br> " hi";
-        //alert()->success('SuccessAlert',"first line \r\n second line");
-
-
-
+                                         after one hour and within 24 we will cut 20% from total price,
+                                         after 24 houres we will cut 100%  from totlal price
+                ');
         }
         else {
             //tell user that there is no enough balance in his account to book the trip
             Alert::error('Oops...', 'you do not have enought balance');
         }
-        //Alert::success('Success!', 'Your request has been processed.');
         return redirect()->route('bookings.index');
     }
 
+    public function cancelBooking(Booking $booking ){
+        //This function need to update it is so massy and violate SRP
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        // /*
-        // -You can use Eloquent's with() method to eager load the bus relationship
-        // for the TravelsSchedule model.
-        // -This will retrieve the TravelsSchedule with the given ID,
-        //  along with its related bus model.
-        // The bus_number attribute of the related bus model can then be
-        // accessed using $trip->bus->bus_number.
-
-        // */
-        // $tripDetails = TravelsSchedule::with('bus')->findOrFail($id);
-        // return view('confirmReservation',['tripDetails'=> $tripDetails]);
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
-    {
-
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
-    {
-        //
-    }
-
-    public function cancelBooking($id){
-        $booking = Booking::findOrFail($id);
-        //dd($booking);
         //add the canceld seats to travelSchedule
         $trip = TravelsSchedule::findOrFail($booking->travels_schedule_id);
         $trip->available_seats += $booking->number_of_seats;
         $trip->save();
 
-        $payment = Payment::where('booking_id',$id)->first();
-       // dd($payment);
-        // check the time to cut the correct amount from the use
-        /*
-            To get the difference in minutes between $PaymentTime and $currentTime,
-            you can use the diff() method of the DateTime class which returns
-            a DateInterval object representing the difference between two dates or times.
-        */
+        $payment = Payment::where('booking_id',$booking->id)->first();
         $PaymentTime = new DateTime($payment->created_at);
+        //get the difference in minutes
         $currentTime = new DateTime(now());
         $interval = $PaymentTime->diff($currentTime);
         $hours_diff = $interval->h;
-        //dd($hours_diff);
         //retrieve the current authenticated user's object
         $user = auth()->user();
-        //less than one hour cut nothing
+        //within one hour cut nothing
         if($hours_diff < 1){
             //add the payment amount for the booking to user balance
             $user->balance += $payment->payment_amount;
@@ -222,8 +143,8 @@ class BookingController extends Controller
             Alert::success('Canceld Successfully', 'We return  all the payment amount money to your balance ');
         }
 
-        //between one hour and two hours  cut 30% (return 70% to user)
-        elseif($hours_diff < 2 ){
+        //within 24 hours  cut 30% (return 70% to user)
+        else if($hours_diff < 24 ){
             $cttingAmount = ($payment->payment_amount * 30 /100);
             $user->balance +=  ($payment->payment_amount - $cttingAmount);
             $user->save();
@@ -231,9 +152,9 @@ class BookingController extends Controller
             $payment->save();
             Alert::success('Canceld Successfully', 'We cut 30% from total payment amount ');
         }
-        //more than two hours  cut 100%
-        else {
-            Alert::success('Canceld Successfully', 'We cut 100% from total payment amount ');
+        //more than 24 hours  cut 100%
+        else if($hours_diff > 24 ) {
+            Alert::success('Canceld Successfully', 'We cut 100% from total payment amount');
 
 
         }

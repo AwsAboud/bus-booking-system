@@ -27,7 +27,9 @@ class TravelController extends Controller
             $avaliableTrips = TravelsSchedule::latest()->where([
                 ['starting_point', 'like', '%' . $from . '%'],
                 ['destination', 'like', '%' . $to . '%'],
-            ])->whereDate('schedule_date',  $formattedDate)->get();
+            ])->whereDate('schedule_date',  $formattedDate)
+            ->latest('schedule_date')
+            ->get();
         }
 
         // if the user did not inter a date we will retreive all trips started from the current date
