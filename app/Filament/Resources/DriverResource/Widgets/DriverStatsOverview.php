@@ -12,7 +12,7 @@ class DriverStatsOverview extends BaseWidget
     {
         return [
             //get the number of  the company drivers
-            Card::make('Total Drivers', Driver::all()->count())
+            Card::make('Total Drivers', Driver::count())
             ->description('Total Customers')
             ->color('success')
             ->extraAttributes([

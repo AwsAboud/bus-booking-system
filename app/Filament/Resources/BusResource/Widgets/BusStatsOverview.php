@@ -12,19 +12,13 @@ class BusStatsOverview extends BaseWidget
     {
         return [
             //get the number of buses in the company
-            Card::make('Total Buses', Bus::all()->count())
+            Card::make('Total Buses', Bus::count())
             ->description('Total Buses')
             ->color('success')
             ->extraAttributes([
                 'style' => 'width:40%'
             ]),
 
-            //Card::make('Buses', Bus::all()->count())
-            // //you can add custom style using the function below
-            // // light green #22d822
-            // ->extraAttributes([
-            //     'style' => 'background: #1fc71f ;;width:30%'
-            // ])
         ];
     }
 }
