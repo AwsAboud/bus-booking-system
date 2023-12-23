@@ -42,7 +42,7 @@ class DashboardStatsOverview extends BaseWidget
         $numberOfCurrentMonthBookings = Booking::whereMonth('booking_date',$currentMonth)->count();
         return [
             //get the number of drivers in the company
-            Card::make('Total Drivers', Driver::all()->count())
+            Card::make('Total Drivers', Driver::count())
             ->description('Total Drivers')
             ->color('success')
             ->extraAttributes([
@@ -51,7 +51,7 @@ class DashboardStatsOverview extends BaseWidget
             ]),
 
             //get the number of buses in the company
-             Card::make('Total Buses', Bus::all()->count())
+             Card::make('Total Buses', Bus::count())
              ->description('Total Buses')
              ->color('success')
              ->extraAttributes([
@@ -61,7 +61,7 @@ class DashboardStatsOverview extends BaseWidget
         ]),
 
              //get the number of  the company Customers
-            Card::make('Total Users', User::all()->count())
+            Card::make('Total Users', User::count())
             ->description('Total Users')
             ->color('success')
             ->extraAttributes([

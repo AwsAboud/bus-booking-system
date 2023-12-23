@@ -35,25 +35,6 @@ class TravelsScheduleResource extends Resource
                 //read the below commet
                 Select::make('bus_id')
                 ->label('Bus Number')
-                /*
-                --------------------------------------------------------------------------------
-                    - pluck($value, $key)[the definision for it Get an array with the
-                     values of givin $key
-                        (
-                        $valueيعني بالمشرمحي وقت العرض ع الشاشة رح تعرض ال
-                        $key ووقت التخزين بالدلتا رح تخزن
-                        )]
-                    so when we write pluck('bus_number', 'id') then if
-                    we slect bus_number = 11 it will store in
-                    the database the  [id] for the selected bus number (الكلام مو منطفي شوي بما انو )
-                    - we do this because the bus_number is  easier
-                    for admin to remember than the bus id
-                    - so to prevent conviosen for the adminUse  we
-                    put  label('Bus Number') for bus_id coulmn :)
-                    - visit the [ https://filamentphp.com/docs/2.x/forms/fields#select ]
-                    and whach the video in this page for more information
-                ---------------------------------------------------------------------------------
-                */
                 ->options(Bus::all()->pluck('bus_number', 'id'))
                 ->searchable()
                 ->required()
@@ -94,15 +75,6 @@ class TravelsScheduleResource extends Resource
                 ->label('Price Per Seat'),
                 Forms\Components\TextInput::make('available_seats')
                 ->numeric()->required(),
-                // Select::make('available_seats')
-                // ->required()
-                // ->options(function(callable $get){
-                //     $bus = Bus::find($get('bus_id'))->first();
-
-                //     if($bus )
-                //     return  $bus->pluck('id','id');
-
-                // }),
                 Forms\Components\TextInput::make('remarks'),
 
             ]);

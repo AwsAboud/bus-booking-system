@@ -3,7 +3,6 @@
 namespace App\Filament\Resources\TravelsScheduleResource\Widgets;
 
 use Carbon\Carbon;
-use App\Models\Driver;
 use App\Models\TravelsSchedule;
 use Filament\Widgets\StatsOverviewWidget\Card;
 use Filament\Widgets\StatsOverviewWidget as BaseWidget;

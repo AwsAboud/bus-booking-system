@@ -1,9 +1,5 @@
 <?php
-
-//memory floadهي الصفحة وقفت السيرفر ن الشغل  ع الغلب ل كويري عم يعمل
-//شوف شو الوضع او باسوء الاحوال علقها
 namespace App\Filament\Widgets;
-
 use Carbon\Carbon;
 use App\Models\Payment;
 use Filament\Widgets\LineChartWidget;
