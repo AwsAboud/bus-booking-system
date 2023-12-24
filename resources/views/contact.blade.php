@@ -39,8 +39,8 @@
                 </div>
                 <div class="box">
                     <h3 class="email">Email Us</h3>
-                    <p>luqman1it@gmail.com</p>
                     <p>awsaboud7@gmail.com</p>
+                    <p>luqman1it@gmail.com</p>
                 </div>
             </div>
             <div class="contact-form">
@@ -116,9 +116,9 @@
                     <h2 class="title-footer">Contact Info</h2>
                     <ul class="footer-links">
                         <li><a href="">Syria Latakia</a></li>
-                        <li><a href="">+963932048737</a></li>
-                        <li><a href="">luqman1it@gmail.com</a></li>
+                        <li><a href="">aws.amin.aboud@gmail.com</a></li>
                         <li><a href="">awsaboud7@gmail.com</a></li>
+                        <li><a href="">luqman1it@gmail.com</a></li>
                     </ul>
                 </div>
             </div>
