@@ -197,9 +197,9 @@
                     <h2 class="title-footer">Contact Info</h2>
                     <ul class="footer-links">
                         <li><a href="">Syria Latakia</a></li>
-                        <li><a href="">+963932048737</a></li>
-                        <li><a href="">luqman1it@gmail.com</a></li>
+                        <li><a href="">aws.amin.aboud@gmail.com</a></li>
                         <li><a href="">awsaboud7@gmail.com</a></li>
+                        <li><a href="">luqman1it@gmail.com</a></li>
                     </ul>
                 </div>
             </div>
